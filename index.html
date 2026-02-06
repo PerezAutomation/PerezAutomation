@@ -67,10 +67,13 @@
       gap: 0.75rem;
     }
 
-    .brand img {
-      width: 42px;
-      height: 42px;
-    }
+.brand img {
+  width: 42px;
+  height: 42px;
+  padding: 6px;
+  background: white;
+  border-radius: 8px;
+}
 
     .brand h1 {
       font-size: 1.25rem;
@@ -127,7 +130,7 @@
         <img src="logo.png" alt="Perez Automation logo" />
         <h1>Perez Automation</h1>
       </div>
-      <button class="theme-toggle" id="themeToggle">Toggle theme</button>
+        <button class="theme-toggle" id="themeToggle">Dark mode</button>
     </header>
 
     <article class="post">
@@ -148,20 +151,28 @@
     </footer>
   </div>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const storedTheme = localStorage.getItem('theme');
+<script>
+  const toggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
 
-    if (storedTheme) {
-      document.documentElement.setAttribute('data-theme', storedTheme);
-    }
+  function updateButton(theme) {
+    toggle.textContent =
+      theme === 'dark' ? 'Light mode' : 'Dark mode';
+  }
 
-    toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-    });
+  const storedTheme = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', storedTheme);
+  updateButton(storedTheme);
+
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateButton(next);
+  });
+</script>
+
   </script>
 </body>
 </html>
