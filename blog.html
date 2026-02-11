@@ -1,5 +1,11 @@
-<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Perez Automation</title>
 
+<style>
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -7,7 +13,6 @@ body {
   color: #e5e7eb;
 }
 
-/* Subtle tech glow */
 body::before {
   content: "";
   position: fixed;
@@ -18,98 +23,87 @@ body::before {
   z-index: -1;
 }
 
-/* HEADER NAV */
-
-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px 60px;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffffff;
-}
-
-/* HERO */
-
 .hero {
   text-align: center;
-  margin-top: 140px;
+  margin-top: 160px;
 }
 
 .hero h1 {
-  font-size: 3.8rem;   /* bigger */
-  letter-spacing: 3px;
+  font-size: 4rem;
+  letter-spacing: 6px;
   margin: 0;
+  font-weight: 300;
 }
 
 .hero h2 {
-  font-size: 1.2rem;
-  margin-top: 16px;
+  font-size: 1.3rem;
+  margin-top: 18px;
   color: #9ca3af;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
-
-/* BREADCRUMBS */
 
 .breadcrumbs {
   text-align: center;
-  margin-top: 70px;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-top: 80px;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .breadcrumbs a {
   color: #6b7280;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 15px;
 }
 
 .breadcrumbs a:hover {
   color: #ffffff;
 }
 
-/* ACTIVE PAGE STYLE */
-
-.active span.bracket {
-  color: #dc2626;
-}
-
-.active span.label {
-  color: #ffffff;
-}
+.active .bracket { color: #dc2626; }
+.active .label { color: #ffffff; }
 
 .content {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 80px auto;
   padding: 0 20px;
-}
-
-.card {
-  background: #111827;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 30px;
 }
 
 footer {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   color: #6b7280;
   font-size: 0.85rem;
 }
-
 </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>BLOG</h1>
+  <h2>Engineering Thoughts & Breakdowns</h2>
+</section>
+
+<div class="breadcrumbs">
+  <a href="index.html">MAIN</a>
+  <a href="projects/index.html">PROJECTS</a>
+
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">BLOG</span>
+    <span class="bracket">]</span>
+  </span>
+</div>
+
+<section class="content">
+  <p>Blog posts coming soon.</p>
+</section>
+
+<footer>
+  © 2026 Perez Automation
+</footer>
+
+</body>
+</html>
