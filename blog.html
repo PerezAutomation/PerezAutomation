@@ -12,6 +12,7 @@ body {
   background: #0b0f14;
   color: #e5e7eb;
 }
+
 body::before {
   content: "";
   position: fixed;
@@ -20,6 +21,9 @@ body::before {
     radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
   z-index: -1;
+}
+
+/* HERO (same on all pages) */
 .hero {
   text-align: center;
   margin-top: 140px;
@@ -41,6 +45,7 @@ body::before {
   color: #9ca3af;
 }
 
+/* BREADCRUMBS */
 .breadcrumbs {
   text-align: center;
   margin-top: 35px;
@@ -54,12 +59,30 @@ body::before {
   text-decoration: none;
   margin: 0 12px;
 }
-.active .bracket { color:#dc2626; }
-.active .label { color:#fff; }
 
-.content { max-width:900px; margin:60px auto; padding:0 20px; }
-.card { background:#111827; padding:30px; border-radius:10px; }
-footer { text-align:center; padding:60px 20px; color:#6b7280; font-size:0.85rem; }
+.active .bracket { color:#dc2626; }
+.active .label { color:#ffffff; }
+
+/* CONTENT */
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background:#111827;
+  padding:30px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+  font-size:0.85rem;
+}
 </style>
 </head>
 <body>
@@ -70,22 +93,4 @@ footer { text-align:center; padding:60px 20px; color:#6b7280; font-size:0.85rem;
 </section>
 
 <div class="breadcrumbs">
-  <a href="index.html">MAIN</a>
-  <a href="projects/index.html">PROJECTS</a>
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">BLOG</span>
-    <span class="bracket">]</span>
-  </span>
-</div>
-
-<section class="content">
-  <div class="card">
-    <h3>Coming Soon</h3>
-    <p>Blog posts will be added here shortly.</p>
-  </div>
-</section>
-
-<footer>© 2026 Perez Automation</footer>
-</body>
-</html>
+  <a href
