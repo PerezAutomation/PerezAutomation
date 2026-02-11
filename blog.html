@@ -6,15 +6,17 @@
 <title>Blog - Perez Automation</title>
 
 <style>
+
+/* ---------------- GLOBAL ---------------- */
+
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
   background: #0b0f14;
   color: #e5e7eb;
-  position: relative;
-  z-index: 1;
 }
 
+/* background glow */
 body::before {
   content: "";
   position: fixed;
@@ -25,6 +27,31 @@ body::before {
   z-index: -1;
 }
 
-/* HERO */
+/* ---------------- HERO ---------------- */
+
 .hero {
-  text-al
+  text-align: center;
+  margin-top: 140px;
+  min-height: 150px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 6px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.hero h2 {
+  font-size: 1.05rem;
+  margin-top: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #9ca3af;
+}
+
+/* ---------------- BREADCRUMBS ---------------- */
+
+.breadcrumbs {
+  text-align: center;
+  margin-top:
