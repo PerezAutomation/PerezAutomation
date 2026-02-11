@@ -7,9 +7,7 @@
 
 <style>
 
-/* -----------------------------
-   GLOBAL
-------------------------------*/
+/* ---------------- GLOBAL ---------------- */
 
 body {
   margin: 0;
@@ -18,6 +16,7 @@ body {
   color: #e5e7eb;
 }
 
+/* background glow */
 body::before {
   content: "";
   position: fixed;
@@ -28,37 +27,34 @@ body::before {
   z-index: -1;
 }
 
-/* -----------------------------
-   HERO
-------------------------------*/
+/* ---------------- HERO ---------------- */
 
 .hero {
   text-align: center;
-  margin-top: 160px;
+  margin-top: 140px;
+  min-height: 150px;
 }
 
 .hero h1 {
   font-size: 4rem;
   letter-spacing: 6px;
   margin: 0;
-  font-weight: 300;   /* THIN & AIRY */
+  font-weight: 300;
 }
 
 .hero h2 {
   font-size: 1.05rem;
   margin-top: 26px;
-  font-weight: 700;   /* breadcrumb weight */
+  font-weight: 700;
   letter-spacing: 1px;
   color: #9ca3af;
 }
 
-/* -----------------------------
-   CENTER BREADCRUMBS
-------------------------------*/
+/* ---------------- BREADCRUMBS ---------------- */
 
 .breadcrumbs {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 35px;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -74,12 +70,29 @@ body::before {
   color: #ffffff;
 }
 
-.active .bracket { color: #dc2626; }
-.active .label { color: #ffffff; }
+.active .bracket { color:#dc2626; }
+.active .label { color:#ffffff; }
 
-/* -----------------------------
-   CONTENT
-------------------------------*/
+/* second breadcrumb row (project selector) */
+.sub-breadcrumbs {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sub-breadcrumbs a {
+  color: #6b7280;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.sub-breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+/* ---------------- CONTENT ---------------- */
 
 .content {
   max-width: 900px;
@@ -88,59 +101,61 @@ body::before {
 }
 
 .card {
-  background: #111827;
-  padding: 30px;
-  border-radius: 10px;
+  background:#111827;
+  padding:30px;
+  border-radius:10px;
 }
 
+/* ---------------- FOOTER ---------------- */
+
 footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: #6b7280;
-  font-size: 0.85rem;
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+  font-size:0.85rem;
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
 <section class="hero">
   <h1>PROJECTS</h1>
   <h2>Recent Engineering Work</h2>
 </section>
 
-<!-- FIRST ROW BREADCRUMBS -->
+<!-- MAIN BREADCRUMBS -->
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
+
   <span class="active">
     <span class="bracket">[</span>
     <span class="label">PROJECTS</span>
     <span class="bracket">]</span>
   </span>
+
   <a href="../blog.html">BLOG</a>
 </div>
 
-<!-- SECOND ROW BREADCRUMBS (project selection) -->
-<div class="breadcrumbs" style="margin-top: 15px;">
+<!-- PROJECT SELECTOR (SECOND ROW) -->
+<div class="sub-breadcrumbs">
   <span class="active">
     <span class="bracket">[</span>
     <span class="label">RECENT</span>
     <span class="bracket">]</span>
   </span>
+
   <a href="focus-st.html">FOCUS ST</a>
   <a href="honours-a.html">HONOURS A</a>
   <a href="honours-b.html">HONOURS B</a>
 </div>
 
-<!-- CONTENT -->
 <section class="content">
   <div class="card">
-    <h3>Welcome</h3>
+    <h3>Recent Projects</h3>
     <p>
-      This page contains my recent projects in automotive engineering,
-      automation systems, and mechatronics.
+      This section will highlight the most recent automotive,
+      automation, and mechatronics builds currently in progress.
     </p>
   </div>
 </section>
