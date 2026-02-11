@@ -1,53 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Perez Automation</title>
+
 <style>
+/* SAME STYLE AS BEFORE */
+body { margin:0; font-family:"Segoe UI", Roboto, sans-serif; background:#0b0f14; color:#e5e7eb; }
+body::before { content:""; position:fixed; inset:0; background:
+radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+z-index:-1; }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
-}
+.hero { text-align:center; margin-top:160px; }
+.hero h1 { font-size:4rem; letter-spacing:6px; margin:0; font-weight:300; }
+.hero h2 { font-size:1.3rem; margin-top:18px; color:#9ca3af; letter-spacing:2px; font-weight:300; }
 
-/* Subtle tech glow */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index: -1;
-}
+.breadcrumbs { text-align:center; margin-top:80px; font-size:1.05rem; font-weight:700; letter-spacing:1px; }
+.breadcrumbs a { color:#6b7280; text-decoration:none; margin:0 15px; }
+.breadcrumbs a:hover { color:#ffffff; }
 
-/* HEADER NAV */
+.active .bracket { color:#dc2626; }
+.active .label { color:#ffffff; }
 
-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px 60px;
-}
+.content { max-width:900px; margin:80px auto; padding:0 20px; }
 
-nav {
-  display: flex;
-  gap: 30px;
-}
+footer { text-align:center; padding:80px 20px; color:#6b7280; font-size:0.85rem; }
+</style>
+</head>
 
-nav a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
+<body>
 
-nav a:hover {
-  color: #ffffff;
-}
-
-/* HERO */
-
-<h1>PROJECTS</h1>
-<h2>Recent Work & Engineering Builds</h2>
-
-/* BREADCRUMBS */
+<section class="hero">
+  <h1>PROJECTS</h1>
+  <h2>Recent Engineering Work</h2>
+</section>
 
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
@@ -60,34 +48,19 @@ nav a:hover {
 
   <a href="../blog.html">BLOG</a>
 </div>
-/* ACTIVE PAGE STYLE */
 
-.active span.bracket {
-  color: #dc2626;
-}
+<section class="content">
+  <p>Select a project:</p>
+  <p>
+    <a href="focus-st.html">Focus ST</a><br>
+    <a href="honours-a.html">Honours Project A</a><br>
+    <a href="honours-b.html">Honours Project B</a>
+  </p>
+</section>
 
-.active span.label {
-  color: #ffffff;
-}
+<footer>
+  © 2026 Perez Automation
+</footer>
 
-.content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.card {
-  background: #111827;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: #6b7280;
-  font-size: 0.85rem;
-}
-
-</style>
+</body>
+</html>
