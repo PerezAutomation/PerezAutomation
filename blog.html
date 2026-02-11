@@ -54,4 +54,78 @@ body::before {
 
 .breadcrumbs {
   text-align: center;
-  margin-top:
+  margin-top: 35px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.breadcrumbs a {
+  color: #6b7280;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+.active .bracket { color: #dc2626; }
+.active .label { color: #ffffff; }
+
+/* ---------------- CONTENT ---------------- */
+
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>BLOG</h1>
+  <h2>Engineering Thoughts & Breakdowns</h2>
+</section>
+
+<div class="breadcrumbs">
+  <a href="index.html">MAIN</a>
+  <a href="projects/index.html">PROJECTS</a>
+
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">BLOG</span>
+    <span class="bracket">]</span>
+  </span>
+</div>
+
+<section class="content">
+  <div class="card">
+    <h3>Coming Soon</h3>
+    <p>Blog posts will be added here shortly.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Perez Automation
+</footer>
+
+</body>
+</html>
