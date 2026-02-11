@@ -49,13 +49,16 @@ body::before {
   margin-top: 35px;
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .breadcrumbs a {
   color: #6b7280;
   text-decoration: none;
   margin: 0 12px;
+}
+
+.breadcrumbs a:hover {
+  color: #ffffff;
 }
 
 .active .bracket { color:#dc2626; }
@@ -66,13 +69,16 @@ body::before {
   margin-top: 15px;
   font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
 .sub-breadcrumbs a {
   color: #6b7280;
   text-decoration: none;
   margin: 0 10px;
+}
+
+.sub-breadcrumbs a:hover {
+  color: #ffffff;
 }
 
 .content {
@@ -102,18 +108,20 @@ footer {
   <h2>Manufacturing Systems Project</h2>
 </section>
 
+<!-- TOP LEVEL BREADCRUMBS -->
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
 
-  <span class="active">
+  <a href="index.html" class="active">
     <span class="bracket">[</span>
     <span class="label">PROJECTS</span>
     <span class="bracket">]</span>
-  </span>
+  </a>
 
   <a href="../blog.html">BLOG</a>
 </div>
 
+<!-- PROJECT NAVIGATION -->
 <div class="sub-breadcrumbs">
   <a href="index.html">RECENT</a>
   <a href="focus-st.html">FOCUS ST</a>
@@ -129,10 +137,16 @@ footer {
 <section class="content">
   <div class="card">
     <h3>Honours Project B</h3>
-    <p>System integration, modelling, and automation design work documented here.</p>
+    <p>
+      System integration, modelling, and automation design work documented here.
+      This section will cover development progress, engineering decisions, and final outcomes.
+    </p>
   </div>
 </section>
 
-<footer>© 2026 Perez Automation</footer>
+<footer>
+  © 2026 Perez Automation
+</footer>
+
 </body>
 </html>
