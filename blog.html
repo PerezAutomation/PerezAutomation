@@ -3,13 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog - Perez Automation</title>
+<title>Perez Automation</title>
 
 <style>
 
 /* -----------------------------
    GLOBAL
 ------------------------------*/
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #0b0f14;
+  color: #e5e7eb;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index: -1;
+}
 
 /* -----------------------------
    TOP NAV
@@ -62,23 +79,6 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-   
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index: -1;
-}
 
 /* -----------------------------
    HERO
@@ -91,15 +91,15 @@ body::before {
 
 .hero h1 {
   font-size: 4rem;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;   /* THIN & AIRY (only title) */
 }
 
 .hero h2 {
   font-size: 1.05rem;
   margin-top: 26px;
-  font-weight: 700;
+  font-weight: 700;   /* breadcrumb weight */
   letter-spacing: 1px;
   color: #9ca3af;
 }
@@ -139,6 +139,12 @@ body::before {
   padding: 0 20px;
 }
 
+.card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 footer {
   text-align: center;
   padding: 80px 20px;
@@ -151,24 +157,41 @@ footer {
 
 <body>
 
-<section class="hero">
-  <h1>BLOG</h1>
-  <h2>Engineering Thoughts & Breakdowns</h2>
-</section>
-
-<div class="breadcrumbs">
+<!-- TOP NAV -->
+<nav class="nav">
   <a href="index.html">MAIN</a>
-  <a href="projects/index.html">PROJECTS</a>
 
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">BLOG</span>
-    <span class="bracket">]</span>
-  </span>
-</div>
+  <div class="dropdown">
+    <a href="projects/index.html">PROJECTS</a>
+    <div class="dropdown-content">
+      <a href="projects/index.html">Recent</a>
+      <a href="projects/focus-st.html">Focus ST</a>
+      <a href="projects/honours-a.html">Honours Project A</a>
+      <a href="projects/honours-b.html">Honours Project B</a>
+    </div>
+  </div>
 
+  <a href="blog.html">BLOG</a>
+</nav>
+
+<!-- HERO -->
+<h1>BLOG</h1>
+<h2>Engineering Thoughts & Breakdowns</h2>
+
+<!-- BREADCRUMBS -->
+<a href="index.html">MAIN</a>
+<a href="projects/index.html">PROJECTS</a>
+<span class="active">[ BLOG ]</span>
+   
+<!-- CONTENT -->
 <section class="content">
-  <p>Blog posts coming soon.</p>
+  <div class="card">
+    <h3>Welcome</h3>
+    <p>
+      This site documents my work in automotive engineering,
+      automation systems, mechatronics projects and applied control systems.
+    </p>
+  </div>
 </section>
 
 <footer>
