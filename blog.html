@@ -1,0 +1,115 @@
+<style>
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #0b0f14;
+  color: #e5e7eb;
+}
+
+/* Subtle tech glow */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index: -1;
+}
+
+/* HEADER NAV */
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 60px;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin-top: 140px;
+}
+
+.hero h1 {
+  font-size: 3.8rem;   /* bigger */
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  margin-top: 16px;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.breadcrumbs a {
+  color: #6b7280;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+/* ACTIVE PAGE STYLE */
+
+.active span.bracket {
+  color: #dc2626;
+}
+
+.active span.label {
+  color: #ffffff;
+}
+
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+</style>
