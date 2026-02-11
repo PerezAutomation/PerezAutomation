@@ -6,10 +6,7 @@
 <title>Perez Automation</title>
 
 <style>
-
-/* -----------------------------
-   GLOBAL STYLING (COREMATIC STYLE)
-------------------------------*/
+<style>
 
 body {
   margin: 0;
@@ -18,7 +15,7 @@ body {
   color: #e5e7eb;
 }
 
-/* Subtle tech gradient background */
+/* Subtle tech glow */
 body::before {
   content: "";
   position: fixed;
@@ -29,123 +26,124 @@ body::before {
   z-index: -1;
 }
 
-/* -----------------------------
-   HEADER
-------------------------------*/
+/* HEADER NAV */
 
 header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 60px;
+  justify-content: flex-end;
+  padding: 30px 60px;
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo img {
-  width: 50px;
-  height: 50px;
-}
-
-.logo span {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-/* -----------------------------
-   NAVIGATION
-------------------------------*/
 
 nav {
   display: flex;
   gap: 30px;
-  align-items: center;
 }
 
 nav a {
-  color: #e5e7eb;
+  color: #9ca3af;
   text-decoration: none;
   font-size: 0.95rem;
-  position: relative;
+  transition: 0.3s;
 }
 
 nav a:hover {
+  color: #ffffff;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin-top: 140px;
+}
+
+.hero h1 {
+  font-size: 3.8rem;   /* bigger */
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  margin-top: 16px;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+/* BREADCRUMBS */
+
+.breadcrumbs {
+  text-align: center;
+  margin-top: 70px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.breadcrumbs a {
+  color: #6b7280;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
+/* ACTIVE PAGE STYLE */
+
+.active span.bracket {
   color: #dc2626;
 }
 
-/* Dropdown */
-
-.dropdown {
-  position: relative;
+.active span.label {
+  color: #ffffff;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 30px;
-  left: 0;
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.card {
   background: #111827;
-  padding: 10px 0;
-  min-width: 180px;
-  border-radius: 6px;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
-.dropdown-content a {
-  display: block;
-  padding: 10px 15px;
-}
-
-.dropdown-content a:hover {
-  background: rgba(220,38,38,0.15);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
 }
 
 /* -----------------------------
    HERO SECTION
 ------------------------------*/
 
-.hero {
-  text-align: center;
-  margin-top: 120px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.hero h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 12px;
-  color: #9ca3af;
-  letter-spacing: 1px;
+<section class="hero">
+  <h1>PEREZ AUTOMATION</h1>
+  <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
+</section>
 }
 
 /* -----------------------------
    BREADCRUMBS STYLE
 ------------------------------*/
 
-.breadcrumbs {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
+<div class="breadcrumbs">
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">MAIN</span>
+    <span class="bracket">]</span>
+  </span>
 
-.breadcrumbs span {
-  color: #dc2626;
-}
+  <a href="projects/index.html">PROJECTS</a>
+  <a href="blog.html">BLOG</a>
+</div>
 
 /* -----------------------------
    CONTENT
