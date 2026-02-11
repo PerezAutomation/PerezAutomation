@@ -29,58 +29,6 @@ body::before {
 }
 
 /* -----------------------------
-   TOP NAV
-------------------------------*/
-
-.nav {
-  position: fixed;
-  top: 30px;
-  right: 60px;
-  display: flex;
-  gap: 30px;
-  z-index: 10;
-}
-
-.nav a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.nav a:hover {
-  color: #ffffff;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  position: absolute;
-  top: 28px;
-  left: 0;
-  background: #111827;
-  border-radius: 6px;
-  display: none;
-  min-width: 180px;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 14px;
-  color: #9ca3af;
-}
-
-.dropdown-content a:hover {
-  background: rgba(220,38,38,0.15);
-  color: #ffffff;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* -----------------------------
    HERO
 ------------------------------*/
 
@@ -105,7 +53,7 @@ body::before {
 }
 
 /* -----------------------------
-   BREADCRUMBS
+   CENTER BREADCRUMBS
 ------------------------------*/
 
 .breadcrumbs {
@@ -157,4 +105,49 @@ footer {
 
 <body>
 
-<!-
+<!-- HERO -->
+<section class="hero">
+  <h1>PROJECTS</h1>
+  <h2>Recent Engineering Work</h2>
+</section>
+
+<!-- FIRST ROW BREADCRUMBS -->
+<div class="breadcrumbs">
+  <a href="../index.html">MAIN</a>
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">PROJECTS</span>
+    <span class="bracket">]</span>
+  </span>
+  <a href="../blog.html">BLOG</a>
+</div>
+
+<!-- SECOND ROW BREADCRUMBS (project selection) -->
+<div class="breadcrumbs" style="margin-top: 15px;">
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">RECENT</span>
+    <span class="bracket">]</span>
+  </span>
+  <a href="focus-st.html">FOCUS ST</a>
+  <a href="honours-a.html">HONOURS A</a>
+  <a href="honours-b.html">HONOURS B</a>
+</div>
+
+<!-- CONTENT -->
+<section class="content">
+  <div class="card">
+    <h3>Welcome</h3>
+    <p>
+      This page contains my recent projects in automotive engineering,
+      automation systems, and mechatronics.
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Perez Automation
+</footer>
+
+</body>
+</html>
