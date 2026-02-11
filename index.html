@@ -76,49 +76,28 @@ body::before {
 .active .label { color: #ffffff; }
 
 /* -----------------------------
-   FEATURE IMAGE (ALIVE EFFECT)
+   FEATURE IMAGE
 ------------------------------*/
 
 .feature-image {
   max-width: 1300px;
   margin: 50px auto 20px auto;
   padding: 0 25px;
-  overflow: hidden;
-  border-radius: 12px;
 }
 
-/* slow zoom motion */
 .feature-image img {
   width: 100%;
   height: 420px;
   object-fit: cover;
   border-radius: 12px;
-
-  animation: slowZoom 18s ease-in-out infinite alternate,
-             glowPulse 6s ease-in-out infinite;
+  transition: box-shadow 0.25s ease;
 }
 
-/* cinematic zoom drift */
-@keyframes slowZoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-
-/* soft breathing glow */
-@keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 30px rgba(220,38,38,0.12);
-  }
-  50% {
-    box-shadow: 0 0 55px rgba(220,38,38,0.22);
-  }
-  100% {
-    box-shadow: 0 0 30px rgba(220,38,38,0.12);
-  }
+/* Glow ONLY on hover */
+.feature-image img:hover {
+  box-shadow:
+    0 0 35px rgba(220,38,38,0.25),
+    0 0 70px rgba(220,38,38,0.12);
 }
 
 /* -----------------------------
@@ -226,7 +205,7 @@ footer {
   <a href="blog.html">BLOG</a>
 </div>
 
-<!-- ALIVE IMAGE -->
+<!-- IMAGE -->
 <section class="feature-image">
   <img src="photo1.jpeg" alt="Valentino overlooking landscape">
 </section>
@@ -238,75 +217,3 @@ footer {
     <p>
       A featured build will be highlighted here as projects develop.
       This space will showcase the most significant automotive,
-      automation, or mechatronics work currently in progress.
-    </p>
-    <p style="color:#9ca3af;">Currently in development…</p>
-  </div>
-
-  <div class="card">
-    <h3>Purpose</h3>
-    <p>
-      Perez Automation exists to document ideas, projects, and learning experiences across automation,
-      mechatronics, and modern engineering systems.
-    </p>
-    <p>
-      • Automotive development<br>
-      • Robotics & control systems<br>
-      • Manufacturing technologies<br>
-      • University projects<br>
-      • Engineering breakdowns
-    </p>
-  </div>
-
-  <div class="card full">
-    <h3>About</h3>
-    <p>
-      Established in early 2026 in Melbourne, Australia, Perez Automation began as a personal engineering journal
-      alongside the journey through a Bachelor of Mechatronics Engineering.
-    </p>
-    <p>
-      Founded by Valentino Perez Elizalde — born in Argentina and raised in Australia — this platform documents
-      the path of a final-year engineering student specialising in Advanced Automation and Manufacturing.
-    </p>
-    <p>
-      Inspired by the world’s leading industrial designers, engineers, and innovators, this space explores ideas
-      across automotive systems, robotics, production technologies, and emerging automation.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Skills & Tools</h3>
-    <p><strong>CAD & Design</strong></p>
-    <p>
-      SolidWorks — Proficient (CSWA Certified)<br>
-      Fusion 360 — Intermediate<br>
-      Technical Drawing — Proficient
-    </p>
-    <p><strong>Engineering & Software</strong></p>
-    <p>
-      MATLAB — Intermediate<br>
-      Python — Intermediate<br>
-      Arduino — Proficient<br>
-      PLC Fundamentals — Learning
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Connect</h3>
-    <p>
-      Instagram — Coming Soon<br>
-      X — Coming Soon<br>
-      LinkedIn — Coming Soon<br>
-      TikTok — Coming Soon<br>
-      YouTube — Coming Soon
-    </p>
-  </div>
-
-</section>
-
-<footer>
-  © 2026 Perez Automation
-</footer>
-
-</body>
-</html>
