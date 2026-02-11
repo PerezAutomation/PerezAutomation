@@ -8,8 +8,25 @@
 <style>
 
 /* -----------------------------
-   GLOBAL STYLING
+   GLOBAL
 ------------------------------*/
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #0b0f14;
+  color: #e5e7eb;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index: -1;
+}
 
 /* -----------------------------
    TOP NAV
@@ -62,41 +79,7 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-   
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
-}
 
-/* Subtle red tech glow background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index: -1;
-}
-
-<nav class="nav">
-  <a href="index.html">MAIN</a>
-
-  <div class="dropdown">
-    <a href="projects/index.html">PROJECTS</a>
-    <div class="dropdown-content">
-      <a href="projects/index.html">Recent</a>
-      <a href="projects/focus-st.html">Focus ST</a>
-      <a href="projects/honours-a.html">Honours Project A</a>
-      <a href="projects/honours-b.html">Honours Project B</a>
-    </div>
-  </div>
-
-  <a href="blog.html">BLOG</a>
-</nav>
-   
 /* -----------------------------
    HERO
 ------------------------------*/
@@ -108,19 +91,19 @@ body::before {
 
 .hero h1 {
   font-size: 4rem;
-  letter-spacing: 5px;
+  letter-spacing: 6px;
   margin: 0;
-  font-weight: 400;   /* slightly thicker, still clean */
+  font-weight: 300;   /* THIN & AIRY (only title) */
 }
 
 .hero h2 {
-  font-size: 1.05rem;        /* same as breadcrumbs */
+  font-size: 1.05rem;
   margin-top: 26px;
-  font-weight: 700;          /* same thickness as breadcrumbs */
+  font-weight: 700;   /* breadcrumb weight */
   letter-spacing: 1px;
   color: #9ca3af;
 }
-   
+
 /* -----------------------------
    BREADCRUMBS
 ------------------------------*/
@@ -143,14 +126,8 @@ body::before {
   color: #ffffff;
 }
 
-/* Active page styling */
-.active .bracket {
-  color: #dc2626;
-}
-
-.active .label {
-  color: #ffffff;
-}
+.active .bracket { color: #dc2626; }
+.active .label { color: #ffffff; }
 
 /* -----------------------------
    CONTENT
@@ -180,6 +157,23 @@ footer {
 
 <body>
 
+<!-- TOP NAV -->
+<nav class="nav">
+  <a href="index.html">MAIN</a>
+
+  <div class="dropdown">
+    <a href="projects/index.html">PROJECTS</a>
+    <div class="dropdown-content">
+      <a href="projects/index.html">Recent</a>
+      <a href="projects/focus-st.html">Focus ST</a>
+      <a href="projects/honours-a.html">Honours Project A</a>
+      <a href="projects/honours-b.html">Honours Project B</a>
+    </div>
+  </div>
+
+  <a href="blog.html">BLOG</a>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
@@ -188,7 +182,6 @@ footer {
 
 <!-- BREADCRUMBS -->
 <div class="breadcrumbs">
-
   <span class="active">
     <span class="bracket">[</span>
     <span class="label">MAIN</span>
@@ -197,7 +190,6 @@ footer {
 
   <a href="projects/index.html">PROJECTS</a>
   <a href="blog.html">BLOG</a>
-
 </div>
 
 <!-- CONTENT -->
