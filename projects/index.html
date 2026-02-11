@@ -6,9 +6,7 @@
 <title>Projects - Perez Automation</title>
 
 <style>
-
 /* ---------------- GLOBAL ---------------- */
-
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -16,7 +14,6 @@ body {
   color: #e5e7eb;
 }
 
-/* background glow */
 body::before {
   content: "";
   position: fixed;
@@ -28,93 +25,53 @@ body::before {
 }
 
 /* ---------------- HERO ---------------- */
-
-.hero {
-  text-align: center;
-  margin-top: 140px;
-  min-height: 150px;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  letter-spacing: 6px;
-  margin: 0;
-  font-weight: 300;
-}
-
-.hero h2 {
-  font-size: 1.05rem;
-  margin-top: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #9ca3af;
-}
+.hero { text-align:center; margin-top:140px; min-height:150px; }
+.hero h1 { font-size:4rem; letter-spacing:6px; margin:0; font-weight:300; }
+.hero h2 { font-size:1.05rem; margin-top:26px; font-weight:700; letter-spacing:1px; color:#9ca3af; }
 
 /* ---------------- BREADCRUMBS ---------------- */
-
 .breadcrumbs {
-  text-align: center;
-  margin-top: 35px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+  text-align:center;
+  margin-top:35px;
+  font-size:1.05rem;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
 .breadcrumbs a {
-  color: #6b7280;
-  text-decoration: none;
-  margin: 0 12px;
+  color:#6b7280;
+  text-decoration:none;
+  margin:0 12px;
 }
 
-.breadcrumbs a:hover {
-  color: #ffffff;
-}
+.breadcrumbs a:hover { color:#ffffff; }
 
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
 
-/* second breadcrumb row (project selector) */
+/* second breadcrumb row */
 .sub-breadcrumbs {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  text-align:center;
+  margin-top:15px;
+  font-size:0.95rem;
+  font-weight:600;
+  letter-spacing:1px;
 }
 
 .sub-breadcrumbs a {
-  color: #6b7280;
-  text-decoration: none;
-  margin: 0 10px;
+  color:#6b7280;
+  text-decoration:none;
+  margin:0 10px;
 }
 
-.sub-breadcrumbs a:hover {
-  color: #ffffff;
-}
+.sub-breadcrumbs a:hover { color:#ffffff; }
 
 /* ---------------- CONTENT ---------------- */
-
-.content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.card {
-  background:#111827;
-  padding:30px;
-  border-radius:10px;
-}
+.content { max-width:900px; margin:60px auto; padding:0 20px; }
+.card { background:#111827; padding:30px; border-radius:10px; }
 
 /* ---------------- FOOTER ---------------- */
-
-footer {
-  text-align:center;
-  padding:60px 20px;
-  color:#6b7280;
-  font-size:0.85rem;
-}
-
+footer { text-align:center; padding:60px 20px; color:#6b7280; font-size:0.85rem; }
 </style>
 </head>
 <body>
@@ -124,7 +81,6 @@ footer {
   <h2>Recent Engineering Work</h2>
 </section>
 
-<!-- MAIN BREADCRUMBS -->
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
 
@@ -137,7 +93,6 @@ footer {
   <a href="../blog.html">BLOG</a>
 </div>
 
-<!-- PROJECT SELECTOR (SECOND ROW) -->
 <div class="sub-breadcrumbs">
   <span class="active">
     <span class="bracket">[</span>
@@ -153,16 +108,10 @@ footer {
 <section class="content">
   <div class="card">
     <h3>Recent Projects</h3>
-    <p>
-      This section will highlight the most recent automotive,
-      automation, and mechatronics builds currently in progress.
-    </p>
+    <p>This section will highlight the most recent builds in progress.</p>
   </div>
 </section>
 
-<footer>
-  © 2026 Perez Automation
-</footer>
-
+<footer>© 2026 Perez Automation</footer>
 </body>
 </html>
