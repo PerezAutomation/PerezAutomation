@@ -6,7 +6,10 @@
 <title>Perez Automation</title>
 
 <style>
-<style>
+
+/* -----------------------------
+   GLOBAL STYLING
+------------------------------*/
 
 body {
   margin: 0;
@@ -15,7 +18,7 @@ body {
   color: #e5e7eb;
 }
 
-/* Subtle tech glow */
+/* Subtle red tech glow background */
 body::before {
   content: "";
   position: fixed;
@@ -26,124 +29,58 @@ body::before {
   z-index: -1;
 }
 
-/* HEADER NAV */
-
-header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px 60px;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffffff;
-}
-
-/* HERO */
+/* -----------------------------
+   HERO
+------------------------------*/
 
 .hero {
   text-align: center;
-  margin-top: 140px;
+  margin-top: 160px;
 }
 
 .hero h1 {
-  font-size: 3.8rem;   /* bigger */
-  letter-spacing: 3px;
+  font-size: 4rem;
+  letter-spacing: 4px;
   margin: 0;
 }
 
 .hero h2 {
-  font-size: 1.2rem;
-  margin-top: 16px;
+  font-size: 1.3rem;
+  margin-top: 18px;
   color: #9ca3af;
   letter-spacing: 1px;
 }
 
-/* BREADCRUMBS */
+/* -----------------------------
+   BREADCRUMBS
+------------------------------*/
 
 .breadcrumbs {
   text-align: center;
-  margin-top: 70px;
-  font-size: 1rem;
-  font-weight: 600;
+  margin-top: 80px;
+  font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .breadcrumbs a {
   color: #6b7280;
   text-decoration: none;
-  margin: 0 12px;
+  margin: 0 15px;
 }
 
 .breadcrumbs a:hover {
   color: #ffffff;
 }
 
-/* ACTIVE PAGE STYLE */
-
-.active span.bracket {
+/* Active page styling */
+.active .bracket {
   color: #dc2626;
 }
 
-.active span.label {
+.active .label {
   color: #ffffff;
 }
-
-.content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
-.card {
-  background: #111827;
-  padding: 30px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
-footer {
-  text-align: center;
-  padding: 60px 20px;
-  color: #6b7280;
-  font-size: 0.85rem;
-}
-
-/* -----------------------------
-   HERO SECTION
-------------------------------*/
-
-<section class="hero">
-  <h1>PEREZ AUTOMATION</h1>
-  <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
-</section>
-}
-
-/* -----------------------------
-   BREADCRUMBS STYLE
-------------------------------*/
-
-<div class="breadcrumbs">
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">MAIN</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a href="projects/index.html">PROJECTS</a>
-  <a href="blog.html">BLOG</a>
-</div>
 
 /* -----------------------------
    CONTENT
@@ -151,7 +88,7 @@ footer {
 
 .content {
   max-width: 900px;
-  margin: 60px auto;
+  margin: 80px auto;
   padding: 0 20px;
 }
 
@@ -159,18 +96,11 @@ footer {
   background: #111827;
   padding: 30px;
   border-radius: 10px;
-  margin-bottom: 30px;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 25px rgba(220,38,38,0.15);
 }
 
 footer {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   color: #6b7280;
   font-size: 0.85rem;
 }
@@ -180,40 +110,27 @@ footer {
 
 <body>
 
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="Perez Automation Logo">
-  </div>
-
-  <nav>
-    <a href="/index.html">Main</a>
-
-    <div class="dropdown">
-      <a href="/projects/index.html">Projects</a>
-      <div class="dropdown-content">
-        <a href="/projects/index.html">Recent</a>
-        <a href="/projects/focus-st.html">Focus ST</a>
-        <a href="/projects/honours-a.html">Honours Project A</a>
-        <a href="/projects/honours-b.html">Honours Project B</a>
-      </div>
-    </div>
-
-    <a href="/blog.html">Blog</a>
-  </nav>
-</header>
-
-
+<!-- HERO -->
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
 </section>
 
-
+<!-- BREADCRUMBS -->
 <div class="breadcrumbs">
-  <span>[ MAIN ]</span>
+
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">MAIN</span>
+    <span class="bracket">]</span>
+  </span>
+
+  <a href="projects/index.html">PROJECTS</a>
+  <a href="blog.html">BLOG</a>
+
 </div>
 
-
+<!-- CONTENT -->
 <section class="content">
   <div class="card">
     <h3>Welcome</h3>
@@ -223,7 +140,6 @@ footer {
     </p>
   </div>
 </section>
-
 
 <footer>
   © 2026 Perez Automation
