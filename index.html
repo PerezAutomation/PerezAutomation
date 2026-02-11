@@ -1,190 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perez Automation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perez Automation</title>
 
-  <style>
-    /* --------------------
-       CSS VARIABLES
-    -------------------- */
-    :root {
-      --bg: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --card: #f8fafc;
-      --accent: #1e3a8a;
-    }
+<style>
 
-    [data-theme="dark"] {
-      --bg: #0b1220;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --card: #111827;
-      --accent: #60a5fa;
-    }
+/* -----------------------------
+   GLOBAL STYLING (COREMATIC STYLE)
+------------------------------*/
 
-    /* --------------------
-       GLOBAL STYLES
-    -------------------- */
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #0b0f14;
+  color: #e5e7eb;
+}
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.25s ease, color 0.25s ease;
-    }
+/* Subtle tech gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index: -1;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+/* -----------------------------
+   HEADER
+------------------------------*/
 
-    /* --------------------
-       LAYOUT
-    -------------------- */
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 1.25rem 4rem;
-    }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 60px;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      gap: 1rem;
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+.logo img {
+  width: 50px;
+  height: 50px;
+}
 
-    .brand img {
-      width: 42px;
-      height: 42px;
-      padding: 3px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 6px;
-    }
+.logo span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 
-    .brand h1 {
-      font-size: 1.25rem;
-      margin: 0;
-      font-weight: 600;
-    }
+/* -----------------------------
+   NAVIGATION
+------------------------------*/
 
-    .nav {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.9rem;
-    }
+nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
 
-    .theme-toggle {
-      border: 1px solid var(--muted);
-      background: transparent;
-      color: var(--text);
-      padding: 0.4rem 0.75rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
+nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+}
 
-    /* --------------------
-       BLOG POST CARD
-    -------------------- */
-    .post {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      transition: background 0.25s ease;
-    }
+nav a:hover {
+  color: #dc2626;
+}
 
-    .post h2 {
-      margin-top: 0;
-      font-size: 1.75rem;
-    }
+/* Dropdown */
 
-    .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
+.dropdown {
+  position: relative;
+}
 
-    footer {
-      margin-top: 4rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
-    }
-  </style>
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #111827;
+  padding: 10px 0;
+  min-width: 180px;
+  border-radius: 6px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+}
+
+.dropdown-content a:hover {
+  background: rgba(220,38,38,0.15);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* -----------------------------
+   HERO SECTION
+------------------------------*/
+
+.hero {
+  text-align: center;
+  margin-top: 120px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 12px;
+  color: #9ca3af;
+  letter-spacing: 1px;
+}
+
+/* -----------------------------
+   BREADCRUMBS STYLE
+------------------------------*/
+
+.breadcrumbs {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.breadcrumbs span {
+  color: #dc2626;
+}
+
+/* -----------------------------
+   CONTENT
+------------------------------*/
+
+.content {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(220,38,38,0.15);
+}
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <img src="logo.png" alt="Perez Automation logo" />
-        <h1>Perez Automation</h1>
-      </div>
 
-      <nav class="nav">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/index.html">Projects</a>
-        <a href="/blog.html">Blog</a>
-      </nav>
-
-      <button class="theme-toggle" id="themeToggle">Dark mode</button>
-    </header>
-
-    <article class="post">
-      <h2>Welcome to Perez Automation</h2>
-      <div class="meta">Posted by Valentino · Automation & Mechatronics</div>
-      <p>
-        This site documents my journey through automation, mechatronics,
-        smart manufacturing, and hands-on engineering projects.
-      </p>
-      <p>
-        Expect clean breakdowns, lessons learned, design decisions,
-        and practical insights from real builds and experiments.
-      </p>
-    </article>
-
-    <footer>
-      © 2026 Perez Automation · Built minimal, on purpose
-    </footer>
+<header>
+  <div class="logo">
+    <img src="logo.png" alt="Perez Automation Logo">
   </div>
 
-  <script>
-    const toggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
+  <nav>
+    <a href="/index.html">Main</a>
 
-    function updateButton(theme) {
-      toggle.textContent =
-        theme === 'dark' ? 'Light mode' : 'Dark mode';
-    }
+    <div class="dropdown">
+      <a href="/projects/index.html">Projects</a>
+      <div class="dropdown-content">
+        <a href="/projects/index.html">Recent</a>
+        <a href="/projects/focus-st.html">Focus ST</a>
+        <a href="/projects/honours-a.html">Honours Project A</a>
+        <a href="/projects/honours-b.html">Honours Project B</a>
+      </div>
+    </div>
 
-    const storedTheme = localStorage.getItem('theme') || 'light';
-    root.setAttribute('data-theme', storedTheme);
-    updateButton(storedTheme);
+    <a href="/blog.html">Blog</a>
+  </nav>
+</header>
 
-    toggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateButton(next);
-    });
-  </script>
+
+<section class="hero">
+  <h1>PEREZ AUTOMATION</h1>
+  <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
+</section>
+
+
+<div class="breadcrumbs">
+  <span>[ MAIN ]</span>
+</div>
+
+
+<section class="content">
+  <div class="card">
+    <h3>Welcome</h3>
+    <p>
+      This site documents my work in automotive engineering,
+      automation systems, mechatronics projects and applied control systems.
+    </p>
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Perez Automation
+</footer>
+
 </body>
 </html>
