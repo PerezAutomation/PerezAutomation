@@ -7,26 +7,26 @@
 
 <style>
 
-/* GLOBAL */
+/* BASE */
 
-body {
+body{
   margin:0;
-  font-family:"Segoe UI", Roboto, sans-serif;
+  font-family:"Segoe UI",Roboto,sans-serif;
   background:#0b0f14;
   color:#e5e7eb;
 }
 
-body::before {
+body::before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+  radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
   z-index:-1;
 }
 
-/* HERO — SAME ON ALL PAGES */
+/* HERO */
 
 .hero{
   text-align:center;
@@ -42,17 +42,17 @@ body::before {
 
 .hero h2{
   font-size:1.05rem;
-  margin-top:26px;
+  margin-top:22px;
   font-weight:700;
   letter-spacing:1px;
   color:#9ca3af;
 }
 
-/* BREADCRUMBS — LOCKED WIDTH (NO SHIFT EVER) */
+/* BREADCRUMBS (LOCKED) */
 
 .breadcrumbs{
   width:420px;
-  margin:30px auto 0;
+  margin:26px auto 0;
   display:grid;
   grid-template-columns:140px 140px 140px;
   text-align:center;
@@ -70,11 +70,11 @@ body::before {
 .active .bracket{color:#dc2626;}
 .active .label{color:#fff;}
 
-/* IMAGE — SAME DISTANCE AS BLOG CARDS */
+/* IMAGE (MATCHED TO BLOG CARD DISTANCE) */
 
 .feature-image{
   max-width:1300px;
-  margin:40px auto 0;
+  margin:48px auto 0;
   padding:0 25px;
 }
 
@@ -83,20 +83,23 @@ body::before {
   height:380px;
   object-fit:cover;
   border-radius:12px;
+  transition:box-shadow .25s ease;
 }
 
-/* CONTENT */
+.feature-image img:hover{
+  box-shadow:0 0 18px rgba(220,38,38,.15);
+}
+
+/* CARDS */
 
 .content{
   max-width:1300px;
-  margin:0 auto 60px auto;
+  margin:0 auto 60px;
   padding:0 25px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:30px;
 }
-
-.card.full{grid-column:1/span 2;}
 
 .card{
   background:#111827;
@@ -104,8 +107,10 @@ body::before {
   border-radius:12px;
 }
 
+.card.full{grid-column:1/span 2;}
+
 .card h3{
-  margin-top:0;
+  margin:0;
   padding-top:12px;
   position:relative;
 }
@@ -147,60 +152,34 @@ footer{
 </div>
 
 <section class="feature-image">
-  <img src="photo1.jpeg">
+  <img src="photo1.jpeg" alt="">
 </section>
 
 <section class="content">
 
   <div class="card">
     <h3>Featured Project</h3>
-    <p>
-      A featured build will be highlighted here as projects develop.
-      This space will showcase the most significant automotive,
-      automation, or mechatronics work currently in progress.
-    </p>
-    <p style="color:#9ca3af;">Currently in development…</p>
+    <p>A featured build will be highlighted here as projects develop.</p>
   </div>
 
   <div class="card">
     <h3>Purpose</h3>
-    <p>
-      Perez Automation exists to document ideas, projects, and learning experiences across automation,
-      mechatronics, and modern engineering systems.
-    </p>
-    <p>
-      • Automotive development<br>
-      • Robotics & control systems<br>
-      • Manufacturing technologies<br>
-      • University projects<br>
-      • Engineering breakdowns
-    </p>
+    <p>Perez Automation documents ideas, projects, and learning experiences across automation, mechatronics, and engineering systems.</p>
   </div>
 
   <div class="card full">
     <h3>About</h3>
-    <p>
-      Established in early 2026 in Melbourne, Australia, Perez Automation began as a personal engineering journal.
-    </p>
+    <p>Established in 2026 in Melbourne, this platform documents the journey through Mechatronics Engineering.</p>
   </div>
 
   <div class="card">
     <h3>Skills & Tools</h3>
-    <p>
-      SolidWorks — Proficient<br>
-      MATLAB — Intermediate<br>
-      Python — Intermediate<br>
-      Arduino — Proficient
-    </p>
+    <p>SolidWorks • MATLAB • Python • Arduino • PLC</p>
   </div>
 
   <div class="card">
     <h3>Connect</h3>
-    <p>
-      Instagram — Coming Soon<br>
-      LinkedIn — Coming Soon<br>
-      YouTube — Coming Soon
-    </p>
+    <p>Instagram • LinkedIn • YouTube — Coming Soon</p>
   </div>
 
 </section>
