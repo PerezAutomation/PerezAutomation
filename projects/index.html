@@ -26,7 +26,6 @@ body::before {
 .hero {
   text-align:center;
   margin-top:140px;
-  min-height:150px;
 }
 
 .hero h1 {
@@ -44,6 +43,7 @@ body::before {
   color:#9ca3af;
 }
 
+/* SAME BREADCRUMB SYSTEM */
 .breadcrumbs {
   text-align:center;
   margin-top:35px;
@@ -51,10 +51,16 @@ body::before {
   font-weight:700;
 }
 
+.breadcrumbs a,
+.breadcrumbs span {
+  display:inline-block;
+  width:140px;
+  text-align:center;
+}
+
 .breadcrumbs a {
   color:#6b7280;
   text-decoration:none;
-  margin:0 12px;
 }
 
 .breadcrumbs a:hover { color:#ffffff; }
@@ -62,6 +68,7 @@ body::before {
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
 
+/* SUB NAV */
 .sub-breadcrumbs {
   text-align:center;
   margin-top:15px;
@@ -104,9 +111,8 @@ footer {
   <h2>Recent Engineering Work</h2>
 </section>
 
-<!-- TOP LEVEL (identical to Focus ST structure) -->
 <div class="breadcrumbs">
-  <a href="../index.html">MAIN</a>
+  <a href="../index.html">LANDING</a>
 
   <span class="active">
     <span class="bracket">[</span>
@@ -117,7 +123,6 @@ footer {
   <a href="../blog.html">BLOG</a>
 </div>
 
-<!-- SUB NAV (only RECENT is active) -->
 <div class="sub-breadcrumbs">
   <span class="active">
     <span class="bracket">[</span>
