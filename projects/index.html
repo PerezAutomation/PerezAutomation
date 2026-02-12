@@ -13,7 +13,11 @@ body {
   color:#e5e7eb;
 }
 
-.hero { text-align:center; margin-top:140px; }
+.hero {
+  text-align:center;
+  margin-top:140px;
+  min-height:180px;
+}
 
 .hero h1 {
   font-size:4rem;
@@ -26,26 +30,20 @@ body {
   font-size:1.05rem;
   margin-top:26px;
   font-weight:700;
-  letter-spacing:1px;
   color:#9ca3af;
 }
 
 .breadcrumbs {
   max-width:480px;
-  margin:35px auto 0 auto;
+  margin:35px auto 0;
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   font-size:1.05rem;
   font-weight:700;
-  letter-spacing:1px;
   text-align:center;
 }
 
-.breadcrumbs a {
-  color:#6b7280;
-  text-decoration:none;
-}
-
+.breadcrumbs a { color:#6b7280; text-decoration:none; }
 .breadcrumbs a:hover { color:#ffffff; }
 
 .active .bracket { color:#dc2626; }
@@ -78,17 +76,13 @@ footer {
 </section>
 
 <div class="breadcrumbs">
-
   <a href="../index.html">LANDING</a>
-
   <span class="active">
     <span class="bracket">[</span>
     <span class="label">PORTFOLIO</span>
     <span class="bracket">]</span>
   </span>
-
   <a href="../blog.html">BLOG</a>
-
 </div>
 
 <section class="content">
