@@ -7,20 +7,10 @@
 
 <style>
 body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
-}
-
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index:-1;
+  margin:0;
+  font-family:"Segoe UI", Roboto, sans-serif;
+  background:#0b0f14;
+  color:#e5e7eb;
 }
 
 .hero {
@@ -39,74 +29,30 @@ body::before {
   font-size:1.05rem;
   margin-top:26px;
   font-weight:700;
-  letter-spacing:1px;
   color:#9ca3af;
 }
 
-/* PRO NAVBAR */
 .breadcrumbs {
-  max-width:420px;
-  margin:35px auto 0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
-  align-items:center;
+  text-align:center;
+  margin-top:35px;
   font-size:1.05rem;
   font-weight:700;
-  letter-spacing:1px;
-}
-
-.breadcrumbs a,
-.breadcrumbs span {
-  text-align:center;
 }
 
 .breadcrumbs a {
   color:#6b7280;
   text-decoration:none;
+  margin:0 12px;
 }
 
 .breadcrumbs a:hover { color:#ffffff; }
 
-.active .bracket { color:#dc2626; }
-.active .label { color:#ffffff; }
-
-/* IMAGE */
-.feature-image {
-  max-width:1300px;
-  margin:50px auto 20px auto;
-  padding:0 25px;
-}
-
-.feature-image img {
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:12px;
-}
-
-/* GRID CONTENT */
-.content {
-  max-width:1300px;
-  margin:20px auto 60px auto;
-  padding:0 25px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-.card.full { grid-column:1 / span 2; }
-
-.card {
-  background:#111827;
-  padding:32px;
-  border-radius:12px;
-}
+.active { color:#ffffff; }
 
 footer {
   text-align:center;
   padding:60px 20px;
   color:#6b7280;
-  font-size:0.85rem;
 }
 </style>
 </head>
@@ -118,43 +64,10 @@ footer {
 </section>
 
 <div class="breadcrumbs">
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">LANDING</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a href="portfolio/index.html">PORTFOLIO</a>
+  <span class="active">LANDING</span>
+  <a href="projects/index.html">PORTFOLIO</a>
   <a href="blog.html">BLOG</a>
 </div>
-
-<section class="feature-image">
-  <img src="photo1.jpeg" alt="">
-</section>
-
-<section class="content">
-
-  <div class="card">
-    <h3>Featured Project</h3>
-    <p>A featured build will be highlighted here as projects develop.</p>
-  </div>
-
-  <div class="card">
-    <h3>Purpose</h3>
-    <p>
-      Perez Automation documents ideas, projects, and learning experiences across automation,
-      mechatronics, and engineering systems.
-    </p>
-  </div>
-
-  <div class="card full">
-    <h3>About</h3>
-    <p>
-      Established in 2026 in Melbourne, this platform documents the journey through a Bachelor of Mechatronics Engineering.
-    </p>
-  </div>
-
-</section>
 
 <footer>© 2026 Perez Automation</footer>
 
