@@ -6,9 +6,6 @@
 <title>Focus ST - Perez Automation</title>
 
 <style>
-
-/* ---------------- GLOBAL ---------------- */
-
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -16,7 +13,6 @@ body {
   color: #e5e7eb;
 }
 
-/* background glow */
 body::before {
   content: "";
   position: fixed;
@@ -27,77 +23,64 @@ body::before {
   z-index: -1;
 }
 
-/* ---------------- HERO ---------------- */
-
 .hero {
-  text-align: center;
-  margin-top: 140px;
-  min-height: 150px;
+  text-align:center;
+  margin-top:140px;
+  min-height:150px;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  letter-spacing: 6px;
-  margin: 0;
-  font-weight: 300;
+  font-size:4rem;
+  letter-spacing:6px;
+  margin:0;
+  font-weight:300;
 }
 
 .hero h2 {
-  font-size: 1.05rem;
-  margin-top: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #9ca3af;
-}
-
-/* ---------------- BREADCRUMBS ---------------- */
-
-.breadcrumbs,
-.sub-breadcrumbs {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  letter-spacing: 1px;
+  font-size:1.05rem;
+  margin-top:26px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#9ca3af;
 }
 
 .breadcrumbs {
-  margin-top: 35px;
-  font-size: 1.05rem;
-  font-weight: 700;
+  text-align:center;
+  margin-top:35px;
+  font-size:1.05rem;
+  font-weight:700;
 }
 
-.sub-breadcrumbs {
-  margin-top: 15px;
-  font-size: 0.95rem;
-  font-weight: 600;
+.breadcrumbs a {
+  color:#6b7280;
+  text-decoration:none;
+  margin:0 12px;
 }
 
-.breadcrumbs a,
-.sub-breadcrumbs a {
-  color: #6b7280;
-  text-decoration: none;
-}
-
-.breadcrumbs a:hover,
-.sub-breadcrumbs a:hover {
-  color: #ffffff;
-}
+.breadcrumbs a:hover { color:#ffffff; }
 
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
 
-.bracket {
-  display: inline-block;
-  width: 10px;
-  text-align: center;
+.sub-breadcrumbs {
+  text-align:center;
+  margin-top:15px;
+  font-size:0.95rem;
+  font-weight:600;
 }
 
-/* ---------------- CONTENT ---------------- */
+.sub-breadcrumbs a {
+  color:#6b7280;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+.sub-breadcrumbs a:hover { color:#ffffff; }
 
 .content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
 .card {
@@ -106,15 +89,12 @@ body::before {
   border-radius:10px;
 }
 
-/* ---------------- FOOTER ---------------- */
-
 footer {
   text-align:center;
   padding:60px 20px;
   color:#6b7280;
   font-size:0.85rem;
 }
-
 </style>
 </head>
 <body>
@@ -124,20 +104,20 @@ footer {
   <h2>Automotive Development Project</h2>
 </section>
 
-<!-- TOP BREADCRUMBS -->
+<!-- TOP LEVEL -->
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
 
-  <a href="index.html" class="active">
+  <span class="active">
     <span class="bracket">[</span>
     <span class="label">PROJECTS</span>
     <span class="bracket">]</span>
-  </a>
+  </span>
 
   <a href="../blog.html">BLOG</a>
 </div>
 
-<!-- PROJECT SELECTOR -->
+<!-- SUB NAV -->
 <div class="sub-breadcrumbs">
   <a href="index.html">RECENT</a>
 
@@ -155,14 +135,14 @@ footer {
   <div class="card">
     <h3>Focus ST Build</h3>
     <p>
-      Automotive modifications, tuning work, and engineering experimentation
-      documented throughout the build process.
+      Documentation of automotive development, modifications,
+      testing, and engineering decisions related to the Focus ST platform.
     </p>
   </div>
 </section>
 
 <footer>
-  © 2026 Perez Automation
+© 2026 Perez Automation
 </footer>
 
 </body>
