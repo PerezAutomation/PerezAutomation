@@ -44,7 +44,7 @@ body::before {
   color:#9ca3af;
 }
 
-/* SAME breadcrumb CSS as Projects */
+/* SAME AS PROJECTS PAGE */
 .breadcrumbs {
   text-align:center;
   margin-top:35px;
@@ -60,8 +60,9 @@ body::before {
 
 .breadcrumbs a:hover { color:#ffffff; }
 
-.active .bracket { color:#dc2626; }
-.active .label { color:#ffffff; }
+.breadcrumbs a.active { color:#ffffff; }
+
+.breadcrumbs a.active .bracket { color:#dc2626; }
 
 .content {
   max-width:900px;
@@ -90,21 +91,16 @@ footer {
   <h2>Engineering Thoughts & Breakdowns</h2>
 </section>
 
-<!-- IDENTICAL STRUCTURE TO PROJECTS -->
 <div class="breadcrumbs">
   <a href="index.html">MAIN</a>
 
-  <a href="projects/index.html">
-    <span class="bracket">[</span>
-    <span class="label">PROJECTS</span>
-    <span class="bracket">]</span>
-  </a>
+  <a href="projects/index.html">PROJECTS</a>
 
-  <span class="active">
+  <a href="blog.html" class="active">
     <span class="bracket">[</span>
     <span class="label">BLOG</span>
     <span class="bracket">]</span>
-  </span>
+  </a>
 </div>
 
 <section class="content">
