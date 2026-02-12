@@ -1,43 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog - Perez Automation</title>
+
 <style>
 body {
   margin:0;
   font-family:"Segoe UI", Roboto, sans-serif;
   background:#0b0f14;
   color:#e5e7eb;
-  text-align:center;
-  margin-top:140px;
+}
+
+.hero { text-align:center; margin-top:140px; }
+
+.hero h1 {
+  font-size:4rem;
+  letter-spacing:6px;
+  margin:0;
+  font-weight:300;
+}
+
+.hero h2 {
+  font-size:1.05rem;
+  margin-top:26px;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#9ca3af;
 }
 
 .breadcrumbs {
-  margin-top:35px;
+  max-width:480px;
+  margin:35px auto 0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
   font-size:1.05rem;
   font-weight:700;
+  letter-spacing:1px;
+  text-align:center;
 }
 
 .breadcrumbs a {
   color:#6b7280;
   text-decoration:none;
-  margin:0 12px;
 }
 
 .breadcrumbs a:hover { color:#ffffff; }
 
-.active { color:#ffffff; }
+.active .bracket { color:#dc2626; }
+.active .label { color:#ffffff; }
+
+.content {
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
+}
+
+.card {
+  background:#111827;
+  padding:30px;
+  border-radius:10px;
+}
+
+footer {
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+}
 </style>
 </head>
 <body>
 
-<h1>PORTFOLIO</h1>
+<section class="hero">
+  <h1>BLOG</h1>
+  <h2>Engineering Thoughts & Breakdowns</h2>
+</section>
 
 <div class="breadcrumbs">
-  <a href="../index.html">LANDING</a>
-  <span class="active">PORTFOLIO</span>
-  <a href="../blog.html">BLOG</a>
+
+  <a href="index.html">LANDING</a>
+
+  <a href="projects/index.html">PORTFOLIO</a>
+
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">BLOG</span>
+    <span class="bracket">]</span>
+  </span>
+
 </div>
+
+<section class="content">
+  <div class="card">
+    <h3>Coming Soon</h3>
+    <p>Blog posts will be added here shortly.</p>
+  </div>
+</section>
+
+<footer>© 2026 Perez Automation</footer>
 
 </body>
 </html>
