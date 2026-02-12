@@ -49,6 +49,8 @@ body::before {
   color: #9ca3af;
 }
 
+/* BREADCRUMBS */
+
 .breadcrumbs {
   text-align: center;
   margin-top: 35px;
@@ -57,11 +59,22 @@ body::before {
   letter-spacing: 1px;
 }
 
+/* Prevent layout shifting */
+.breadcrumbs a,
+.breadcrumbs span {
+  display: inline-block;
+}
+
 .breadcrumbs a {
   color: #6b7280;
   text-decoration: none;
   margin: 0 12px;
 }
+
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
+
 .active .bracket { color: #dc2626; }
 .active .label { color: #ffffff; }
 
@@ -81,7 +94,6 @@ body::before {
   transition: box-shadow 0.25s ease;
 }
 
-/* MUCH softer glow */
 .feature-image img:hover {
   box-shadow: 0 0 18px rgba(220,38,38,0.15);
 }
