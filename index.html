@@ -44,6 +44,7 @@ body::before {
   color:#9ca3af;
 }
 
+/* EXACT SAME breadcrumb styling as Projects */
 .breadcrumbs {
   text-align:center;
   margin-top:35px;
@@ -75,34 +76,11 @@ body::before {
   border-radius:12px;
 }
 
-.content {
-  max-width:1300px;
-  margin:20px auto 60px auto;
-  padding:0 25px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-.card.full { grid-column:1 / span 2; }
-
-.card {
-  background:#111827;
-  padding:32px;
-  border-radius:12px;
-}
-
 footer {
   text-align:center;
   padding:60px 20px;
   color:#6b7280;
   font-size:0.85rem;
-}
-
-@media (max-width:900px){
-  .content { grid-template-columns:1fr; }
-  .card.full { grid-column:1; }
-  .feature-image img { height:300px; }
 }
 </style>
 </head>
@@ -113,7 +91,7 @@ footer {
   <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
 </section>
 
-<!-- MATCHES PROJECTS STYLE EXACTLY -->
+<!-- IDENTICAL STRUCTURE TO PROJECTS -->
 <div class="breadcrumbs">
   <span class="active">
     <span class="bracket">[</span>
@@ -126,33 +104,7 @@ footer {
 </div>
 
 <section class="feature-image">
-  <img src="photo1.jpeg" alt="Valentino overlooking landscape">
-</section>
-
-<section class="content">
-
-  <div class="card">
-    <h3>Featured Project</h3>
-    <p>A featured build will be highlighted here as projects develop.</p>
-    <p style="color:#9ca3af;">Currently in development…</p>
-  </div>
-
-  <div class="card">
-    <h3>Purpose</h3>
-    <p>
-      Perez Automation documents ideas, projects, and learning across automation,
-      mechatronics, and modern engineering systems.
-    </p>
-  </div>
-
-  <div class="card full">
-    <h3>About</h3>
-    <p>
-      Established in 2026 in Melbourne, Australia, this platform documents the journey
-      through a Bachelor of Mechatronics Engineering.
-    </p>
-  </div>
-
+  <img src="photo1.jpeg" alt="">
 </section>
 
 <footer>
