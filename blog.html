@@ -46,16 +46,22 @@ body::before {
 
 /* EXACT SAME CSS AS PROJECTS PAGE */
 .breadcrumbs {
-  text-align:center;
-  margin-top:35px;
-  font-size:1.05rem;
-  font-weight:700;
+  text-align: center;
+  margin-top: 35px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.breadcrumbs a,
+.breadcrumbs span {
+  display: inline-block;
+  width: 140px;   /* this is the magic line */
+  text-align: center;
 }
 
 .breadcrumbs a {
-  color:#6b7280;
-  text-decoration:none;
-  margin:0 12px;
+  color: #6b7280;
+  text-decoration: none;
 }
 
 .breadcrumbs a:hover { color:#ffffff; }
@@ -92,7 +98,7 @@ footer {
 
 <!-- MATCHES PROJECTS STRUCTURE -->
 <div class="breadcrumbs">
-  <a href="index.html">MAIN</a>
+  <a href="index.html">LANDING</a>
 
   <a href="projects/index.html">PROJECTS</a>
 
