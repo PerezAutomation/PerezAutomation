@@ -57,6 +57,8 @@ body::before {
   margin: 0 12px;
 }
 
+.breadcrumbs a:hover { color:#ffffff; }
+
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
 
@@ -68,15 +70,17 @@ body::before {
 }
 
 .sub-breadcrumbs a {
-  color: #6b7280;
-  text-decoration: none;
-  margin: 0 10px;
+  color:#6b7280;
+  text-decoration:none;
+  margin:0 10px;
 }
 
+.sub-breadcrumbs a:hover { color:#ffffff; }
+
 .content {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
 .card {
@@ -97,23 +101,21 @@ footer {
 
 <section class="hero">
   <h1>HONOURS A</h1>
-  <h2>Advanced Automation Research</h2>
+  <h2>Automation & Systems Design</h2>
 </section>
 
-<!-- TOP BREADCRUMB -->
 <div class="breadcrumbs">
   <a href="../index.html">MAIN</a>
 
-  <a href="index.html" class="active">
+  <span class="active">
     <span class="bracket">[</span>
     <span class="label">PROJECTS</span>
     <span class="bracket">]</span>
-  </a>
+  </span>
 
   <a href="../blog.html">BLOG</a>
 </div>
 
-<!-- SECOND ROW -->
 <div class="sub-breadcrumbs">
   <a href="index.html">RECENT</a>
   <a href="focus-st.html">FOCUS ST</a>
@@ -131,12 +133,15 @@ footer {
   <div class="card">
     <h3>Honours Project A</h3>
     <p>
-      Research, modelling, automation concepts, and engineering system development
-      will be documented here as the project progresses.
+      Research, design development, and system integration work
+      documented throughout the progression of the honours project.
     </p>
   </div>
 </section>
 
-<footer>© 2026 Perez Automation</footer>
+<footer>
+© 2026 Perez Automation
+</footer>
+
 </body>
 </html>
