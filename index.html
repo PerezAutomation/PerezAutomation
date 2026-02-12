@@ -6,6 +6,9 @@
 <title>Perez Automation</title>
 
 <style>
+
+/* GLOBAL */
+
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -23,40 +26,49 @@ body::before {
   z-index: -1;
 }
 
+/* HERO */
+
 .hero {
-  text-align:center;
-  margin-top:140px;
-  min-height:150px;
+  text-align: center;
+  margin-top: 140px;
+  min-height: 150px;
 }
 
 .hero h1 {
-  font-size:4rem;
-  letter-spacing:6px;
-  margin:0;
-  font-weight:300;
+  font-size: 4rem;
+  letter-spacing: 6px;
+  margin: 0;
+  font-weight: 300;
 }
 
 .hero h2 {
-  font-size:1.05rem;
-  margin-top:26px;
-  font-weight:700;
-  letter-spacing:1px;
-  color:#9ca3af;
+  font-size: 1.05rem;
+  margin-top: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #9ca3af;
 }
 
-/* MATCHES PROJECTS PAGE */
+/* FIXED BREADCRUMBS */
+
 .breadcrumbs {
-  text-align:center;
-  margin-top:35px;
-  font-size:1.05rem;
-  font-weight:700;
-  letter-spacing:1px;
+  text-align: center;
+  margin-top: 35px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* lock each item to same width so spacing never changes */
+.breadcrumbs a,
+.breadcrumbs span {
+  display: inline-block;
+  width: 140px;
+  text-align: center;
 }
 
 .breadcrumbs a {
-  color:#6b7280;
-  text-decoration:none;
-  margin:0 10px; /* slightly tighter for balance */
+  color: #6b7280;
+  text-decoration: none;
 }
 
 .breadcrumbs a:hover { color:#ffffff; }
@@ -64,29 +76,101 @@ body::before {
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
 
+/* IMAGE */
+
 .feature-image {
-  max-width:1300px;
-  margin:50px auto 20px auto;
-  padding:0 25px;
+  max-width: 1300px;
+  margin: 50px auto 20px auto;
+  padding: 0 25px;
 }
 
 .feature-image img {
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  border-radius:12px;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: box-shadow 0.25s ease;
 }
+
+.feature-image img:hover {
+  box-shadow: 0 0 18px rgba(220,38,38,0.15);
+}
+
+/* GRID */
+
+.content {
+  max-width: 1300px;
+  margin: 20px auto 60px auto;
+  padding: 0 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card.full {
+  grid-column: 1 / span 2;
+}
+
+/* CARDS */
+
+.card {
+  background: #111827;
+  padding: 32px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(220,38,38,0.12);
+}
+
+/* TITLE STYLE */
+
+.card h3 {
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  padding-top: 12px;
+}
+
+.card h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: #dc2626;
+}
+
+/* FOOTER */
 
 footer {
-  text-align:center;
-  padding:60px 20px;
-  color:#6b7280;
-  font-size:0.85rem;
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
 }
 
-@media (max-width:900px){
-  .feature-image img { height:300px; }
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .card.full {
+    grid-column: 1;
+  }
+
+  .feature-image img {
+    height: 300px;
+  }
 }
+
 </style>
 </head>
 <body>
@@ -96,7 +180,6 @@ footer {
   <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
 </section>
 
-<!-- UPDATED BREADCRUMB -->
 <div class="breadcrumbs">
   <span class="active">
     <span class="bracket">[</span>
@@ -109,11 +192,84 @@ footer {
 </div>
 
 <section class="feature-image">
-  <img src="photo1.jpeg" alt="">
+  <img src="photo1.jpeg" alt="Valentino overlooking landscape">
+</section>
+
+<section class="content">
+
+  <div class="card">
+    <h3>Featured Project</h3>
+    <p>
+      A featured build will be highlighted here as projects develop.
+      This space will showcase the most significant automotive,
+      automation, or mechatronics work currently in progress.
+    </p>
+    <p style="color:#9ca3af;">Currently in development…</p>
+  </div>
+
+  <div class="card">
+    <h3>Purpose</h3>
+    <p>
+      Perez Automation exists to document ideas, projects, and learning experiences across automation,
+      mechatronics, and modern engineering systems.
+    </p>
+    <p>
+      • Automotive development<br>
+      • Robotics & control systems<br>
+      • Manufacturing technologies<br>
+      • University projects<br>
+      • Engineering breakdowns
+    </p>
+  </div>
+
+  <div class="card full">
+    <h3>About</h3>
+    <p>
+      Established in early 2026 in Melbourne, Australia, Perez Automation began as a personal engineering journal
+      alongside the journey through a Bachelor of Mechatronics Engineering.
+    </p>
+    <p>
+      Founded by Valentino Perez Elizalde — born in Argentina and raised in Australia — this platform documents
+      the path of a final-year engineering student specialising in Advanced Automation and Manufacturing.
+    </p>
+    <p>
+      Inspired by the world’s leading industrial designers, engineers, and innovators, this space explores ideas
+      across automotive systems, robotics, production technologies, and emerging automation.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Skills & Tools</h3>
+    <p><strong>CAD & Design</strong></p>
+    <p>
+      SolidWorks — Proficient (CSWA Certified)<br>
+      Fusion 360 — Intermediate<br>
+      Technical Drawing — Proficient
+    </p>
+    <p><strong>Engineering & Software</strong></p>
+    <p>
+      MATLAB — Intermediate<br>
+      Python — Intermediate<br>
+      Arduino — Proficient<br>
+      PLC Fundamentals — Learning
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Connect</h3>
+    <p>
+      Instagram — Coming Soon<br>
+      X — Coming Soon<br>
+      LinkedIn — Coming Soon<br>
+      TikTok — Coming Soon<br>
+      YouTube — Coming Soon
+    </p>
+  </div>
+
 </section>
 
 <footer>
-© 2026 Perez Automation
+  © 2026 Perez Automation
 </footer>
 
 </body>
