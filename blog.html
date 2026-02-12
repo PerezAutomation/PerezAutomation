@@ -6,6 +6,7 @@
 <title>Blog - Perez Automation</title>
 
 <style>
+
 body {
   margin:0;
   font-family:"Segoe UI", Roboto, sans-serif;
@@ -13,10 +14,21 @@ body {
   color:#e5e7eb;
 }
 
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index:-1;
+}
+
+/* HERO */
+
 .hero {
   text-align:center;
   margin-top:140px;
-  min-height:180px;
 }
 
 .hero h1 {
@@ -30,24 +42,34 @@ body {
   font-size:1.05rem;
   margin-top:26px;
   font-weight:700;
+  letter-spacing:1px;
   color:#9ca3af;
 }
 
+/* FIXED BREADCRUMBS (NO SHIFT) */
+
 .breadcrumbs {
-  max-width:480px;
-  margin:35px auto 0;
+  width:420px;
+  margin:35px auto 0 auto;
   display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:140px 140px 140px;
+  text-align:center;
   font-size:1.05rem;
   font-weight:700;
-  text-align:center;
+  letter-spacing:1px;
 }
 
-.breadcrumbs a { color:#6b7280; text-decoration:none; }
+.breadcrumbs a {
+  color:#6b7280;
+  text-decoration:none;
+}
+
 .breadcrumbs a:hover { color:#ffffff; }
 
 .active .bracket { color:#dc2626; }
 .active .label { color:#ffffff; }
+
+/* CONTENT */
 
 .content {
   max-width:900px;
@@ -58,7 +80,7 @@ body {
 .card {
   background:#111827;
   padding:30px;
-  border-radius:10px;
+  border-radius:12px;
 }
 
 footer {
@@ -66,6 +88,7 @@ footer {
   padding:60px 20px;
   color:#6b7280;
 }
+
 </style>
 </head>
 <body>
@@ -76,13 +99,17 @@ footer {
 </section>
 
 <div class="breadcrumbs">
+
   <a href="index.html">LANDING</a>
+
   <a href="projects/index.html">PORTFOLIO</a>
+
   <span class="active">
     <span class="bracket">[</span>
     <span class="label">BLOG</span>
     <span class="bracket">]</span>
   </span>
+
 </div>
 
 <section class="content">
