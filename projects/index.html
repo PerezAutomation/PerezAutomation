@@ -134,4 +134,145 @@ body::before {
   margin-top: 0;
   font-weight: 600;
   letter-spacing: 1px;
-  position: relat
+  position: relative;
+  padding-top: 12px;
+}
+
+.card h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 2px;
+  background: #dc2626;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .card.full {
+    grid-column: 1;
+  }
+
+  .feature-image img {
+    height: 300px;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>PEREZ AUTOMATION</h1>
+  <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
+</section>
+
+<div class="breadcrumbs">
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">MAIN</span>
+    <span class="bracket">]</span>
+  </span>
+
+  <a href="projects/index.html">PROJECTS</a>
+  <a href="blog.html">BLOG</a>
+</div>
+
+<section class="feature-image">
+  <img src="photo1.jpeg" alt="Valentino overlooking landscape">
+</section>
+
+<section class="content">
+
+  <div class="card">
+    <h3>Featured Project</h3>
+    <p>
+      A featured build will be highlighted here as projects develop.
+      This space will showcase the most significant automotive,
+      automation, or mechatronics work currently in progress.
+    </p>
+    <p style="color:#9ca3af;">Currently in development…</p>
+  </div>
+
+  <div class="card">
+    <h3>Purpose</h3>
+    <p>
+      Perez Automation exists to document ideas, projects, and learning experiences across automation,
+      mechatronics, and modern engineering systems.
+    </p>
+    <p>
+      • Automotive development<br>
+      • Robotics & control systems<br>
+      • Manufacturing technologies<br>
+      • University projects<br>
+      • Engineering breakdowns
+    </p>
+  </div>
+
+  <div class="card full">
+    <h3>About</h3>
+    <p>
+      Established in early 2026 in Melbourne, Australia, Perez Automation began as a personal engineering journal
+      alongside the journey through a Bachelor of Mechatronics Engineering.
+    </p>
+    <p>
+      Founded by Valentino Perez Elizalde — born in Argentina and raised in Australia — this platform documents
+      the path of a final-year engineering student specialising in Advanced Automation and Manufacturing.
+    </p>
+    <p>
+      Inspired by the world’s leading industrial designers, engineers, and innovators, this space explores ideas
+      across automotive systems, robotics, production technologies, and emerging automation.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Skills & Tools</h3>
+    <p><strong>CAD & Design</strong></p>
+    <p>
+      SolidWorks — Proficient (CSWA Certified)<br>
+      Fusion 360 — Intermediate<br>
+      Technical Drawing — Proficient
+    </p>
+    <p><strong>Engineering & Software</strong></p>
+    <p>
+      MATLAB — Intermediate<br>
+      Python — Intermediate<br>
+      Arduino — Proficient<br>
+      PLC Fundamentals — Learning
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Connect</h3>
+    <p>
+      Instagram — Coming Soon<br>
+      X — Coming Soon<br>
+      LinkedIn — Coming Soon<br>
+      TikTok — Coming Soon<br>
+      YouTube — Coming Soon
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Perez Automation
+</footer>
+
+</body>
+</html>
