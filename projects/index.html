@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects - Perez Automation</title>
+<title>Perez Automation</title>
 
 <style>
-/* ---------------- GLOBAL ---------------- */
+
+/* GLOBAL */
+
 body {
   margin: 0;
   font-family: "Segoe UI", Roboto, sans-serif;
@@ -24,89 +26,112 @@ body::before {
   z-index: -1;
 }
 
-/* ---------------- HERO ---------------- */
-.hero { text-align:center; margin-top:140px; min-height:150px; }
-.hero h1 { font-size:4rem; letter-spacing:6px; margin:0; font-weight:300; }
-.hero h2 { font-size:1.05rem; margin-top:26px; font-weight:700; letter-spacing:1px; color:#9ca3af; }
+/* HERO */
 
-/* ---------------- BREADCRUMBS ---------------- */
-<div class="breadcrumbs">
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">MAIN</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a href="projects/index.html">PROJECTS</a>
-  <a href="blog.html">BLOG</a>
-</div>
-
-.active .bracket { color:#dc2626; }
-.active .label { color:#ffffff; }
-
-/* second breadcrumb row */
-.sub-breadcrumbs {
-  text-align:center;
-  margin-top:15px;
-  font-size:0.95rem;
-  font-weight:600;
-  letter-spacing:1px;
+.hero {
+  text-align: center;
+  margin-top: 140px;
+  min-height: 150px;
 }
 
-.sub-breadcrumbs a {
-  color:#6b7280;
-  text-decoration:none;
-  margin:0 10px;
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 6px;
+  margin: 0;
+  font-weight: 300;
 }
 
-.sub-breadcrumbs a:hover { color:#ffffff; }
+.hero h2 {
+  font-size: 1.05rem;
+  margin-top: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #9ca3af;
+}
 
-/* ---------------- CONTENT ---------------- */
-.content { max-width:900px; margin:60px auto; padding:0 20px; }
-.card { background:#111827; padding:30px; border-radius:10px; }
+/* BREADCRUMBS */
 
-/* ---------------- FOOTER ---------------- */
-footer { text-align:center; padding:60px 20px; color:#6b7280; font-size:0.85rem; }
-</style>
-</head>
-<body>
+.breadcrumbs {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
 
-<section class="hero">
-  <h1>PROJECTS</h1>
-  <h2>Recent Engineering Work</h2>
-</section>
+/* Prevent layout shifting */
+.breadcrumbs a,
+.breadcrumbs span {
+  display: inline-block;
+}
 
-<div class="breadcrumbs">
-  <a href="../index.html">MAIN</a>
+.breadcrumbs a {
+  color: #6b7280;
+  text-decoration: none;
+  margin: 0 12px;
+}
 
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">PROJECTS</span>
-    <span class="bracket">]</span>
-  </span>
+.breadcrumbs a:hover {
+  color: #ffffff;
+}
 
-  <a href="../blog.html">BLOG</a>
-</div>
+.active .bracket { color: #dc2626; }
+.active .label { color: #ffffff; }
 
-<div class="sub-breadcrumbs">
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">RECENT</span>
-    <span class="bracket">]</span>
-  </span>
+/* IMAGE */
 
-  <a href="focus-st.html">FOCUS ST</a>
-  <a href="honours-a.html">HONOURS A</a>
-  <a href="honours-b.html">HONOURS B</a>
-</div>
+.feature-image {
+  max-width: 1300px;
+  margin: 50px auto 20px auto;
+  padding: 0 25px;
+}
 
-<section class="content">
-  <div class="card">
-    <h3>Recent Projects</h3>
-    <p>This section will highlight the most recent builds in progress.</p>
-  </div>
-</section>
+.feature-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: box-shadow 0.25s ease;
+}
 
-<footer>© 2026 Perez Automation</footer>
-</body>
-</html>
+.feature-image img:hover {
+  box-shadow: 0 0 18px rgba(220,38,38,0.15);
+}
+
+/* GRID */
+
+.content {
+  max-width: 1300px;
+  margin: 20px auto 60px auto;
+  padding: 0 25px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.card.full {
+  grid-column: 1 / span 2;
+}
+
+/* CARDS */
+
+.card {
+  background: #111827;
+  padding: 32px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(220,38,38,0.12);
+}
+
+/* TITLE STYLE */
+
+.card h3 {
+  margin-top: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relat
