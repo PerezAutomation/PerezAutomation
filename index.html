@@ -44,7 +44,7 @@ body::before {
   color:#9ca3af;
 }
 
-/* SAME AS PROJECTS PAGE */
+/* EXACT SAME CSS AS PROJECTS PAGE */
 .breadcrumbs {
   text-align:center;
   margin-top:35px;
@@ -60,9 +60,8 @@ body::before {
 
 .breadcrumbs a:hover { color:#ffffff; }
 
-.breadcrumbs a.active { color:#ffffff; }
-
-.breadcrumbs a.active .bracket { color:#dc2626; }
+.active .bracket { color:#dc2626; }
+.active .label { color:#ffffff; }
 
 .feature-image {
   max-width:1300px;
@@ -92,12 +91,13 @@ footer {
   <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
 </section>
 
+<!-- MATCHES PROJECTS STRUCTURE -->
 <div class="breadcrumbs">
-  <a href="index.html" class="active">
+  <span class="active">
     <span class="bracket">[</span>
     <span class="label">MAIN</span>
     <span class="bracket">]</span>
-  </a>
+  </span>
 
   <a href="projects/index.html">PROJECTS</a>
   <a href="blog.html">BLOG</a>
