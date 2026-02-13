@@ -12,7 +12,6 @@ body{
   background:#0b0f14;
   color:#e5e7eb;
 }
-
 body::before{
   content:"";
   position:fixed;
@@ -28,15 +27,20 @@ body::before{
 .hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
 .hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;letter-spacing:1px;color:#9ca3af;}
 
-/* BREADCRUMBS (NO SHIFT) */
+/* BREADCRUMBS — CINEMATIC + NO SHIFT */
 .breadcrumbs{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:50px;
+  gap:90px;
   margin-top:26px;
   font-size:1.05rem;
   font-weight:700;
+}
+.breadcrumbs a,
+.breadcrumbs span{
+  width:130px;
+  text-align:center;
 }
 .breadcrumbs a{color:#6b7280;text-decoration:none;}
 .breadcrumbs a:hover{color:#fff;}
@@ -71,11 +75,7 @@ body::before{
 }
 .card{background:#111827;padding:32px;border-radius:12px;}
 .card.full{grid-column:1/span 2;}
-.card h3{
-  margin-top:0;
-  padding-top:12px;
-  position:relative;
-}
+.card h3{margin-top:0;padding-top:12px;position:relative;}
 .card h3::before{
   content:"";
   position:absolute;
