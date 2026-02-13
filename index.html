@@ -23,7 +23,7 @@ body::before{
   z-index:-1;
 }
 
-/* HERO — identical spacing to blog/portfolio */
+/* HERO */
 .hero{
   text-align:center;
   margin-top:140px;
@@ -43,7 +43,7 @@ body::before{
   color:#9ca3af;
 }
 
-/* BREADCRUMBS — identical spacing */
+/* EXACT SAME BREADCRUMB SYSTEM AS BLOG/PORTFOLIO */
 .breadcrumbs{
   display:flex;
   justify-content:center;
@@ -61,24 +61,26 @@ body::before{
   text-decoration:none;
 }
 
-/* keep bracket space reserved to stop shifting */
+/* reserve bracket space so nothing shifts */
 .bracket{opacity:0;}
 .active .bracket{
   opacity:1;
   color:#dc2626;
 }
-.active .label{color:#fff;}
+.active .label{
+  color:#fff;
+}
 
-/* IMAGE — SAME DISTANCE AS BLOG CARD */
+/* IMAGE — RESTORED ORIGINAL WIDTH */
 .feature-image{
-  max-width:900px;
+  max-width:1300px;
   margin:48px auto 60px;
-  padding:0 20px;
+  padding:0 25px;
 }
 
 .feature-image img{
   width:100%;
-  height:380px;
+  height:420px;
   object-fit:cover;
   border-radius:12px;
   transition:.25s ease;
@@ -139,6 +141,7 @@ footer{
 @media(max-width:900px){
   .content{grid-template-columns:1fr;}
   .card.full{grid-column:1;}
+  .feature-image img{height:300px;}
 }
 </style>
 </head>
