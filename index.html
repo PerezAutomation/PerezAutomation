@@ -43,23 +43,26 @@ body::before{
   color:#9ca3af;
 }
 
-/* BREADCRUMBS (NO SHIFT) */
+/* FLEX BREADCRUMBS (NO SHIFT EVER) */
 
 .breadcrumbs{
-  width:420px;
-  margin:26px auto 0;
-  display:grid;
-  grid-template-columns:140px 140px 140px;
-  text-align:center;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:26px;
   font-size:1.05rem;
   font-weight:700;
 }
 
-.breadcrumbs a{ color:#6b7280; text-decoration:none; }
-.breadcrumbs a:hover{ color:#fff; }
+.breadcrumbs a{
+  color:#6b7280;
+  text-decoration:none;
+}
 
-.active .bracket{ color:#dc2626; }
-.active .label{ color:#fff; }
+.breadcrumbs a:hover{color:#fff;}
+
+.active .bracket{color:#dc2626;}
+.active .label{color:#fff;}
 
 /* IMAGE */
 
@@ -81,7 +84,7 @@ body::before{
   box-shadow:0 0 18px rgba(220,38,38,.18);
 }
 
-/* CARDS */
+/* CONTENT GRID */
 
 .content{
   max-width:1300px;
@@ -98,10 +101,10 @@ body::before{
   border-radius:12px;
 }
 
-.card.full{ grid-column:1/span 2; }
+.card.full{grid-column:1/span 2;}
 
 .card h3{
-  margin:0;
+  margin-top:0;
   padding-top:12px;
   position:relative;
 }
@@ -123,8 +126,8 @@ footer{
 }
 
 @media(max-width:900px){
-  .content{ grid-template-columns:1fr; }
-  .card.full{ grid-column:1; }
+  .content{grid-template-columns:1fr;}
+  .card.full{grid-column:1;}
 }
 
 </style>
@@ -150,27 +153,72 @@ footer{
 
   <div class="card">
     <h3>Featured Project</h3>
-    <p>A featured build will be highlighted here as projects develop.</p>
+    <p>
+      A featured build will be highlighted here as projects develop.
+      This space will showcase the most significant automotive,
+      automation, or mechatronics work currently in progress.
+    </p>
+    <p style="color:#9ca3af;">Currently in development…</p>
   </div>
 
   <div class="card">
     <h3>Purpose</h3>
-    <p>Perez Automation documents ideas, projects, and learning experiences across automation, mechatronics, and engineering systems.</p>
+    <p>
+      Perez Automation exists to document ideas, projects, and learning experiences across automation,
+      mechatronics, and modern engineering systems.
+    </p>
+    <p>
+      • Automotive development<br>
+      • Robotics & control systems<br>
+      • Manufacturing technologies<br>
+      • University projects<br>
+      • Engineering breakdowns
+    </p>
   </div>
 
   <div class="card full">
     <h3>About</h3>
-    <p>Established in Melbourne in 2026, Perez Automation began as a personal engineering journal during the journey through a Bachelor of Mechatronics Engineering.</p>
+    <p>
+      Established in early 2026 in Melbourne, Australia, Perez Automation began as a personal engineering journal
+      alongside the journey through a Bachelor of Mechatronics Engineering.
+    </p>
+    <p>
+      Founded by Valentino Perez Elizalde — born in Argentina and raised in Australia — this platform documents
+      the path of a final-year engineering student specialising in Advanced Automation and Manufacturing.
+    </p>
+    <p>
+      Inspired by the world’s leading industrial designers, engineers, and innovators, this space explores ideas
+      across automotive systems, robotics, production technologies, and emerging automation.
+    </p>
   </div>
 
   <div class="card">
     <h3>Skills & Tools</h3>
-    <p>SolidWorks — Proficient<br>MATLAB — Intermediate<br>Python — Intermediate<br>Arduino — Proficient</p>
+    <p><strong>CAD & Design</strong></p>
+    <p>
+      SolidWorks — Proficient (CSWA Certified)<br>
+      Fusion 360 — Intermediate<br>
+      Technical Drawing — Proficient
+    </p>
+
+    <p><strong>Engineering & Software</strong></p>
+    <p>
+      MATLAB — Intermediate<br>
+      Python — Intermediate<br>
+      Arduino — Proficient<br>
+      PLC Fundamentals — Learning
+    </p>
   </div>
 
   <div class="card">
     <h3>Connect</h3>
-    <p>Instagram — Coming Soon<br>LinkedIn — Coming Soon<br>YouTube — Coming Soon</p>
+    <p>
+      Instagram — Coming Soon<br>
+      X — Coming Soon<br>
+      LinkedIn — Coming Soon<br>
+      TikTok — Coming Soon<br>
+      YouTube — Coming Soon
+    </p>
   </div>
 
 </section>
