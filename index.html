@@ -12,6 +12,7 @@ body{
   background:#0b0f14;
   color:#e5e7eb;
 }
+
 body::before{
   content:"";
   position:fixed;
@@ -25,27 +26,37 @@ body::before{
 /* HERO */
 .hero{text-align:center;margin-top:140px;}
 .hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;letter-spacing:1px;color:#9ca3af;}
+.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
 
-/* BREADCRUMBS — CINEMATIC + NO SHIFT */
+/* BREADCRUMBS (TIGHT + NO SHIFT) */
 .breadcrumbs{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:90px;
+  gap:40px;
   margin-top:26px;
   font-size:1.05rem;
   font-weight:700;
 }
+
 .breadcrumbs a,
 .breadcrumbs span{
-  width:130px;
+  width:110px;
   text-align:center;
+  color:#6b7280;
+  text-decoration:none;
 }
-.breadcrumbs a{color:#6b7280;text-decoration:none;}
-.breadcrumbs a:hover{color:#fff;}
-.active .bracket{color:#dc2626;}
-.active .label{color:#fff;}
+
+/* brackets always reserve space */
+.bracket{
+  opacity:0;
+}
+.active .bracket{
+  opacity:1;
+  color:#dc2626;
+}
+.active .label{
+  color:#fff;
+}
 
 /* IMAGE */
 .feature-image{
@@ -58,13 +69,13 @@ body::before{
   height:380px;
   object-fit:cover;
   border-radius:12px;
-  transition:box-shadow .25s ease;
+  transition:all .25s ease;
 }
 .feature-image img:hover{
   box-shadow:0 0 18px rgba(220,38,38,.18);
 }
 
-/* CONTENT GRID */
+/* CONTENT */
 .content{
   max-width:1300px;
   margin:0 auto 60px;
@@ -73,14 +84,34 @@ body::before{
   grid-template-columns:1fr 1fr;
   gap:30px;
 }
-.card{background:#111827;padding:32px;border-radius:12px;}
+
+.card{
+  background:#111827;
+  padding:32px;
+  border-radius:12px;
+  transition:all .2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 18px rgba(220,38,38,.12);
+}
+
 .card.full{grid-column:1/span 2;}
-.card h3{margin-top:0;padding-top:12px;position:relative;}
+
+.card h3{
+  margin-top:0;
+  padding-top:12px;
+  position:relative;
+}
+
 .card h3::before{
   content:"";
   position:absolute;
-  top:0;left:0;
-  width:36px;height:2px;
+  top:0;
+  left:0;
+  width:36px;
+  height:2px;
   background:#dc2626;
 }
 
@@ -100,13 +131,27 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
 </section>
 
 <div class="breadcrumbs">
-  <span class="active"><span class="bracket">[</span><span class="label">LANDING</span><span class="bracket">]</span></span>
-  <a href="projects/index.html">PORTFOLIO</a>
-  <a href="blog.html">BLOG</a>
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">LANDING</span>
+    <span class="bracket">]</span>
+  </span>
+
+  <a href="projects/index.html">
+    <span class="bracket">[</span>
+    <span class="label">PORTFOLIO</span>
+    <span class="bracket">]</span>
+  </a>
+
+  <a href="blog.html">
+    <span class="bracket">[</span>
+    <span class="label">BLOG</span>
+    <span class="bracket">]</span>
+  </a>
 </div>
 
 <section class="feature-image">
-  <img src="photo1.jpeg" alt="">
+  <img src="photo1.jpeg">
 </section>
 
 <section class="content">
