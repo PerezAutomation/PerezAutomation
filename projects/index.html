@@ -3,30 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<title>Portfolio - Perez Automation</title>
 
 <style>
-body{margin:0;font-family:"Segoe UI",Roboto,sans-serif;background:#0b0f14;color:#e5e7eb;}
-body::before{content:"";position:fixed;inset:0;background:
-  radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-  radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);z-index:-1;}
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,sans-serif;
+  background:#0b0f14;
+  color:#e5e7eb;
+}
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
+  z-index:-1;
+}
+
+/* HERO */
 .hero{text-align:center;margin-top:140px;}
 .hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
 .hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
 
+/* BREADCRUMBS */
 .breadcrumbs{
-  display:flex;justify-content:center;align-items:center;
-  gap:90px;margin-top:26px;font-size:1.05rem;font-weight:700;
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:26px;
+  font-size:1.05rem;
+  font-weight:700;
 }
-.breadcrumbs a,.breadcrumbs span{width:130px;text-align:center;}
-.breadcrumbs a{color:#6b7280;text-decoration:none;}
-.breadcrumbs a:hover{color:#fff;}
-.active .bracket{color:#dc2626;}
+
+.breadcrumbs a,
+.breadcrumbs span{
+  width:110px;
+  text-align:center;
+  color:#6b7280;
+  text-decoration:none;
+}
+
+.bracket{opacity:0;}
+.active .bracket{opacity:1;color:#dc2626;}
 .active .label{color:#fff;}
 
-.content{max-width:900px;margin:48px auto 60px;padding:0 20px;}
-.card{background:#111827;padding:30px;border-radius:12px;}
+/* CONTENT */
+.content{
+  max-width:900px;
+  margin:48px auto 60px;
+  padding:0 20px;
+}
+
+.card{
+  background:#111827;
+  padding:30px;
+  border-radius:12px;
+  transition:.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 18px rgba(220,38,38,.12);
+}
+
+.card h3{
+  margin-top:0;
+  padding-top:12px;
+  position:relative;
+}
+
+.card h3::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:36px;
+  height:2px;
+  background:#dc2626;
+}
 
 footer{text-align:center;padding:60px 20px;color:#6b7280;}
 </style>
@@ -39,9 +96,23 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
 </section>
 
 <div class="breadcrumbs">
-  <a href="../index.html">LANDING</a>
-  <span class="active"><span class="bracket">[</span><span class="label">PORTFOLIO</span><span class="bracket">]</span></span>
-  <a href="../blog.html">BLOG</a>
+  <a href="../index.html">
+    <span class="bracket">[</span>
+    <span class="label">LANDING</span>
+    <span class="bracket">]</span>
+  </a>
+
+  <span class="active">
+    <span class="bracket">[</span>
+    <span class="label">PORTFOLIO</span>
+    <span class="bracket">]</span>
+  </span>
+
+  <a href="../blog.html">
+    <span class="bracket">[</span>
+    <span class="label">BLOG</span>
+    <span class="bracket">]</span>
+  </a>
 </div>
 
 <section class="content">
