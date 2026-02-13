@@ -23,12 +23,27 @@ body::before{
   z-index:-1;
 }
 
-/* HERO */
-.hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
+/* HERO — identical spacing to blog/portfolio */
+.hero{
+  text-align:center;
+  margin-top:140px;
+}
 
-/* BREADCRUMBS (TIGHT + NO SHIFT) */
+.hero h1{
+  font-size:4rem;
+  letter-spacing:6px;
+  margin:0;
+  font-weight:300;
+}
+
+.hero h2{
+  font-size:1.05rem;
+  margin-top:22px;
+  font-weight:700;
+  color:#9ca3af;
+}
+
+/* BREADCRUMBS — identical spacing */
 .breadcrumbs{
   display:flex;
   justify-content:center;
@@ -46,36 +61,34 @@ body::before{
   text-decoration:none;
 }
 
-/* brackets always reserve space */
-.bracket{
-  opacity:0;
-}
+/* keep bracket space reserved to stop shifting */
+.bracket{opacity:0;}
 .active .bracket{
   opacity:1;
   color:#dc2626;
 }
-.active .label{
-  color:#fff;
+.active .label{color:#fff;}
+
+/* IMAGE — SAME DISTANCE AS BLOG CARD */
+.feature-image{
+  max-width:900px;
+  margin:48px auto 60px;
+  padding:0 20px;
 }
 
-/* IMAGE */
-.feature-image{
-  max-width:1300px;
-  margin:48px auto 60px;
-  padding:0 25px;
-}
 .feature-image img{
   width:100%;
   height:380px;
   object-fit:cover;
   border-radius:12px;
-  transition:all .25s ease;
+  transition:.25s ease;
 }
+
 .feature-image img:hover{
   box-shadow:0 0 18px rgba(220,38,38,.18);
 }
 
-/* CONTENT */
+/* CONTENT GRID */
 .content{
   max-width:1300px;
   margin:0 auto 60px;
@@ -89,7 +102,7 @@ body::before{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:all .2s ease;
+  transition:.2s ease;
 }
 
 .card:hover{
@@ -97,7 +110,9 @@ body::before{
   box-shadow:0 0 18px rgba(220,38,38,.12);
 }
 
-.card.full{grid-column:1/span 2;}
+.card.full{
+  grid-column:1/span 2;
+}
 
 .card h3{
   margin-top:0;
@@ -115,7 +130,11 @@ body::before{
   background:#dc2626;
 }
 
-footer{text-align:center;padding:60px 20px;color:#6b7280;}
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+}
 
 @media(max-width:900px){
   .content{grid-template-columns:1fr;}
@@ -205,6 +224,7 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
       Fusion 360 — Intermediate<br>
       Technical Drawing — Proficient
     </p>
+
     <p><strong>Engineering & Software</strong></p>
     <p>
       MATLAB — Intermediate<br>
