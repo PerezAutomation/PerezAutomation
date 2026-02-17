@@ -6,6 +6,7 @@
 <title>Perez Automation</title>
 
 <style>
+/* GLOBAL */
 body{
   margin:0;
   font-family:"Segoe UI",Roboto,sans-serif;
@@ -43,7 +44,7 @@ body::before{
   color:#9ca3af;
 }
 
-/* EXACT SAME BREADCRUMB SYSTEM AS BLOG/PORTFOLIO */
+/* BREADCRUMBS — EXACT SAME SYSTEM AS BLOG/PORTFOLIO */
 .breadcrumbs{
   display:flex;
   justify-content:center;
@@ -61,17 +62,19 @@ body::before{
   text-decoration:none;
 }
 
-/* reserve bracket space so nothing shifts */
+/* reserve space for brackets so nothing shifts */
 .bracket{opacity:0;}
+
 .active .bracket{
   opacity:1;
   color:#dc2626;
 }
+
 .active .label{
-  color:#fff;
+  color:#ffffff;
 }
 
-/* IMAGE — RESTORED ORIGINAL WIDTH */
+/* FEATURE IMAGE — ALIGNED WITH BLOG CARD START */
 .feature-image{
   max-width:1300px;
   margin:48px auto 60px;
@@ -83,9 +86,10 @@ body::before{
   height:420px;
   object-fit:cover;
   border-radius:12px;
-  transition:.25s ease;
+  transition:all .25s ease;
 }
 
+/* image glow */
 .feature-image img:hover{
   box-shadow:0 0 18px rgba(220,38,38,.18);
 }
@@ -104,9 +108,10 @@ body::before{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.2s ease;
+  transition:all .2s ease;
 }
 
+/* card hover glow */
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 0 18px rgba(220,38,38,.12);
@@ -116,6 +121,7 @@ body::before{
   grid-column:1/span 2;
 }
 
+/* red accent line */
 .card h3{
   margin-top:0;
   padding-top:12px;
@@ -136,8 +142,10 @@ footer{
   text-align:center;
   padding:60px 20px;
   color:#6b7280;
+  font-size:.85rem;
 }
 
+/* MOBILE */
 @media(max-width:900px){
   .content{grid-template-columns:1fr;}
   .card.full{grid-column:1;}
@@ -173,7 +181,7 @@ footer{
 </div>
 
 <section class="feature-image">
-  <img src="photo1.jpeg">
+  <img src="photo1.jpeg" alt="">
 </section>
 
 <section class="content">
