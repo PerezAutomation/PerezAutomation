@@ -6,10 +6,9 @@
 <title>Perez Automation</title>
 
 <style>
-/* GLOBAL */
 body{
   margin:0;
-  font-family:"Segoe UI", Roboto, sans-serif;
+  font-family:"Segoe UI",Roboto,sans-serif;
   background:#0b0f14;
   color:#e5e7eb;
 }
@@ -34,12 +33,11 @@ body{
   color:#9ca3af;
 }
 
-/* NAV (stable, no shifting) */
+/* STABLE NAV (NO SHIFT EVER) */
 .nav{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:70px;
+  gap:40px;
   margin-top:55px;
   margin-bottom:40px;
   font-size:.95rem;
@@ -47,32 +45,31 @@ body{
 }
 
 .nav a{
+  width:140px;              /* FIXED WIDTH = NO MOVEMENT */
+  text-align:center;
   color:#6b7280;
   text-decoration:none;
   padding-bottom:10px;
   position:relative;
-  transition:color .2s ease;
 }
 
-.nav a:hover{
-  color:#ffffff;
-}
+.nav a:hover{color:white;}
 
 .nav a.active{
-  color:#ffffff;
+  color:white;
 }
 
 .nav a.active::after{
   content:"";
   position:absolute;
-  left:0;
-  width:100%;
+  left:20px;
+  right:20px;
   bottom:0;
   height:2px;
   background:#dc2626;
 }
 
-/* FEATURE IMAGE */
+/* IMAGE */
 .feature-image{
   max-width:1300px;
   margin:0 auto 32px;
@@ -86,7 +83,7 @@ body{
   border-radius:12px;
 }
 
-/* CONTENT GRID */
+/* CONTENT */
 .content{
   max-width:1300px;
   margin:0 auto 60px;
@@ -100,37 +97,14 @@ body{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.2s ease;
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 18px rgba(220,38,38,.12);
-}
-
-.card.full{
-  grid-column:1/span 2;
-}
+.card.full{grid-column:1/span 2;}
 
 footer{
   text-align:center;
   padding:60px 20px;
   color:#6b7280;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .content{
-    grid-template-columns:1fr;
-  }
-
-  .card.full{
-    grid-column:1;
-  }
-
-  .feature-image img{
-    height:300px;
-  }
 }
 </style>
 </head>
@@ -148,39 +122,17 @@ footer{
 </section>
 
 <section class="feature-image">
-  <img src="photo1.jpeg" alt="Feature image">
+  <img src="photo1.jpeg">
 </section>
 
 <section class="content">
-
-  <div class="card">
-    <h3>Featured Project</h3>
-    <p>A featured build will be highlighted here.</p>
-  </div>
-
-  <div class="card">
-    <h3>Purpose</h3>
-    <p>Automation, mechatronics and automotive engineering journal.</p>
-  </div>
-
-  <div class="card full">
-    <h3>About</h3>
-    <p>Engineering journey documentation.</p>
-  </div>
-
-  <div class="card">
-    <h3>Skills</h3>
-    <p>CAD, MATLAB, Arduino, Python.</p>
-  </div>
-
-  <div class="card">
-    <h3>Connect</h3>
-    <p>Social links coming soon.</p>
-  </div>
-
+  <div class="card"><h3>Featured Project</h3></div>
+  <div class="card"><h3>Purpose</h3></div>
+  <div class="card full"><h3>About</h3></div>
+  <div class="card"><h3>Skills</h3></div>
+  <div class="card"><h3>Connect</h3></div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
-
 </body>
 </html>
