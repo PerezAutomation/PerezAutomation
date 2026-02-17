@@ -6,41 +6,30 @@
 <title>Blog</title>
 
 <style>
-body{margin:0;font-family:"Segoe UI",Roboto,sans-serif;background:#0b0f14;color:#e5e7eb;}
+html{overflow-y:scroll;}
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,sans-serif;
+  background:#0b0f14;
+  color:#e5e7eb;
+}
 
 .hero{text-align:center;margin-top:140px;}
 .hero h1{font-size:4rem;letter-spacing:8px;margin:0;font-weight:300;}
 .hero h2{font-size:1.05rem;margin-top:20px;font-weight:700;color:#9ca3af;}
 
 .nav{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:55px;
-  margin-bottom:40px;
+  width:520px;
+  margin:55px auto 40px auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  text-align:center;
   font-size:.95rem;
 }
 
-.nav a{
-  width:140px;
-  text-align:center;
-  color:#6b7280;
-  text-decoration:none;
-  padding-bottom:10px;
-  position:relative;
-}
-
-.nav a.active{color:white;}
-
-.nav a.active::after{
-  content:"";
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:0;
-  height:2px;
-  background:#dc2626;
-}
+.nav a{color:#6b7280;text-decoration:none;padding-bottom:10px;}
+.nav a.active{color:white;border-bottom:2px solid #dc2626;}
 
 .content{max-width:900px;margin:0 auto 60px;padding:0 20px;}
 .card{background:#111827;padding:30px;border-radius:12px;}
@@ -62,7 +51,6 @@ body{margin:0;font-family:"Segoe UI",Roboto,sans-serif;background:#0b0f14;color:
 <section class="content">
   <div class="card">
     <h3>First Entry</h3>
-    <p>Engineering notes will appear here.</p>
   </div>
 </section>
 
