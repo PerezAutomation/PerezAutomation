@@ -3,51 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog - Perez Automation</title>
+<title>Blog</title>
 
 <style>
-body{
-  margin:0;
-  font-family:"Segoe UI",Roboto,sans-serif;
-  background:#0b0f14;
-  color:#e5e7eb;
-}
+body{margin:0;font-family:"Segoe UI",Roboto,sans-serif;background:#0b0f14;color:#e5e7eb;}
 
 .hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
+.hero h1{font-size:4rem;letter-spacing:8px;margin:0;font-weight:300;}
+.hero h2{font-size:1.05rem;margin-top:20px;font-weight:700;color:#9ca3af;}
 
-.breadcrumbs{
+.nav{
   display:flex;
   justify-content:center;
-  gap:40px;
-  margin-top:26px;
-  font-size:1.05rem;
-  font-weight:700;
+  gap:70px;
+  margin-top:55px;
+  margin-bottom:40px;
+  font-size:.95rem;
+  letter-spacing:1px;
 }
 
-.crumb{
-  width:130px;
-  text-align:center;
-  text-decoration:none;
+.nav a{
   color:#6b7280;
+  text-decoration:none;
+  padding-bottom:8px;
+  position:relative;
 }
 
-.bracket{opacity:0;}
-.active .bracket{opacity:1;color:#dc2626;}
-.active .label{color:#fff;}
+.nav a.active{color:white;}
+.nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:2px;background:#dc2626;
+}
 
 .content{
   max-width:900px;
-  margin:32px auto 60px;
+  margin:0 auto 60px;
   padding:0 20px;
 }
 
-.card{
-  background:#111827;
-  padding:30px;
-  border-radius:12px;
-}
+.card{background:#111827;padding:30px;border-radius:12px;}
 </style>
 </head>
 <body>
@@ -55,32 +51,18 @@ body{
 <section class="hero">
   <h1>BLOG</h1>
   <h2>Engineering Thoughts & Breakdowns</h2>
+
+  <div class="nav">
+    <a href="index.html">LANDING</a>
+    <a href="projects/index.html">PORTFOLIO</a>
+    <a href="blog.html" class="active">BLOG</a>
+  </div>
 </section>
-
-<div class="breadcrumbs">
-  <a class="crumb" href="index.html">
-    <span class="bracket">[</span>
-    <span class="label">LANDING</span>
-    <span class="bracket">]</span>
-  </a>
-
-  <a class="crumb" href="projects/index.html">
-    <span class="bracket">[</span>
-    <span class="label">PORTFOLIO</span>
-    <span class="bracket">]</span>
-  </a>
-
-  <span class="crumb active">
-    <span class="bracket">[</span>
-    <span class="label">BLOG</span>
-    <span class="bracket">]</span>
-  </span>
-</div>
 
 <section class="content">
   <div class="card">
     <h3>First Entry</h3>
-    <p>Engineering notes and breakdowns will appear here.</p>
+    <p>Engineering notes will appear here.</p>
   </div>
 </section>
 
