@@ -6,6 +6,10 @@
 <title>Perez Automation</title>
 
 <style>
+html{
+  overflow-y:scroll;
+}
+
 body{
   margin:0;
   font-family:"Segoe UI",Roboto,sans-serif;
@@ -33,40 +37,26 @@ body{
   color:#9ca3af;
 }
 
-/* STABLE NAV (NO SHIFT EVER) */
+/* PERFECTLY STABLE NAV */
 .nav{
-  display:flex;
-  justify-content:center;
-  gap:40px;
-  margin-top:55px;
-  margin-bottom:40px;
+  width:520px;
+  margin:55px auto 40px auto;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  text-align:center;
   font-size:.95rem;
   letter-spacing:1px;
 }
 
 .nav a{
-  width:140px;              /* FIXED WIDTH = NO MOVEMENT */
-  text-align:center;
   color:#6b7280;
   text-decoration:none;
   padding-bottom:10px;
-  position:relative;
 }
-
-.nav a:hover{color:white;}
 
 .nav a.active{
   color:white;
-}
-
-.nav a.active::after{
-  content:"";
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:0;
-  height:2px;
-  background:#dc2626;
+  border-bottom:2px solid #dc2626;
 }
 
 /* IMAGE */
@@ -99,7 +89,9 @@ body{
   border-radius:12px;
 }
 
-.card.full{grid-column:1/span 2;}
+.card.full{
+  grid-column:1/span 2;
+}
 
 footer{
   text-align:center;
