@@ -13,47 +13,62 @@ body{
   color:#e5e7eb;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index:-1;
+/* HERO */
+.hero{
+  text-align:center;
+  margin-top:140px;
 }
 
-/* HERO */
-.hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
+.hero h1{
+  font-size:4rem;
+  letter-spacing:8px;
+  margin:0;
+  font-weight:300;
+}
 
-/* MAIN BREADCRUMBS */
-.breadcrumbs{
+.hero h2{
+  font-size:1.05rem;
+  margin-top:20px;
+  font-weight:700;
+  color:#9ca3af;
+}
+
+/* CINEMATIC NAV */
+.nav{
   display:flex;
   justify-content:center;
-  gap:40px;
-  margin-top:26px;
-  font-size:1.05rem;
-  font-weight:700;
+  gap:70px;
+  margin-top:55px; /* BIGGER space like Corematic */
+  margin-bottom:40px;
+  font-size:.95rem;
+  letter-spacing:1px;
 }
 
-/* fixed box prevents shifting */
-.crumb{
-  width:130px;
-  text-align:center;
-  text-decoration:none;
+.nav a{
   color:#6b7280;
+  text-decoration:none;
+  padding-bottom:8px;
+  position:relative;
 }
 
-.bracket{opacity:0;}
-.active .bracket{opacity:1;color:#dc2626;}
-.active .label{color:#fff;}
+.nav a.active{
+  color:white;
+}
 
-/* FEATURE IMAGE */
+.nav a.active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:2px;
+  background:#dc2626;
+}
+
+/* IMAGE */
 .feature-image{
   max-width:1300px;
-  margin:32px auto 32px;
+  margin:0 auto 32px;
   padding:0 25px;
 }
 
@@ -62,11 +77,6 @@ body::before{
   height:420px;
   object-fit:cover;
   border-radius:12px;
-  transition:.25s ease;
-}
-
-.feature-image img:hover{
-  box-shadow:0 0 18px rgba(220,38,38,.18);
 }
 
 /* CONTENT */
@@ -83,39 +93,10 @@ body::before{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.2s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 18px rgba(220,38,38,.12);
 }
 
 .card.full{grid-column:1/span 2;}
-
-.card h3{
-  margin-top:0;
-  padding-top:12px;
-  position:relative;
-}
-
-.card h3::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:36px;
-  height:2px;
-  background:#dc2626;
-}
-
 footer{text-align:center;padding:60px 20px;color:#6b7280;}
-
-@media(max-width:900px){
-  .content{grid-template-columns:1fr;}
-  .card.full{grid-column:1;}
-  .feature-image img{height:300px;}
-}
 </style>
 </head>
 <body>
@@ -123,57 +104,24 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
+
+  <div class="nav">
+    <a href="index.html" class="active">LANDING</a>
+    <a href="projects/index.html">PORTFOLIO</a>
+    <a href="blog.html">BLOG</a>
+  </div>
 </section>
-
-<div class="breadcrumbs">
-  <span class="crumb active">
-    <span class="bracket">[</span>
-    <span class="label">LANDING</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a class="crumb" href="projects/index.html">
-    <span class="bracket">[</span>
-    <span class="label">PORTFOLIO</span>
-    <span class="bracket">]</span>
-  </a>
-
-  <a class="crumb" href="blog.html">
-    <span class="bracket">[</span>
-    <span class="label">BLOG</span>
-    <span class="bracket">]</span>
-  </a>
-</div>
 
 <section class="feature-image">
   <img src="photo1.jpeg">
 </section>
 
 <section class="content">
-  <div class="card">
-    <h3>Featured Project</h3>
-    <p>A featured build will be highlighted here.</p>
-  </div>
-
-  <div class="card">
-    <h3>Purpose</h3>
-    <p>Automation, mechatronics and automotive engineering journal.</p>
-  </div>
-
-  <div class="card full">
-    <h3>About</h3>
-    <p>Engineering journey documentation.</p>
-  </div>
-
-  <div class="card">
-    <h3>Skills</h3>
-    <p>CAD, MATLAB, Arduino, Python.</p>
-  </div>
-
-  <div class="card">
-    <h3>Connect</h3>
-    <p>Socials coming soon.</p>
-  </div>
+  <div class="card"><h3>Featured Project</h3></div>
+  <div class="card"><h3>Purpose</h3></div>
+  <div class="card full"><h3>About</h3></div>
+  <div class="card"><h3>Skills</h3></div>
+  <div class="card"><h3>Connect</h3></div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
