@@ -6,6 +6,7 @@
 <title>Portfolio - Perez Automation</title>
 
 <style>
+/* GLOBAL */
 body{
   margin:0;
   font-family:"Segoe UI",Roboto,sans-serif;
@@ -24,11 +25,26 @@ body::before{
 }
 
 /* HERO */
-.hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:6px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:700;color:#9ca3af;}
+.hero{
+  text-align:center;
+  margin-top:140px;
+}
 
-/* BREADCRUMBS */
+.hero h1{
+  font-size:4rem;
+  letter-spacing:6px;
+  margin:0;
+  font-weight:300;
+}
+
+.hero h2{
+  font-size:1.05rem;
+  margin-top:22px;
+  font-weight:700;
+  color:#9ca3af;
+}
+
+/* MAIN BREADCRUMBS (STABLE / FIXED WIDTH) */
 .breadcrumbs{
   display:flex;
   justify-content:center;
@@ -38,22 +54,29 @@ body::before{
   font-weight:700;
 }
 
-.breadcrumbs a,
-.breadcrumbs span{
-  width:110px;
+/* invisible fixed boxes so nothing shifts */
+.crumb{
+  width:130px;
   text-align:center;
-  color:#6b7280;
   text-decoration:none;
+  color:#6b7280;
 }
 
 .bracket{opacity:0;}
-.active .bracket{opacity:1;color:#dc2626;}
-.active .label{color:#fff;}
 
-/* CONTENT */
+.active .bracket{
+  opacity:1;
+  color:#dc2626;
+}
+
+.active .label{
+  color:#ffffff;
+}
+
+/* CONTENT — spacing matches landing image distance */
 .content{
   max-width:900px;
-  margin:48px auto 60px;
+  margin:32px auto 60px;
   padding:0 20px;
 }
 
@@ -85,30 +108,34 @@ body::before{
   background:#dc2626;
 }
 
-footer{text-align:center;padding:60px 20px;color:#6b7280;}
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+}
 </style>
 </head>
 <body>
 
 <section class="hero">
-  <h1>PORTFOLIO</h1>
-  <h2>Recent Engineering Work</h2>
+  <h1>RECENT</h1>
+  <h2>Focus ST</h2>
 </section>
 
 <div class="breadcrumbs">
-  <a href="../index.html">
+  <a class="crumb" href="../index.html">
     <span class="bracket">[</span>
     <span class="label">LANDING</span>
     <span class="bracket">]</span>
   </a>
 
-  <span class="active">
+  <span class="crumb active">
     <span class="bracket">[</span>
     <span class="label">PORTFOLIO</span>
     <span class="bracket">]</span>
   </span>
 
-  <a href="../blog.html">
+  <a class="crumb" href="../blog.html">
     <span class="bracket">[</span>
     <span class="label">BLOG</span>
     <span class="bracket">]</span>
@@ -118,7 +145,7 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
 <section class="content">
   <div class="card">
     <h3>Recent Projects</h3>
-    <p>This section will highlight the latest builds currently in development.</p>
+    <p>This section will highlight the latest Focus ST work and engineering builds currently in development.</p>
   </div>
 </section>
 
