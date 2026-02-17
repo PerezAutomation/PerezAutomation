@@ -15,10 +15,27 @@ body{
   color:#e5e7eb;
 }
 
-.hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:8px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:20px;font-weight:700;color:#9ca3af;}
+/* HERO — MATCH LANDING EXACTLY */
+.hero{
+  text-align:center;
+  margin-top:140px;
+}
 
+.hero h1{
+  font-size:4rem;
+  letter-spacing:8px;
+  margin:0;
+  font-weight:300;
+}
+
+.hero h2{
+  font-size:1.05rem;
+  margin-top:20px;
+  font-weight:700;
+  color:#9ca3af;
+}
+
+/* NAV */
 .nav{
   display:flex;
   justify-content:center;
@@ -26,6 +43,7 @@ body{
   margin-top:55px;
   margin-bottom:40px;
   font-size:.95rem;
+  letter-spacing:1px;
 }
 
 .nav a{
@@ -35,7 +53,9 @@ body{
   position:relative;
 }
 
-.nav a.active{color:white;}
+.nav a.active{
+  color:white;
+}
 
 .nav a.active::after{
   content:"";
@@ -47,15 +67,25 @@ body{
   background:#dc2626;
 }
 
-.content{max-width:900px;margin:0 auto 60px;padding:0 20px;}
-.card{background:#111827;padding:30px;border-radius:12px;}
+.content{
+  max-width:900px;
+  margin:0 auto 60px;
+  padding:0 20px;
+}
+
+.card{
+  background:#111827;
+  padding:30px;
+  border-radius:12px;
+}
 </style>
 </head>
 <body>
 
 <section class="hero">
-  <h1>RECENT</h1>
-  <h2>Focus ST</h2>
+  <!-- SAME TITLE SCALE AS LANDING -->
+  <h1>PEREZ AUTOMATION</h1>
+  <h2>Recent Work — Focus ST</h2>
 
   <div class="nav">
     <a href="../index.html">LANDING</a>
@@ -67,6 +97,7 @@ body{
 <section class="content">
   <div class="card">
     <h3>Recent Projects</h3>
+    <p>Latest Focus ST work.</p>
   </div>
 </section>
 
