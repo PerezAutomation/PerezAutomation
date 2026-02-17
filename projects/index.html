@@ -5,34 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-
 <style>
+::selection{ background:#7f1d1d; color:#fff; }
+
 body{
   margin:0;
-  font-family:"Inter",sans-serif;
+  font-family:"Segoe UI", Roboto, sans-serif;
   color:#e5e7eb;
   background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.06), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 45%),
+    radial-gradient(circle at 25% 30%, rgba(220,38,38,0.07), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(220,38,38,0.05), transparent 50%),
     #0b0f14;
-  animation:fadeIn .6s ease;
 }
 
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* HERO */
+.hero{ text-align:center; margin-top:140px; }
+.hero h1{ font-size:4rem; letter-spacing:8px; margin:0; font-weight:300; }
+.hero h2{ font-size:1.02rem; margin-top:18px; font-weight:400; color:#9ca3af; }
 
-.hero{text-align:center;margin-top:140px;}
-.hero h1{font-size:4rem;letter-spacing:8px;margin:0;font-weight:300;}
-.hero h2{font-size:1.05rem;margin-top:22px;font-weight:600;color:#9ca3af;}
-
-.nav-wrap{position:sticky;top:0;background:rgba(11,15,20,.65);backdrop-filter:blur(6px);padding-top:60px;padding-bottom:30px;}
-
-.nav{display:flex;justify-content:center;gap:80px;font-size:.95rem;}
-
-.nav a{color:#6b7280;text-decoration:none;padding-bottom:12px;position:relative;transition:.25s;}
-.nav a:hover{color:#fff;text-shadow:0 0 8px rgba(255,255,255,.35);}
-.nav a.active{color:#fff;}
-
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:center;
+  gap:70px;
+  margin-top:110px; /* 2× bigger gap */
+  margin-bottom:45px;
+  font-size:.95rem;
+  letter-spacing:1px;
+}
+.nav a{
+  color:#6b7280;
+  text-decoration:none;
+  padding-bottom:12px;
+  position:relative;
+  transition:color .2s ease, text-shadow .2s ease;
+}
+.nav a:hover{ color:#fff; text-shadow:0 0 6px rgba(255,255,255,.25); }
+.nav a.active{ color:#fff; }
 .nav a::after{
   content:"";
   position:absolute;
@@ -41,20 +50,28 @@ body{
   width:0%;
   height:2px;
   background:#dc2626;
-  transition:.35s;
   transform:translateX(-50%);
+  transition:width .28s ease;
 }
-
 .nav a:hover::after,
-.nav a.active::after{width:100%;}
+.nav a.active::after{ width:100%; }
 
-.content{max-width:900px;margin:40px auto 60px;padding:0 20px;}
-.card{background:#111827;padding:30px;border-radius:12px;transition:.25s;}
-
+/* CONTENT */
+.content{ max-width:900px; margin:0 auto 60px; padding:0 20px; }
+.card{
+  background:#111827;
+  padding:30px;
+  border-radius:12px;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(220,38,38,.25),0 12px 30px rgba(0,0,0,.5);
+  box-shadow:0 0 22px rgba(220,38,38,.22), 0 14px 32px rgba(0,0,0,.55);
 }
+.card h3{ margin-top:0; font-weight:500; }
+.card p{ font-weight:400; color:#cfd3da; }
+
+footer{ text-align:center; padding:60px 20px; color:#6b7280; }
 </style>
 </head>
 <body>
@@ -62,20 +79,18 @@ body{
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2>Recent Work — Focus ST</h2>
-</section>
 
-<div class="nav-wrap">
   <div class="nav">
     <a href="../index.html">LANDING</a>
     <a href="index.html" class="active">PORTFOLIO</a>
     <a href="../blog.html">BLOG</a>
   </div>
-</div>
+</section>
 
 <section class="content">
   <div class="card">
     <h3>Recent Projects</h3>
-    <p>Latest automotive and engineering builds.</p>
+    <p>Latest automotive and engineering builds and documentation.</p>
   </div>
 </section>
 
