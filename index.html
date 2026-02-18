@@ -17,13 +17,9 @@ body{
   background:#0b0f14;
   position:relative;
   overflow-x:hidden;
-
-  opacity:0;
-  animation:pageFade .35s ease forwards;
 }
 
-@keyframes pageFade{ to{opacity:1;} }
-
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -45,25 +41,11 @@ body::after{
   opacity:.55;
 }
 
+/* HERO */
 .hero{
   text-align:center;
   margin-top:110px;
   position:relative;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:38%;
-  width:1400px;
-  height:600px;
-  transform:translate(-50%,-50%);
-  background:
-    radial-gradient(circle, rgba(220,38,38,.07), rgba(220,38,38,.03), transparent 70%);
-  filter:blur(90px);
-  opacity:.45;
-  z-index:-1;
 }
 
 .hero h1{
@@ -71,7 +53,6 @@ body::after{
   letter-spacing:10px;
   margin:0;
   font-weight:300;
-  font-family:"Segoe UI",Roboto,sans-serif;
 }
 
 .tagline{
@@ -96,19 +77,18 @@ body::after{
   to{opacity:1; transform:translateY(0);}
 }
 
-/* divider styled like breadcrumb underline */
+/* SHORT DIVIDER */
 .hero-divider{
-  width:420px;
+  width:80px;
   height:2px;
   background:#dc2626;
-  margin:30px auto 30px;
-  opacity:.85;
+  margin:16px auto 22px;
 }
 
-/* BREADCRUMBS (ORIGINAL STYLE RESTORED) */
+/* BREADCRUMBS */
 .nav-wrap{
   width:420px;
-  margin:26px auto 60px;
+  margin:0 auto 60px;
 }
 
 .nav{
@@ -165,6 +145,7 @@ body::after{
   border-radius:12px;
 }
 
+/* CONTENT */
 .content{
   max-width:1300px;
   margin:0 auto 80px;
@@ -196,6 +177,8 @@ footer{
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
   <p class="subtag">Designing and building high-performance automotive systems.</p>
 
+  <div class="hero-divider"></div>
+
   <div class="nav-wrap">
     <div class="nav">
       <a href="index.html" class="active"><span>LANDING</span></a>
@@ -204,8 +187,6 @@ footer{
     </div>
   </div>
 </section>
-
-<div class="hero-divider"></div>
 
 <section class="feature-image">
   <img src="photo1.jpeg">
@@ -238,14 +219,6 @@ footer{
 </section>
 
 <footer>Connect — Coming Soon</footer>
-
-<script>
-document.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('click',()=>{
-    document.body.style.opacity='0';
-  });
-});
-</script>
 
 </body>
 </html>
