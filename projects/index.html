@@ -87,7 +87,7 @@ body::after{
 /* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 18px;
+  margin:26px auto 10px; /* tighter gap */
 }
 
 .nav{
@@ -129,35 +129,34 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV — tighter + faster fade */
+/* SECONDARY NAV — COMPACT + SAME WIDTH */
 .subnav-wrap{
-  max-width:560px;        /* slightly tighter width */
-  margin:8px auto 64px;
+  width:420px;              /* EXACT same as primary */
+  margin:0 auto 60px;       /* almost no gap */
   opacity:0;
-  transform:translateY(-12px);
-  animation:dropIn .45s ease-out .12s forwards,
-            fadeIn .45s ease-out .12s forwards; /* faster fade */
+  transform:translateY(-8px);
+  animation:dropIn .35s ease-out .08s forwards,
+            fadeIn .4s ease-out .08s forwards;
 }
 
 .subnav{
   display:flex;
-  justify-content:center;
-  gap:24px;               /* tighter spacing between items */
-  font-size:.86rem;
-  letter-spacing:.45px;
+  justify-content:space-between;
+  font-size:.84rem;         /* slightly smaller but close */
+  letter-spacing:.35px;
 }
 
 .subnav a{
-  flex:1;
   text-align:center;
   color:#6b7280;
   text-decoration:none;
+  flex:1;
 }
 
 .subnav a span{
   position:relative;
   display:inline-block;
-  padding-bottom:7px;
+  padding-bottom:6px;
 }
 
 .subnav a:hover{color:#fff;}
@@ -182,11 +181,11 @@ body::after{
 
 /* DROP */
 @keyframes dropIn{
-  from{ transform:translateY(-14px); }
+  from{ transform:translateY(-10px); }
   to{ transform:translateY(0); }
 }
 
-/* FASTER FADE */
+/* QUICK FADE */
 @keyframes fadeIn{
   from{ opacity:0; }
   to{ opacity:1; }
@@ -203,27 +202,6 @@ body::after{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.18s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.55),
-    0 0 14px rgba(220,38,38,.16);
-}
-
-.card h3{
-  margin:0 0 12px 0;
-  font-family:"Space Grotesk";
-  font-size:1.3rem;
-}
-
-.card p{
-  margin:0;
-  font-size:.95rem;
-  color:#cfd3da;
-  line-height:1.7;
 }
 
 footer{
