@@ -14,21 +14,18 @@ body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#e5e7eb;
-
-  /* much larger, softer gradients */
-  background:
-    radial-gradient(1200px 600px at 50% 0%, rgba(220,38,38,0.045), transparent 70%),
-    radial-gradient(1000px 500px at 50% 60%, rgba(220,38,38,0.02), transparent 75%),
-    #0b0f14;
+  background:#0b0f14;
 }
 
-/* softer, bigger vignette so no visible ring */
-body::after{
+/* VERY SUBTLE DEPTH (cleaner, no banding) */
+body::before{
   content:"";
   position:fixed;
-  inset:-20%;
+  inset:0;
   pointer-events:none;
-  background:radial-gradient(circle at center, transparent 65%, rgba(0,0,0,.06));
+  background:
+    radial-gradient(circle at 50% 0%, rgba(220,38,38,.035), transparent 65%),
+    radial-gradient(circle at 50% 100%, rgba(0,0,0,.25), transparent 60%);
 }
 
 /* HERO */
@@ -47,19 +44,19 @@ body::after{
   position:relative;
 }
 
-/* glow moved up + blended */
+/* CLEANER, SOFTER TITLE GLOW */
 .hero h1::before{
   content:"";
   position:absolute;
   left:50%;
   top:40%;
-  width:600px;
-  height:200px;
+  width:520px;
+  height:160px;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(220,38,38,.085), rgba(220,38,38,.03), transparent 80%);
+  background:radial-gradient(circle, rgba(220,38,38,.08), transparent 75%);
+  filter:blur(36px);
+  opacity:.55;
   z-index:-1;
-  filter:blur(40px);
-  opacity:.6;
 }
 
 .tagline{
@@ -104,7 +101,7 @@ body::after{
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
-/* center-out underline */
+/* underline grows from center */
 .nav a span::after{
   content:"";
   position:absolute;
@@ -138,11 +135,11 @@ body::after{
   transition:box-shadow .25s;
 }
 
-/* slightly softer glow */
+/* FINAL BALANCED IMAGE GLOW */
 .feature-image img:hover{
   box-shadow:
-    0 0 18px rgba(220,38,38,.18),
-    0 0 30px rgba(220,38,38,.08);
+    0 0 14px rgba(220,38,38,.16),
+    0 0 24px rgba(220,38,38,.08);
 }
 
 /* CONTENT */
@@ -171,7 +168,7 @@ body::after{
   transform:translateY(-4px);
   box-shadow:
     0 10px 26px rgba(0,0,0,.5),
-    0 0 14px rgba(220,38,38,.14);
+    0 0 12px rgba(220,38,38,.14);
 }
 
 .card h3{
