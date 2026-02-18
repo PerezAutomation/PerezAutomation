@@ -9,7 +9,6 @@
 
 <style>
 html{overflow-y:scroll;}
-
 body{
   margin:0;
   font-family:"Inter",sans-serif;
@@ -19,14 +18,13 @@ body{
   overflow-x:hidden;
 }
 
-/* background glow + grid */
+/* background */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  background:
-    radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
+  background:radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
 }
 body::after{
   content:"";
@@ -46,7 +44,6 @@ body::after{
   margin-top:110px;
   position:relative;
 }
-
 .hero::before{
   content:"";
   position:absolute;
@@ -55,8 +52,7 @@ body::after{
   width:1400px;
   height:600px;
   transform:translate(-50%,-50%);
-  background:
-    radial-gradient(circle, rgba(220,38,38,.07), rgba(220,38,38,.03), transparent 70%);
+  background:radial-gradient(circle, rgba(220,38,38,.07), rgba(220,38,38,.03), transparent 70%);
   filter:blur(90px);
   opacity:.45;
   z-index:-1;
@@ -81,7 +77,6 @@ body::after{
   margin-top:10px;
   font-size:1rem;
   color:#9ca3af;
-  letter-spacing:.35px;
 }
 
 /* PRIMARY NAV */
@@ -146,7 +141,6 @@ body::after{
 }
 .subnav a:hover{color:#fff;}
 .subnav a.active{color:#fff;}
-
 .subnav a span::after{
   content:"";
   position:absolute;
@@ -173,17 +167,6 @@ body::after{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.18s ease;
-}
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.55),
-    0 0 14px rgba(220,38,38,.16);
-}
-.card h3{
-  margin:0 0 12px 0;
-  font-family:"Space Grotesk";
 }
 footer{
   text-align:center;
@@ -199,7 +182,6 @@ footer{
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
   <p class="subtag">Portfolio</p>
 
-  <!-- PRIMARY -->
   <div class="nav-wrap">
     <div class="nav">
       <a href="../index.html"><span>LANDING</span></a>
@@ -208,10 +190,9 @@ footer{
     </div>
   </div>
 
-  <!-- SECONDARY -->
   <div class="subnav-wrap">
     <div class="subnav">
-      <a href="index.html" class="active"><span>RECENTS</span></a>
+      <a href="index.html" class="active"><span>RECENT</span></a>
       <a href="focusst.html"><span>FOCUS ST</span></a>
       <a href="honours-a.html"><span>HONOURS A</span></a>
       <a href="honours-b.html"><span>HONOURS B</span></a>
@@ -222,7 +203,7 @@ footer{
 <section class="content">
   <div class="card">
     <h3>Recent Work</h3>
-    <p>Latest engineering builds and development logs.</p>
+    <p>Latest engineering builds and documentation.</p>
   </div>
 </section>
 
