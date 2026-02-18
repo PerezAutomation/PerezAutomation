@@ -15,18 +15,35 @@ body{
   font-family:"Inter",sans-serif;
   color:#e5e7eb;
   background:#0b0f14;
+  position:relative;
+  overflow-x:hidden;
 }
 
-/* NATURAL LIGHT DEPTH (irregular, not centered) */
+/* DYNAMIC ATMOSPHERIC LAYER */
 body::before{
   content:"";
   position:fixed;
-  inset:0;
+  inset:-20%;
   pointer-events:none;
   background:
-    radial-gradient(800px 500px at 20% 10%, rgba(220,38,38,.05), transparent 70%),
-    radial-gradient(700px 400px at 80% 20%, rgba(59,130,246,.03), transparent 70%),
-    radial-gradient(900px 600px at 60% 80%, rgba(220,38,38,.025), transparent 70%);
+    radial-gradient(900px 500px at 50% 0%, rgba(220,38,38,.035), transparent 70%),
+    radial-gradient(700px 400px at 70% 60%, rgba(59,130,246,.03), transparent 70%),
+    radial-gradient(800px 500px at 30% 80%, rgba(220,38,38,.02), transparent 70%);
+  animation: drift 28s ease-in-out infinite alternate;
+  filter: blur(20px);
+}
+
+/* VERY SLOW LIGHT DRIFT */
+@keyframes drift{
+  0%{
+    transform: translateX(-2%) translateY(-1%) scale(1);
+  }
+  50%{
+    transform: translateX(2%) translateY(1%) scale(1.03);
+  }
+  100%{
+    transform: translateX(-1%) translateY(2%) scale(1.02);
+  }
 }
 
 /* HERO */
