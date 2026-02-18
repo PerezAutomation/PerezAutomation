@@ -87,7 +87,7 @@ body::after{
 /* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 22px; /* slightly more space below */
+  margin:26px auto 18px; /* medium spacing */
 }
 
 .nav{
@@ -129,19 +129,20 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV — slightly smaller + smoother drop */
+/* SECONDARY NAV — slightly smaller again */
 .subnav-wrap{
   width:600px;
-  margin:10px auto 64px; /* slightly more gap between breadcrumbs */
+  margin:8px auto 64px; /* between last two versions */
   opacity:0;
   transform:translateY(-12px);
-  animation:dropIn .45s ease-out .12s forwards;
+  animation:dropIn .45s ease-out .12s forwards,
+            fadeIn 1.2s ease-out .12s forwards;
 }
 
 .subnav{
   display:flex;
   justify-content:space-between;
-  font-size:.88rem; /* VERY subtle size reduction */
+  font-size:.86rem; /* slightly smaller */
   letter-spacing:.45px;
 }
 
@@ -178,15 +179,23 @@ body::after{
   width:100%;
 }
 
-/* SOFT DROP — no bounce */
+/* DROP (same speed) */
 @keyframes dropIn{
   from{
-    opacity:0;
     transform:translateY(-14px);
   }
   to{
-    opacity:1;
     transform:translateY(0);
+  }
+}
+
+/* LONGER FADE */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:1;
   }
 }
 
