@@ -5,32 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perez Automation</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-/* Selection (drag highlight) color tuned to theme */
-::selection{ background:#7f1d1d; color:#fff; }
+::selection{background:#7f1d1d;color:#fff;}
 
 body{
   margin:0;
-  font-family:"Segoe UI", Roboto, sans-serif;
+  font-family:"Inter",sans-serif;
   color:#e5e7eb;
   background:
-    radial-gradient(circle at 25% 30%, rgba(220,38,38,0.07), transparent 45%),
-    radial-gradient(circle at 80% 75%, rgba(220,38,38,0.05), transparent 50%),
+    radial-gradient(circle at 25% 30%, rgba(220,38,38,0.05), transparent 45%),
     #0b0f14;
 }
 
 /* HERO */
-.hero{ text-align:center; margin-top:140px; }
-.hero h1{ font-size:4rem; letter-spacing:8px; margin:0; font-weight:300; }
-.hero h2{ font-size:1.02rem; margin-top:18px; font-weight:400; color:#9ca3af; }
+.hero{text-align:center;margin-top:140px;}
+.hero h1{
+  font-size:4rem;
+  letter-spacing:8px;
+  margin:0;
+  font-weight:300;
+  font-family:"Segoe UI",Roboto,sans-serif;
+}
+.hero h2{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:1rem;
+  margin-top:18px;
+  font-weight:400;
+  color:#9ca3af;
+}
 
-/* BREADCRUMBS — stable, centered */
+/* NAV — stable version */
 .nav{
   display:flex;
   justify-content:center;
   gap:70px;
-  margin-top:110px; /* 2× bigger gap under subtitle */
-  margin-bottom:45px;
+  margin-top:60px;
+  margin-bottom:40px;
   font-size:.95rem;
   letter-spacing:1px;
 }
@@ -38,19 +50,14 @@ body{
 .nav a{
   color:#6b7280;
   text-decoration:none;
-  padding-bottom:12px;
+  padding-bottom:10px;
   position:relative;
-  transition:color .2s ease, text-shadow .2s ease;
+  transition:.2s;
 }
 
-.nav a:hover{
-  color:#fff;
-  text-shadow:0 0 6px rgba(255,255,255,.25);
-}
+.nav a:hover{color:#fff;text-shadow:0 0 6px rgba(255,255,255,.25);}
+.nav a.active{color:#fff;}
 
-.nav a.active{ color:#fff; }
-
-/* animated underline grows from center */
 .nav a::after{
   content:"";
   position:absolute;
@@ -60,36 +67,28 @@ body{
   height:2px;
   background:#dc2626;
   transform:translateX(-50%);
-  transition:width .28s ease;
+  transition:.25s;
 }
-.nav a:hover::after,
-.nav a.active::after{ width:100%; }
 
-/* FEATURE IMAGE — slightly taller + soft overlay */
+.nav a:hover::after,
+.nav a.active::after{width:100%;}
+
+/* IMAGE */
 .feature-image{
   max-width:1300px;
-  margin:0 auto 32px;
+  margin:0 auto 30px;
   padding:0 25px;
-  position:relative;
 }
 .feature-image img{
   width:100%;
-  height:340px; /* taller so head isn't cut */
+  height:320px;
   object-fit:cover;
+  object-position:center 30%; /* more top, less bottom */
   border-radius:12px;
-  transition:box-shadow .25s ease, transform .25s ease;
-}
-.feature-image::after{
-  content:"";
-  position:absolute;
-  inset:0 25px 0 25px;
-  border-radius:12px;
-  pointer-events:none;
-  background:linear-gradient(to bottom, rgba(11,15,20,0) 40%, rgba(11,15,20,.25) 100%);
+  transition:box-shadow .25s;
 }
 .feature-image img:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 28px rgba(220,38,38,.22), 0 12px 28px rgba(0,0,0,.5);
+  box-shadow:0 0 30px rgba(220,38,38,.25);
 }
 
 /* CONTENT */
@@ -106,31 +105,39 @@ body{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:transform .22s ease, box-shadow .22s ease;
+  transition:box-shadow .2s;
+  font-family:"Inter",sans-serif;
 }
 .card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 22px rgba(220,38,38,.22), 0 14px 32px rgba(0,0,0,.55);
+  box-shadow:0 0 20px rgba(220,38,38,.2);
 }
-.card.full{ grid-column:1/span 2; }
 
-.card h3{ margin-top:0; font-weight:500; }
-.card p{ font-weight:400; color:#cfd3da; }
-
-footer{ text-align:center; padding:60px 20px; color:#6b7280; }
-
-@media(max-width:900px){
-  .content{ grid-template-columns:1fr; }
-  .card.full{ grid-column:1; }
-  .feature-image img{ height:260px; }
+.card h3{
+  margin-top:18px;
+  font-weight:500;
+  position:relative;
 }
+
+/* red strip accent */
+.card h3::before{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:0;
+  width:36px;
+  height:2px;
+  background:#dc2626;
+}
+
+.card.full{grid-column:1/span 2;}
+footer{text-align:center;padding:60px 20px;color:#6b7280;}
 </style>
 </head>
 <body>
 
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
-  <h2>Automotive, Automation and Mechatronic Enthusiast</h2>
+  <h2>Automotive, Automation and Mechatronic Engineering</h2>
 
   <div class="nav">
     <a href="index.html" class="active">LANDING</a>
@@ -140,7 +147,7 @@ footer{ text-align:center; padding:60px 20px; color:#6b7280; }
 </section>
 
 <section class="feature-image">
-  <img src="photo1.jpeg" alt="Feature">
+  <img src="photo1.jpeg">
 </section>
 
 <section class="content">
@@ -151,17 +158,17 @@ footer{ text-align:center; padding:60px 20px; color:#6b7280; }
 
   <div class="card">
     <h3>Purpose</h3>
-    <p>Documenting ideas, designs and progress across automation, mechatronics and modern engineering systems.</p>
+    <p>Documenting ideas, designs and progress across automation, mechatronics and engineering systems.</p>
   </div>
 
   <div class="card full">
     <h3>About</h3>
-    <p>Established in Melbourne, this platform follows the journey through Mechatronics Engineering, exploring automotive systems, robotics and manufacturing technologies.</p>
+    <p>Engineering journey through automotive, robotics and manufacturing technologies.</p>
   </div>
 
   <div class="card">
-    <h3>Skills & Tools</h3>
-    <p>SolidWorks, MATLAB, Python, Arduino, Technical Design</p>
+    <h3>Skills</h3>
+    <p>SolidWorks, MATLAB, Python, Arduino</p>
   </div>
 
   <div class="card">
