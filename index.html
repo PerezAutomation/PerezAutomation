@@ -19,28 +19,27 @@ body{
   overflow-x:hidden;
 }
 
-/* DEPTH + MID-PAGE GLOW */
+/* MID-PAGE GLOW (more visible, centered behind cards) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(900px 420px at 50% 0%, rgba(220,38,38,.035), transparent 70%),
-    radial-gradient(800px 420px at 50% 55%, rgba(220,38,38,.025), transparent 70%);
+    radial-gradient(900px 420px at 50% 60%, rgba(220,38,38,.09), transparent 70%);
 }
 
-/* ENGINEERING GRID TEXTURE */
+/* MORE VISIBLE GRID (same size, higher contrast) */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   background-image:
-    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
   background-size:72px 72px;
-  opacity:.45;
+  opacity:.55;
 }
 
 /* HERO */
@@ -59,18 +58,18 @@ body::after{
   position:relative;
 }
 
-/* CLEAN MINIMAL TITLE GLOW */
+/* TITLE GLOW — directly behind text */
 .hero h1::before{
   content:"";
   position:absolute;
   left:50%;
-  top:42%;
-  width:520px;
-  height:160px;
+  top:50%;
+  width:560px;
+  height:180px;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(220,38,38,.07), transparent 75%);
-  filter:blur(38px);
-  opacity:.6;
+  background:radial-gradient(circle, rgba(220,38,38,.12), transparent 70%);
+  filter:blur(42px);
+  opacity:.75;
   z-index:-1;
 }
 
@@ -223,7 +222,7 @@ footer{
 </section>
 
 <section class="feature-image">
-  <img src="photo1.jpeg">
+  <img src="photo1.jpeg" alt="">
 </section>
 
 <section class="content">
