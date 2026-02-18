@@ -129,9 +129,9 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV — now perfectly aligned */
+/* SECONDARY NAV — PYRAMID CENTERED */
 .subnav-wrap{
-  width:420px;  /* match primary width exactly */
+  width:480px;   /* slightly wider for pyramid feel */
   margin:8px auto 64px;
   opacity:0;
   transform:translateY(-10px);
@@ -141,8 +141,7 @@ body::after{
 
 .subnav{
   display:flex;
-  justify-content:space-between;
-  gap:18px;
+  justify-content:space-around;  /* key change */
   font-size:.85rem;
   letter-spacing:.35px;
 }
@@ -151,7 +150,6 @@ body::after{
   text-align:center;
   color:#6b7280;
   text-decoration:none;
-  flex:1;
 }
 
 .subnav a span{
