@@ -87,7 +87,7 @@ body::after{
 /* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 28px; /* increased spacing again */
+  margin:26px auto 28px;
 }
 
 .nav{
@@ -129,9 +129,9 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV */
+/* SECONDARY NAV — now perfectly aligned */
 .subnav-wrap{
-  width:520px;
+  width:420px;  /* match primary width exactly */
   margin:8px auto 64px;
   opacity:0;
   transform:translateY(-10px);
@@ -142,6 +142,7 @@ body::after{
 .subnav{
   display:flex;
   justify-content:space-between;
+  gap:18px;
   font-size:.85rem;
   letter-spacing:.35px;
 }
