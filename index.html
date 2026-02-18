@@ -5,19 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Perez Automation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400&display=swap" rel="stylesheet">
 
 <style>
-html{
-  overflow-y:scroll;
-}
+html{overflow-y:scroll;}
 
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#e5e7eb;
   background:
-    radial-gradient(circle at 25% 30%, rgba(220,38,38,0.05), transparent 45%),
+    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.04), transparent 40%),
     #0b0f14;
 }
 
@@ -33,17 +32,19 @@ body{
 .hero h2{
   font-family:"Space Grotesk";
   font-size:1rem;
-  margin-top:18px;
+  margin-top:10px;
   color:#9ca3af;
 }
 
-/* NAV */
+/* FIXED BREADCRUMB SYSTEM */
+.nav-wrap{
+  width:420px;
+  margin:60px auto 40px;
+}
+
 .nav{
   display:flex;
-  justify-content:center;
-  gap:70px;
-  margin-top:70px;
-  margin-bottom:40px;
+  justify-content:space-between;
   font-size:.95rem;
   letter-spacing:1px;
 }
@@ -53,6 +54,8 @@ body{
   text-decoration:none;
   padding-bottom:10px;
   position:relative;
+  width:140px;
+  text-align:center;
 }
 
 .nav a.active{color:#fff;}
@@ -62,7 +65,7 @@ body{
   position:absolute;
   left:50%;
   bottom:0;
-  width:0%;
+  width:0;
   height:2px;
   background:#dc2626;
   transform:translateX(-50%);
@@ -70,7 +73,7 @@ body{
 }
 
 .nav a:hover::after,
-.nav a.active::after{width:100%;}
+.nav a.active::after{width:70%;}
 
 /* IMAGE */
 .feature-image{
@@ -78,16 +81,14 @@ body{
   margin:0 auto 30px;
   padding:0 25px;
 }
-
 .feature-image img{
   width:100%;
   height:360px;
   object-fit:cover;
-  object-position:center 55%; /* balanced crop */
+  object-position:center 48%;
   border-radius:12px;
   transition:box-shadow .25s;
 }
-
 .feature-image img:hover{
   box-shadow:0 0 28px rgba(220,38,38,.25);
 }
@@ -104,13 +105,24 @@ body{
 
 .card{
   background:#111827;
-  padding:32px;
+  padding:26px;
   border-radius:12px;
-  transition:box-shadow .2s;
+  font-family:"Inter";
+}
+.card:hover{
+  box-shadow:0 0 18px rgba(220,38,38,.18);
 }
 
-.card:hover{
-  box-shadow:0 0 20px rgba(220,38,38,.2);
+.card h3{
+  margin:0 0 10px 0;
+  font-weight:600;
+  font-size:1.2rem;
+}
+
+.card p{
+  margin:0;
+  color:#cfd3da;
+  line-height:1.6;
 }
 
 .card.full{grid-column:1/span 2;}
@@ -124,10 +136,12 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
   <h1>PEREZ AUTOMATION</h1>
   <h2>Automotive, Automation and Mechatronic Engineering</h2>
 
-  <div class="nav">
-    <a href="index.html" class="active">LANDING</a>
-    <a href="projects/index.html">PORTFOLIO</a>
-    <a href="blog.html">BLOG</a>
+  <div class="nav-wrap">
+    <div class="nav">
+      <a href="index.html" class="active">LANDING</a>
+      <a href="projects/index.html">PORTFOLIO</a>
+      <a href="blog.html">BLOG</a>
+    </div>
   </div>
 </section>
 
@@ -136,11 +150,30 @@ footer{text-align:center;padding:60px 20px;color:#6b7280;}
 </section>
 
 <section class="content">
-  <div class="card"><h3>Featured Project</h3><p>Current builds and development.</p></div>
-  <div class="card"><h3>Purpose</h3><p>Documenting engineering progress and ideas.</p></div>
-  <div class="card full"><h3>About</h3><p>Journey through automotive and automation engineering.</p></div>
-  <div class="card"><h3>Skills</h3><p>SolidWorks, MATLAB, Python, Arduino</p></div>
-  <div class="card"><h3>Connect</h3><p>Socials coming soon.</p></div>
+  <div class="card">
+    <h3>Featured Project</h3>
+    <p>Current engineering builds and automotive development.</p>
+  </div>
+
+  <div class="card">
+    <h3>Purpose</h3>
+    <p>Documenting ideas, design work and progress across engineering disciplines.</p>
+  </div>
+
+  <div class="card full">
+    <h3>About</h3>
+    <p>Following the journey through automotive systems, automation and advanced manufacturing.</p>
+  </div>
+
+  <div class="card">
+    <h3>Skills</h3>
+    <p>SolidWorks, MATLAB, Python, Arduino</p>
+  </div>
+
+  <div class="card">
+    <h3>Connect</h3>
+    <p>Socials coming soon.</p>
+  </div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
