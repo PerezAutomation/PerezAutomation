@@ -87,7 +87,7 @@ body::after{
 /* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 10px; /* tighter gap */
+  margin:26px auto 18px; /* restored spacing */
 }
 
 .nav{
@@ -129,20 +129,20 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV — COMPACT + SAME WIDTH */
+/* SECONDARY NAV — more breathing room again */
 .subnav-wrap{
-  width:420px;              /* EXACT same as primary */
-  margin:0 auto 60px;       /* almost no gap */
+  width:520px;            /* wider row */
+  margin:8px auto 64px;   /* space between rows restored */
   opacity:0;
-  transform:translateY(-8px);
+  transform:translateY(-10px);
   animation:dropIn .35s ease-out .08s forwards,
-            fadeIn .4s ease-out .08s forwards;
+            fadeIn .45s ease-out .08s forwards;
 }
 
 .subnav{
   display:flex;
   justify-content:space-between;
-  font-size:.84rem;         /* slightly smaller but close */
+  font-size:.85rem;
   letter-spacing:.35px;
 }
 
@@ -185,7 +185,7 @@ body::after{
   to{ transform:translateY(0); }
 }
 
-/* QUICK FADE */
+/* FADE */
 @keyframes fadeIn{
   from{ opacity:0; }
   to{ opacity:1; }
