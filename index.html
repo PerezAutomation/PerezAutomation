@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perez Automation</title>
+<title>Portfolio - Perez Automation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
@@ -19,7 +19,7 @@ body{
   overflow-x:hidden;
 }
 
-/* SUBTLE GLOW UNDER CARDS ONLY (moved lower + softer) */
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
@@ -29,7 +29,6 @@ body::before{
     radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
 }
 
-/* GRID */
 body::after{
   content:"";
   position:fixed;
@@ -49,7 +48,6 @@ body::after{
   position:relative;
 }
 
-/* LARGE BUT SOFT AMBIENT HERO LIGHT */
 .hero::before{
   content:"";
   position:absolute;
@@ -80,17 +78,30 @@ body::after{
   color:#b7bec8;
 }
 
+/* TITLE FADE */
 .subtag{
   margin-top:10px;
   font-size:1rem;
   color:#9ca3af;
-  letter-spacing:.35px;
+  animation:titleFade .45s ease;
 }
 
-/* BREADCRUMBS */
+@keyframes titleFade{
+  from{
+    opacity:0;
+    transform:translateY(6px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 60px;
+  margin:26px auto 28px;
+  transition:transform .18s ease;
 }
 
 .nav{
@@ -132,76 +143,42 @@ body::after{
   width:100%;
 }
 
-/* IMAGE */
-.feature-image{
-  max-width:1300px;
-  margin:0 auto 40px;
-  padding:0 25px;
+/* SECONDARY NAV */
+.subnav-wrap{
+  width:480px;
+  margin:8px auto 64px;
+  transition:all .22s ease;
 }
 
-.feature-image img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  object-position:center 44%;
-  border-radius:12px;
-  transition:box-shadow .25s;
+.subnav{
+  display:flex;
+  justify-content:space-around;
+  font-size:.85rem;
 }
 
-/* glow only on hover */
-.feature-image img:hover{
-  box-shadow:
-    0 0 14px rgba(220,38,38,.15),
-    0 0 24px rgba(220,38,38,.08);
+/* SUCK UP EFFECT */
+.subnav-wrap.exit{
+  transform:translateY(-38px) scale(.97);
+  opacity:0;
+  filter:blur(2px);
+}
+
+/* TINY NAV BUMP */
+.nav-wrap.bump{
+  transform:translateY(-3px);
 }
 
 /* CONTENT */
 .content{
-  max-width:1300px;
+  max-width:1100px;
   margin:0 auto 80px;
   padding:0 25px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
 }
 
-.featured{
-  grid-column:1/span 2;
-}
-
-/* CARDS */
 .card{
   background:#111827;
   padding:32px;
   border-radius:12px;
-  transition:.18s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:
-    0 12px 28px rgba(0,0,0,.55),
-    0 0 14px rgba(220,38,38,.16);
-}
-
-.card h3{
-  margin:0 0 12px 0;
-  font-family:"Space Grotesk";
-  font-size:1.3rem;
-  font-weight:500;
-}
-
-.card p{
-  margin:0;
-  font-size:.95rem;
-  color:#cfd3da;
-  line-height:1.7;
-}
-
-footer{
-  text-align:center;
-  padding:70px 20px;
-  color:#6b7280;
 }
 </style>
 </head>
@@ -210,52 +187,71 @@ footer{
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
-  <p class="subtag">Designing and building high-performance automotive systems.</p>
+  <p class="subtag">Portfolio</p>
 
   <div class="nav-wrap">
     <div class="nav">
-      <a href="index.html" class="active"><span>LANDING</span></a>
-      <a href="projects/index.html"><span>PORTFOLIO</span></a>
-      <a href="blog.html"><span>BLOG</span></a>
+      <a href="../index.html"><span>LANDING</span></a>
+      <a href="index.html" class="active"><span>PORTFOLIO</span></a>
+      <a href="../blog.html"><span>BLOG</span></a>
+    </div>
+  </div>
+
+  <div class="subnav-wrap">
+    <div class="subnav">
+      <a href="index.html" class="active">RECENT</a>
+      <a href="focusst.html">FOCUS ST</a>
+      <a href="honours-a.html">HONOURS A</a>
+      <a href="honours-b.html">HONOURS B</a>
     </div>
   </div>
 </section>
 
-<section class="feature-image">
-  <img src="photo1.jpeg">
-</section>
-
 <section class="content">
-
-  <div class="card featured">
-    <h3>Featured Project</h3>
-    <p>
-      A detailed breakdown of the latest Focus ST engineering development,
-      covering design decisions, component selection, and performance goals.
-    </p>
-  </div>
-
   <div class="card">
-    <h3>About</h3>
+    <h3>Recent Work</h3>
     <p>
-      A platform documenting the journey through automotive, automation,
-      and advanced engineering systems.
+      Latest engineering builds, development logs, and project documentation.
     </p>
   </div>
-
-  <div class="card">
-    <h3>Skills</h3>
-    <p>
-      SolidWorks, MATLAB, Python, Arduino, manufacturing processes,
-      and system design.
-    </p>
-  </div>
-
 </section>
 
-<footer>
-  Connect — Coming Soon
-</footer>
+<script>
+document.querySelectorAll('.nav a').forEach(link=>{
+  link.addEventListener('click',function(e){
+
+    const target = link.getAttribute('href');
+
+    if(target.includes('index.html') && !target.includes('projects')) {
+      const sub = document.querySelector('.subnav-wrap');
+      if(!sub) return;
+
+      e.preventDefault();
+
+      sub.classList.add('exit');
+      document.querySelector('.nav-wrap').classList.add('bump');
+
+      setTimeout(()=>{
+        window.location = target;
+      },220);
+    }
+
+    if(target.includes('blog')){
+      const sub = document.querySelector('.subnav-wrap');
+      if(!sub) return;
+
+      e.preventDefault();
+
+      sub.classList.add('exit');
+      document.querySelector('.nav-wrap').classList.add('bump');
+
+      setTimeout(()=>{
+        window.location = target;
+      },220);
+    }
+  });
+});
+</script>
 
 </body>
 </html>
