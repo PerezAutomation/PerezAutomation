@@ -22,9 +22,8 @@ body{
   animation:pageFade .35s ease forwards;
 }
 
-@keyframes pageFade{ to{ opacity:1; } }
+@keyframes pageFade{ to{opacity:1;} }
 
-/* glow */
 body::before{
   content:"";
   position:fixed;
@@ -97,16 +96,16 @@ body::after{
   to{opacity:1; transform:translateY(0);}
 }
 
-/* divider */
+/* divider styled like breadcrumb underline */
 .hero-divider{
-  width:80px;
+  width:420px;
   height:2px;
   background:#dc2626;
-  margin:22px auto 10px;
-  opacity:.65;
+  margin:30px auto 30px;
+  opacity:.85;
 }
 
-/* nav */
+/* BREADCRUMBS (ORIGINAL STYLE RESTORED) */
 .nav-wrap{
   width:420px;
   margin:26px auto 60px;
@@ -125,32 +124,68 @@ body::after{
   text-decoration:none;
 }
 
-.nav a:hover{color:#fff;}
-.nav a.active{color:#fff;}
-
 .nav a span{
   position:relative;
   display:inline-block;
   padding-bottom:8px;
 }
 
+.nav a:hover{color:#fff;}
+.nav a.active{color:#fff;}
+
 .nav a span::after{
   content:"";
   position:absolute;
-  left:0;
+  left:50%;
   bottom:0;
-  width:100%;
+  width:0;
   height:2px;
   background:#dc2626;
-  transform:scaleX(0);
-  transform-origin:right;
-  transition:transform .25s ease;
+  transform:translateX(-50%);
+  transition:.25s;
 }
 
 .nav a:hover span::after,
 .nav a.active span::after{
-  transform:scaleX(1);
-  transform-origin:left;
+  width:100%;
+}
+
+/* IMAGE */
+.feature-image{
+  max-width:1300px;
+  margin:0 auto 40px;
+  padding:0 25px;
+}
+
+.feature-image img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center 44%;
+  border-radius:12px;
+}
+
+.content{
+  max-width:1300px;
+  margin:0 auto 80px;
+  padding:0 25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.featured{ grid-column:1/span 2; }
+
+.card{
+  background:#111827;
+  padding:32px;
+  border-radius:12px;
+}
+
+footer{
+  text-align:center;
+  padding:70px 20px;
+  color:#6b7280;
 }
 </style>
 </head>
@@ -160,7 +195,6 @@ body::after{
   <h1>PEREZ AUTOMATION</h1>
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
   <p class="subtag">Designing and building high-performance automotive systems.</p>
-  <div class="hero-divider"></div>
 
   <div class="nav-wrap">
     <div class="nav">
@@ -171,9 +205,43 @@ body::after{
   </div>
 </section>
 
+<div class="hero-divider"></div>
+
+<section class="feature-image">
+  <img src="photo1.jpeg">
+</section>
+
+<section class="content">
+  <div class="card featured">
+    <h3>Featured Project</h3>
+    <p>
+      A detailed breakdown of the latest Focus ST engineering development,
+      covering design decisions, component selection, and performance goals.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>About</h3>
+    <p>
+      A platform documenting the journey through automotive, automation,
+      and advanced engineering systems.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Skills</h3>
+    <p>
+      SolidWorks, MATLAB, Python, Arduino, manufacturing processes,
+      and system design.
+    </p>
+  </div>
+</section>
+
+<footer>Connect — Coming Soon</footer>
+
 <script>
 document.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('click', ()=>{
+  link.addEventListener('click',()=>{
     document.body.style.opacity='0';
   });
 });
