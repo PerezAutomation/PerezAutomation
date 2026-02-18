@@ -8,31 +8,86 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
+html{overflow-y:scroll;}
+
 body{
   margin:0;
   font-family:"Inter",sans-serif;
   color:#e5e7eb;
   background:#0b0f14;
+  position:relative;
+  overflow-x:hidden;
 }
 
-/* TITLE FADE */
+/* BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:72px 72px;
+  opacity:.55;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  margin-top:110px;
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:38%;
+  width:1400px;
+  height:600px;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle, rgba(220,38,38,.07), rgba(220,38,38,.03), transparent 70%);
+  filter:blur(90px);
+  opacity:.45;
+  z-index:-1;
+}
+
+.hero h1{
+  font-size:4.4rem;
+  letter-spacing:10px;
+  margin:0;
+  font-weight:300;
+  font-family:"Segoe UI",Roboto,sans-serif;
+}
+
+.tagline{
+  font-family:"Space Grotesk";
+  font-size:1.12rem;
+  margin-top:8px;
+  color:#b7bec8;
+}
+
 .subtag{
   margin-top:10px;
   font-size:1rem;
   color:#9ca3af;
-  animation:titleFade .45s ease;
 }
 
-@keyframes titleFade{
-  from{opacity:0; transform:translateY(6px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-/* NAV */
+/* PRIMARY NAV */
 .nav-wrap{
   width:420px;
   margin:26px auto 28px;
-  transition:transform .18s ease;
 }
 
 .nav{
@@ -48,89 +103,148 @@ body{
   text-decoration:none;
 }
 
-.nav a.active{color:#fff;}
-
 .nav a span{
   position:relative;
   display:inline-block;
   padding-bottom:8px;
 }
 
+.nav a:hover{color:#fff;}
+.nav a.active{color:#fff;}
+
 .nav a span::after{
   content:"";
   position:absolute;
   left:50%;
   bottom:0;
-  width:100%;
+  width:0;
   height:2px;
   background:#dc2626;
   transform:translateX(-50%);
+  transition:.25s;
 }
 
-/* SECONDARY NAV */
+.nav a:hover span::after,
+.nav a.active span::after{
+  width:100%;
+}
+
+/* SECONDARY NAV — PYRAMID CENTERED */
 .subnav-wrap{
-  width:480px;
+  width:480px;   /* slightly wider for pyramid feel */
   margin:8px auto 64px;
-  transition:all .25s ease;
+  opacity:0;
+  transform:translateY(-10px);
+  animation:dropIn .35s ease-out .08s forwards,
+            fadeIn .45s ease-out .08s forwards;
 }
 
 .subnav{
   display:flex;
-  justify-content:space-around;
+  justify-content:space-around;  /* key change */
   font-size:.85rem;
+  letter-spacing:.35px;
 }
 
-/* SUCTION EXIT */
-.subnav-wrap.exit{
-  transform:translateY(-40px) scale(.96);
-  opacity:0;
-  filter:blur(2px);
+.subnav a{
+  text-align:center;
+  color:#6b7280;
+  text-decoration:none;
 }
 
-/* TINY NAV NUDGE */
-.nav-wrap.bump{
-  transform:translateY(-4px);
+.subnav a span{
+  position:relative;
+  display:inline-block;
+  padding-bottom:6px;
+}
+
+.subnav a:hover{color:#fff;}
+.subnav a.active{color:#fff;}
+
+.subnav a span::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#dc2626;
+  transform:translateX(-50%);
+  transition:.25s;
+}
+
+.subnav a:hover span::after,
+.subnav a.active span::after{
+  width:100%;
+}
+
+/* DROP */
+@keyframes dropIn{
+  from{ transform:translateY(-10px); }
+  to{ transform:translateY(0); }
+}
+
+/* FADE */
+@keyframes fadeIn{
+  from{ opacity:0; }
+  to{ opacity:1; }
+}
+
+/* CONTENT */
+.content{
+  max-width:1100px;
+  margin:0 auto 80px;
+  padding:0 25px;
+}
+
+.card{
+  background:#111827;
+  padding:32px;
+  border-radius:12px;
+}
+
+footer{
+  text-align:center;
+  padding:70px 20px;
+  color:#6b7280;
 }
 </style>
 </head>
 <body>
 
-<section style="text-align:center;margin-top:110px;">
+<section class="hero">
   <h1>PEREZ AUTOMATION</h1>
-  <h2 class="subtag">Portfolio</h2>
+  <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
+  <p class="subtag">Portfolio</p>
 
   <div class="nav-wrap">
     <div class="nav">
-      <a href="../index.html">LANDING</a>
+      <a href="../index.html"><span>LANDING</span></a>
       <a href="index.html" class="active"><span>PORTFOLIO</span></a>
-      <a href="../blog.html">BLOG</a>
+      <a href="../blog.html"><span>BLOG</span></a>
     </div>
   </div>
 
   <div class="subnav-wrap">
     <div class="subnav">
-      <a href="index.html">RECENT</a>
-      <a href="focusst.html">FOCUS ST</a>
-      <a href="honours-a.html">HONOURS A</a>
-      <a href="honours-b.html">HONOURS B</a>
+      <a href="index.html" class="active"><span>RECENT</span></a>
+      <a href="focusst.html"><span>FOCUS ST</span></a>
+      <a href="honours-a.html"><span>HONOURS A</span></a>
+      <a href="honours-b.html"><span>HONOURS B</span></a>
     </div>
   </div>
 </section>
 
-<script>
-document.querySelectorAll('.nav a').forEach(link=>{
-  link.addEventListener('click',e=>{
-    const sub = document.querySelector('.subnav-wrap');
-    if(!sub) return;
+<section class="content">
+  <div class="card">
+    <h3>Recent Work</h3>
+    <p>
+      Latest engineering builds, development logs, and project documentation.
+    </p>
+  </div>
+</section>
 
-    e.preventDefault();
-    sub.classList.add('exit');
-    document.querySelector('.nav-wrap').classList.add('bump');
-
-    setTimeout(()=>window.location=link.href,230);
-  });
-});
-</script>
+<footer>© 2026 Perez Automation</footer>
 
 </body>
 </html>
