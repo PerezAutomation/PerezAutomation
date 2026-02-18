@@ -129,20 +129,20 @@ body::after{
   width:100%;
 }
 
-/* SECONDARY NAV — perfectly centered now */
+/* SECONDARY NAV — tighter + faster fade */
 .subnav-wrap{
-  max-width:620px;
+  max-width:560px;        /* slightly tighter width */
   margin:8px auto 64px;
   opacity:0;
   transform:translateY(-12px);
   animation:dropIn .45s ease-out .12s forwards,
-            fadeIn .7s ease-out .12s forwards;
+            fadeIn .45s ease-out .12s forwards; /* faster fade */
 }
 
 .subnav{
   display:flex;
   justify-content:center;
-  gap:36px;
+  gap:24px;               /* tighter spacing between items */
   font-size:.86rem;
   letter-spacing:.45px;
 }
