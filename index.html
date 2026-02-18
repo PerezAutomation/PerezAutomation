@@ -20,10 +20,20 @@ body{
     #0b0f14;
 }
 
+/* soft vignette */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at center, transparent 60%, rgba(0,0,0,.15));
+}
+
 /* HERO */
 .hero{
   text-align:center;
   margin-top:140px;
+  position:relative;
 }
 
 .hero h1{
@@ -32,25 +42,44 @@ body{
   margin:0;
   font-weight:300;
   font-family:"Segoe UI",Roboto,sans-serif;
+  position:relative;
 }
 
-.hero h2{
+/* red glow behind title */
+.hero h1::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:480px;
+  height:120px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(220,38,38,.18), transparent 70%);
+  z-index:-1;
+  filter:blur(22px);
+  opacity:.55;
+}
+
+/* SECOND TITLE */
+.tagline{
   font-family:"Space Grotesk";
-  font-size:1.1rem;
-  margin-top:14px;
+  font-size:1.3rem;
+  margin-top:8px;
+  color:#b7bec8;
+}
+
+/* THIRD TITLE */
+.subtag{
+  margin-top:10px;
+  font-size:1.08rem;
   color:#9ca3af;
+  letter-spacing:.4px;
 }
 
-.hero p{
-  margin-top:14px;
-  font-size:.95rem;
-  color:#b6bcc6;
-}
-
-/* BREADCRUMBS (UNCHANGED FOR STABILITY) */
+/* BREADCRUMBS (stable) */
 .nav-wrap{
   width:420px;
-  margin:60px auto 50px;
+  margin:60px auto 60px;
 }
 
 .nav{
@@ -64,7 +93,6 @@ body{
   text-align:center;
   color:#6b7280;
   text-decoration:none;
-  font-size:.95rem;
 }
 
 .nav a span{
@@ -76,6 +104,7 @@ body{
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
+/* underline text width only */
 .nav a span::after{
   content:"";
   position:absolute;
@@ -92,12 +121,11 @@ body{
   width:100%;
 }
 
-/* HERO IMAGE (taller + cinematic overlay) */
+/* IMAGE */
 .feature-image{
   max-width:1300px;
   margin:0 auto 60px;
   padding:0 25px;
-  position:relative;
 }
 
 .feature-image img{
@@ -109,21 +137,11 @@ body{
   transition:box-shadow .25s;
 }
 
-/* dark gradient overlay */
-.feature-image::after{
-  content:"";
-  position:absolute;
-  inset:0 25px;
-  border-radius:12px;
-  background:linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.45));
-  pointer-events:none;
-}
-
 .feature-image img:hover{
   box-shadow:0 0 26px rgba(220,38,38,.22);
 }
 
-/* CONTENT LAYOUT */
+/* CONTENT */
 .content{
   max-width:1300px;
   margin:0 auto 80px;
@@ -133,12 +151,11 @@ body{
   gap:40px;
 }
 
-/* FEATURED PROJECT — dominant */
 .featured{
   grid-column:1/span 2;
 }
 
-/* CARD STYLE */
+/* CARDS */
 .card{
   background:#111827;
   padding:32px;
@@ -156,7 +173,7 @@ body{
 .card h3{
   margin:0 0 12px 0;
   font-family:"Space Grotesk";
-  font-size:1.4rem;
+  font-size:1.35rem;
   font-weight:500;
 }
 
@@ -178,8 +195,8 @@ footer{
 
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
-  <h2>Automotive | Mechatronics | Engineering</h2>
-  <p>Designing and building high-performance automotive systems.</p>
+  <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
+  <p class="subtag">Designing and building high-performance automotive systems.</p>
 
   <div class="nav-wrap">
     <div class="nav">
