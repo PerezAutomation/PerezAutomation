@@ -15,15 +15,9 @@ body{
   font-family:"Inter",sans-serif;
   color:#e5e7eb;
   background:#0b0f14;
-  position:relative;
-  overflow-x:hidden;
-
-  opacity:0;
-  animation:pageFade .35s ease forwards;
 }
 
-@keyframes pageFade{ to{opacity:1;} }
-
+/* HERO */
 .hero{
   text-align:center;
   margin-top:110px;
@@ -58,16 +52,16 @@ body{
 }
 
 .hero-divider{
-  width:420px;
+  width:80px;
   height:2px;
   background:#dc2626;
-  margin:30px auto 30px;
-  opacity:.85;
+  margin:16px auto 22px;
 }
 
+/* NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 60px;
+  margin:0 auto 60px;
 }
 
 .nav{
@@ -133,6 +127,8 @@ footer{
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
   <p class="subtag">Engineering Thoughts & Breakdowns</p>
 
+  <div class="hero-divider"></div>
+
   <div class="nav-wrap">
     <div class="nav">
       <a href="index.html"><span>LANDING</span></a>
@@ -141,8 +137,6 @@ footer{
     </div>
   </div>
 </section>
-
-<div class="hero-divider"></div>
 
 <section class="content">
   <div class="card">
@@ -154,14 +148,6 @@ footer{
 </section>
 
 <footer>© 2026 Perez Automation</footer>
-
-<script>
-document.querySelectorAll('a').forEach(link=>{
-  link.addEventListener('click',()=>{
-    document.body.style.opacity='0';
-  });
-});
-</script>
 
 </body>
 </html>
