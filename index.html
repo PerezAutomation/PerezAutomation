@@ -19,49 +19,28 @@ body{
   overflow-x:hidden;
 }
 
-body{
-  margin:0;
-  font-family:"Inter",sans-serif;
-  color:#e5e7eb;
-  background:#0b0f14;
-  position:relative;
-  overflow-x:hidden;
-}
-
-body{
-  margin:0;
-  font-family:"Inter",sans-serif;
-  color:#e5e7eb;
-  background:#0b0f14;
-  position:relative;
-  overflow-x:hidden;
-}
-
-/* SOFT LIGHT DEPTH */
+/* DEPTH + MID-PAGE GLOW */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(900px 500px at 50% 0%, rgba(220,38,38,.045), transparent 70%),
-    radial-gradient(700px 400px at 50% 100%, rgba(0,0,0,.35), transparent 70%);
+    radial-gradient(900px 420px at 50% 0%, rgba(220,38,38,.035), transparent 70%),
+    radial-gradient(800px 420px at 50% 55%, rgba(220,38,38,.025), transparent 70%);
 }
 
-/* ULTRA-SUBTLE TECH TEXTURE (makes page feel alive) */
+/* ENGINEERING GRID TEXTURE */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-
   background-image:
-    linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
-
-  background-size: 80px 80px;
-
-  opacity:.35;
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size:72px 72px;
+  opacity:.45;
 }
 
 /* HERO */
@@ -80,20 +59,18 @@ body::after{
   position:relative;
 }
 
-/* ORGANIC GLOW (multi-layer, not a circle) */
+/* CLEAN MINIMAL TITLE GLOW */
 .hero h1::before{
   content:"";
   position:absolute;
   left:50%;
   top:42%;
-  width:620px;
-  height:220px;
+  width:520px;
+  height:160px;
   transform:translate(-50%,-50%);
-  background:
-    radial-gradient(circle at 40% 50%, rgba(220,38,38,.08), transparent 70%),
-    radial-gradient(circle at 60% 40%, rgba(220,38,38,.06), transparent 70%);
+  background:radial-gradient(circle, rgba(220,38,38,.07), transparent 75%);
   filter:blur(38px);
-  opacity:.65;
+  opacity:.6;
   z-index:-1;
 }
 
@@ -139,6 +116,7 @@ body::after{
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
+/* underline from center */
 .nav a span::after{
   content:"";
   position:absolute;
