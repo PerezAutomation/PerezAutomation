@@ -19,14 +19,14 @@ body{
   overflow-x:hidden;
 }
 
-/* SOFT DEPTH BEHIND IMAGE + CARDS */
+/* SUBTLE GLOW UNDER CARDS ONLY (moved lower + softer) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(1100px 600px at 50% 65%, rgba(220,38,38,.08), transparent 70%);
+    radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
 }
 
 /* GRID */
@@ -49,19 +49,19 @@ body::after{
   position:relative;
 }
 
-/* BIG AMBIENT HERO LIGHT (fills the whole title area) */
+/* LARGE BUT SOFT AMBIENT HERO LIGHT */
 .hero::before{
   content:"";
   position:absolute;
   left:50%;
-  top:40%;
+  top:38%;
   width:1400px;
   height:600px;
   transform:translate(-50%,-50%);
   background:
-    radial-gradient(circle, rgba(220,38,38,.12), rgba(220,38,38,.05), transparent 70%);
-  filter:blur(80px);
-  opacity:.55;
+    radial-gradient(circle, rgba(220,38,38,.07), rgba(220,38,38,.03), transparent 70%);
+  filter:blur(90px);
+  opacity:.45;
   z-index:-1;
 }
 
@@ -148,10 +148,11 @@ body::after{
   transition:box-shadow .25s;
 }
 
+/* glow only on hover */
 .feature-image img:hover{
   box-shadow:
-    0 0 18px rgba(220,38,38,.18),
-    0 0 32px rgba(220,38,38,.10);
+    0 0 14px rgba(220,38,38,.15),
+    0 0 24px rgba(220,38,38,.08);
 }
 
 /* CONTENT */
@@ -179,8 +180,8 @@ body::after{
 .card:hover{
   transform:translateY(-4px);
   box-shadow:
-    0 12px 30px rgba(0,0,0,.55),
-    0 0 18px rgba(220,38,38,.18);
+    0 12px 28px rgba(0,0,0,.55),
+    0 0 14px rgba(220,38,38,.16);
 }
 
 .card h3{
