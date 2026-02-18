@@ -20,13 +20,13 @@ body{
     #0b0f14;
 }
 
-/* soft vignette */
+/* subtle vignette */
 body::after{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  background:radial-gradient(circle at center, transparent 60%, rgba(0,0,0,.15));
+  background:radial-gradient(circle at center, transparent 65%, rgba(0,0,0,.12));
 }
 
 /* HERO */
@@ -45,41 +45,40 @@ body::after{
   position:relative;
 }
 
-/* red glow behind title */
+/* softer blended glow */
 .hero h1::before{
   content:"";
   position:absolute;
   left:50%;
   top:50%;
-  width:480px;
-  height:120px;
+  width:520px;
+  height:160px;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(220,38,38,.18), transparent 70%);
+  background:radial-gradient(circle, rgba(220,38,38,.12), rgba(220,38,38,.06), transparent 75%);
   z-index:-1;
-  filter:blur(22px);
+  filter:blur(28px);
   opacity:.55;
 }
 
-/* SECOND TITLE */
+/* equal spacing for both lines */
 .tagline{
   font-family:"Space Grotesk";
-  font-size:1.3rem;
-  margin-top:8px;
+  font-size:1.15rem;
+  margin-top:12px;
   color:#b7bec8;
 }
 
-/* THIRD TITLE */
 .subtag{
-  margin-top:10px;
-  font-size:1.08rem;
+  margin-top:12px;
+  font-size:1rem;
   color:#9ca3af;
-  letter-spacing:.4px;
+  letter-spacing:.35px;
 }
 
-/* BREADCRUMBS (stable) */
+/* BREADCRUMBS */
 .nav-wrap{
   width:420px;
-  margin:60px auto 60px;
+  margin:12px auto 60px;
 }
 
 .nav{
@@ -104,7 +103,6 @@ body::after{
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
-/* underline text width only */
 .nav a span::after{
   content:"";
   position:absolute;
@@ -138,7 +136,7 @@ body::after{
 }
 
 .feature-image img:hover{
-  box-shadow:0 0 26px rgba(220,38,38,.22);
+  box-shadow:0 0 24px rgba(220,38,38,.18);
 }
 
 /* CONTENT */
@@ -167,13 +165,13 @@ body::after{
   transform:translateY(-4px);
   box-shadow:
     0 8px 22px rgba(0,0,0,.45),
-    0 0 12px rgba(220,38,38,.14);
+    0 0 10px rgba(220,38,38,.10);
 }
 
 .card h3{
   margin:0 0 12px 0;
   font-family:"Space Grotesk";
-  font-size:1.35rem;
+  font-size:1.3rem;
   font-weight:500;
 }
 
