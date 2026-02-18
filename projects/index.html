@@ -19,6 +19,7 @@ body{
   overflow-x:hidden;
 }
 
+/* background glow + grid */
 body::before{
   content:"";
   position:fixed;
@@ -27,7 +28,6 @@ body::before{
   background:
     radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
 }
-
 body::after{
   content:"";
   position:fixed;
@@ -84,34 +84,29 @@ body::after{
   letter-spacing:.35px;
 }
 
-/* BREADCRUMBS (IDENTICAL WIDTH = NO SHIFTING) */
+/* PRIMARY NAV */
 .nav-wrap{
   width:420px;
-  margin:26px auto 60px;
+  margin:26px auto 14px;
 }
-
 .nav{
   display:flex;
   justify-content:space-between;
   font-size:.95rem;
 }
-
 .nav a{
   width:140px;
   text-align:center;
   color:#6b7280;
   text-decoration:none;
 }
-
 .nav a span{
   position:relative;
   display:inline-block;
   padding-bottom:8px;
 }
-
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
-
 .nav a span::after{
   content:"";
   position:absolute;
@@ -123,9 +118,48 @@ body::after{
   transform:translateX(-50%);
   transition:.25s;
 }
-
 .nav a:hover span::after,
 .nav a.active span::after{
+  width:100%;
+}
+
+/* SECONDARY NAV */
+.subnav-wrap{
+  width:560px;
+  margin:0 auto 60px;
+}
+.subnav{
+  display:flex;
+  justify-content:space-between;
+  font-size:.85rem;
+}
+.subnav a{
+  width:140px;
+  text-align:center;
+  color:#6b7280;
+  text-decoration:none;
+}
+.subnav a span{
+  position:relative;
+  display:inline-block;
+  padding-bottom:6px;
+}
+.subnav a:hover{color:#fff;}
+.subnav a.active{color:#fff;}
+
+.subnav a span::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:0;
+  height:2px;
+  background:#dc2626;
+  transform:translateX(-50%);
+  transition:.25s;
+}
+.subnav a:hover span::after,
+.subnav a.active span::after{
   width:100%;
 }
 
@@ -135,35 +169,22 @@ body::after{
   margin:0 auto 80px;
   padding:0 25px;
 }
-
 .card{
   background:#111827;
   padding:32px;
   border-radius:12px;
   transition:.18s ease;
 }
-
 .card:hover{
   transform:translateY(-4px);
   box-shadow:
     0 12px 28px rgba(0,0,0,.55),
     0 0 14px rgba(220,38,38,.16);
 }
-
 .card h3{
   margin:0 0 12px 0;
   font-family:"Space Grotesk";
-  font-size:1.3rem;
-  font-weight:500;
 }
-
-.card p{
-  margin:0;
-  font-size:.95rem;
-  color:#cfd3da;
-  line-height:1.7;
-}
-
 footer{
   text-align:center;
   padding:70px 20px;
@@ -176,8 +197,9 @@ footer{
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
-  <p class="subtag">Portfolio & Engineering Projects</p>
+  <p class="subtag">Portfolio</p>
 
+  <!-- PRIMARY -->
   <div class="nav-wrap">
     <div class="nav">
       <a href="../index.html"><span>LANDING</span></a>
@@ -185,18 +207,25 @@ footer{
       <a href="../blog.html"><span>BLOG</span></a>
     </div>
   </div>
+
+  <!-- SECONDARY -->
+  <div class="subnav-wrap">
+    <div class="subnav">
+      <a href="index.html" class="active"><span>RECENTS</span></a>
+      <a href="focusst.html"><span>FOCUS ST</span></a>
+      <a href="honours-a.html"><span>HONOURS A</span></a>
+      <a href="honours-b.html"><span>HONOURS B</span></a>
+    </div>
+  </div>
 </section>
 
 <section class="content">
   <div class="card">
-    <h3>Recent Projects</h3>
-    <p>
-      Focus ST development, automation builds, and university engineering work will be documented here.
-    </p>
+    <h3>Recent Work</h3>
+    <p>Latest engineering builds and development logs.</p>
   </div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
-
 </body>
 </html>
