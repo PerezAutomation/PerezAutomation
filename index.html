@@ -55,7 +55,21 @@ font-weight:300;
 font-family:"Segoe UI",Roboto,sans-serif;
 }
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
-.subtag{margin-top:10px;font-size:1rem;color:#9ca3af;letter-spacing:.35px;transition:opacity .18s ease;}
+
+/* SUBTAG FADE IN */
+.subtag{
+margin-top:10px;
+font-size:1rem;
+color:#9ca3af;
+letter-spacing:.35px;
+opacity:0;
+animation:subtagFadeIn .45s ease forwards;
+transition:opacity .18s ease;
+}
+@keyframes subtagFadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
 
 /* HERO DIVIDER */
 .hero-divider{
