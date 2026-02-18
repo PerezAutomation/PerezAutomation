@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Perez Automation</title>
+<title>Blog - Perez Automation</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
@@ -19,7 +19,6 @@ body{
   overflow-x:hidden;
 }
 
-/* subtle glow under cards */
 body::before{
   content:"";
   position:fixed;
@@ -29,7 +28,6 @@ body::before{
     radial-gradient(1000px 520px at 50% 72%, rgba(220,38,38,.045), transparent 70%);
 }
 
-/* grid */
 body::after{
   content:"";
   position:fixed;
@@ -86,7 +84,7 @@ body::after{
   letter-spacing:.35px;
 }
 
-/* BREADCRUMBS */
+/* BREADCRUMBS (IDENTICAL = NO MOVEMENT) */
 .nav-wrap{
   width:420px;
   margin:26px auto 60px;
@@ -131,62 +129,13 @@ body::after{
   width:100%;
 }
 
-/* IMAGE */
-.feature-image{
-  max-width:1300px;
-  margin:0 auto 40px;
-  padding:0 25px;
-}
-
-.image-wrap{
-  position:relative;
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.image-wrap img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  object-position:center 44%;
-  display:block;
-  transition:box-shadow .25s;
-}
-
-/* bottom fade for cinematic blend */
-.image-wrap::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  height:38%;
-  background:linear-gradient(to bottom, transparent, #0b0f14);
-  pointer-events:none;
-}
-
-/* glow only on hover */
-.image-wrap img:hover{
-  box-shadow:
-    0 0 14px rgba(220,38,38,.15),
-    0 0 24px rgba(220,38,38,.08);
-}
-
 /* CONTENT */
 .content{
-  max-width:1300px;
+  max-width:1100px;
   margin:0 auto 80px;
   padding:0 25px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
 }
 
-.featured{
-  grid-column:1/span 2;
-}
-
-/* CARDS */
 .card{
   background:#111827;
   padding:32px;
@@ -227,54 +176,27 @@ footer{
 <section class="hero">
   <h1>PEREZ AUTOMATION</h1>
   <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
-  <p class="subtag">Designing and building high-performance automotive systems.</p>
+  <p class="subtag">Engineering Thoughts & Breakdowns</p>
 
   <div class="nav-wrap">
     <div class="nav">
-      <a href="index.html" class="active"><span>LANDING</span></a>
+      <a href="index.html"><span>LANDING</span></a>
       <a href="projects/index.html"><span>PORTFOLIO</span></a>
-      <a href="blog.html"><span>BLOG</span></a>
+      <a href="blog.html" class="active"><span>BLOG</span></a>
     </div>
   </div>
 </section>
 
-<section class="feature-image">
-  <div class="image-wrap">
-    <img src="photo1.jpeg">
-  </div>
-</section>
-
 <section class="content">
-
-  <div class="card featured">
-    <h3>Featured Project</h3>
-    <p>
-      A detailed breakdown of the latest Focus ST engineering development,
-      covering design decisions, component selection, and performance goals.
-    </p>
-  </div>
-
   <div class="card">
-    <h3>About</h3>
+    <h3>Blog Posts</h3>
     <p>
-      A platform documenting the journey through automotive, automation,
-      and advanced engineering systems.
+      Technical breakdowns, engineering thoughts, and documentation of learning through projects.
     </p>
   </div>
-
-  <div class="card">
-    <h3>Skills</h3>
-    <p>
-      SolidWorks, MATLAB, Python, Arduino, manufacturing processes,
-      and system design.
-    </p>
-  </div>
-
 </section>
 
-<footer>
-  Connect — Coming Soon
-</footer>
+<footer>© 2026 Perez Automation</footer>
 
 </body>
 </html>
