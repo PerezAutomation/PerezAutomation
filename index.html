@@ -17,15 +17,16 @@ body{
   background:#0b0f14;
 }
 
-/* VERY SUBTLE DEPTH (cleaner, no banding) */
+/* NATURAL LIGHT DEPTH (irregular, not centered) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   background:
-    radial-gradient(circle at 50% 0%, rgba(220,38,38,.035), transparent 65%),
-    radial-gradient(circle at 50% 100%, rgba(0,0,0,.25), transparent 60%);
+    radial-gradient(800px 500px at 20% 10%, rgba(220,38,38,.05), transparent 70%),
+    radial-gradient(700px 400px at 80% 20%, rgba(59,130,246,.03), transparent 70%),
+    radial-gradient(900px 600px at 60% 80%, rgba(220,38,38,.025), transparent 70%);
 }
 
 /* HERO */
@@ -44,18 +45,20 @@ body::before{
   position:relative;
 }
 
-/* CLEANER, SOFTER TITLE GLOW */
+/* ORGANIC GLOW (multi-layer, not a circle) */
 .hero h1::before{
   content:"";
   position:absolute;
   left:50%;
-  top:40%;
-  width:520px;
-  height:160px;
+  top:42%;
+  width:620px;
+  height:220px;
   transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(220,38,38,.08), transparent 75%);
-  filter:blur(36px);
-  opacity:.55;
+  background:
+    radial-gradient(circle at 40% 50%, rgba(220,38,38,.08), transparent 70%),
+    radial-gradient(circle at 60% 40%, rgba(220,38,38,.06), transparent 70%);
+  filter:blur(38px);
+  opacity:.65;
   z-index:-1;
 }
 
@@ -101,7 +104,6 @@ body::before{
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
-/* underline grows from center */
 .nav a span::after{
   content:"";
   position:absolute;
@@ -135,7 +137,6 @@ body::before{
   transition:box-shadow .25s;
 }
 
-/* FINAL BALANCED IMAGE GLOW */
 .feature-image img:hover{
   box-shadow:
     0 0 14px rgba(220,38,38,.16),
