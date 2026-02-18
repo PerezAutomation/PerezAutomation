@@ -5,73 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-::selection{ background:#7f1d1d; color:#fff; }
+body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;}
 
-body{
-  margin:0;
-  font-family:"Segoe UI", Roboto, sans-serif;
-  color:#e5e7eb;
-  background:
-    radial-gradient(circle at 25% 30%, rgba(220,38,38,0.07), transparent 45%),
-    radial-gradient(circle at 80% 75%, rgba(220,38,38,0.05), transparent 50%),
-    #0b0f14;
-}
+.hero{text-align:center;margin-top:140px;}
+.hero h1{font-size:4rem;letter-spacing:8px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
+.hero h2{font-family:"Space Grotesk";font-size:1rem;margin-top:18px;color:#9ca3af;}
 
-/* HERO */
-.hero{ text-align:center; margin-top:140px; }
-.hero h1{ font-size:4rem; letter-spacing:8px; margin:0; font-weight:300; }
-.hero h2{ font-size:1.02rem; margin-top:18px; font-weight:400; color:#9ca3af; }
+.nav{display:flex;justify-content:center;gap:70px;margin-top:60px;margin-bottom:40px;font-size:.95rem;}
+.nav a{color:#6b7280;text-decoration:none;padding-bottom:10px;position:relative;}
+.nav a.active{color:#fff;}
+.nav a::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:2px;background:#dc2626;transform:translateX(-50%);transition:.25s;}
+.nav a:hover::after,.nav a.active::after{width:100%;}
 
-/* NAV */
-.nav{
-  display:flex;
-  justify-content:center;
-  gap:70px;
-  margin-top:110px; /* 2× bigger gap */
-  margin-bottom:45px;
-  font-size:.95rem;
-  letter-spacing:1px;
-}
-.nav a{
-  color:#6b7280;
-  text-decoration:none;
-  padding-bottom:12px;
-  position:relative;
-  transition:color .2s ease, text-shadow .2s ease;
-}
-.nav a:hover{ color:#fff; text-shadow:0 0 6px rgba(255,255,255,.25); }
-.nav a.active{ color:#fff; }
-.nav a::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:0%;
-  height:2px;
-  background:#dc2626;
-  transform:translateX(-50%);
-  transition:width .28s ease;
-}
-.nav a:hover::after,
-.nav a.active::after{ width:100%; }
-
-/* CONTENT */
-.content{ max-width:900px; margin:0 auto 60px; padding:0 20px; }
-.card{
-  background:#111827;
-  padding:30px;
-  border-radius:12px;
-  transition:transform .22s ease, box-shadow .22s ease;
-}
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 22px rgba(220,38,38,.22), 0 14px 32px rgba(0,0,0,.55);
-}
-.card h3{ margin-top:0; font-weight:500; }
-.card p{ font-weight:400; color:#cfd3da; }
-
-footer{ text-align:center; padding:60px 20px; color:#6b7280; }
+.content{max-width:900px;margin:0 auto 60px;padding:0 20px;}
+.card{background:#111827;padding:30px;border-radius:12px;}
+.card h3{margin-top:18px;position:relative;}
+.card h3::before{content:"";position:absolute;top:-12px;left:0;width:36px;height:2px;background:#dc2626;}
 </style>
 </head>
 <body>
@@ -90,7 +42,7 @@ footer{ text-align:center; padding:60px 20px; color:#6b7280; }
 <section class="content">
   <div class="card">
     <h3>First Entry</h3>
-    <p>Engineering notes, ideas and breakdowns will appear here.</p>
+    <p>Engineering notes and ideas.</p>
   </div>
 </section>
 
