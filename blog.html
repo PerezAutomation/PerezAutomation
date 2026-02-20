@@ -16,31 +16,24 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
-/* SLOWER MACHINED FLIP */
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
 opacity:0;
-transform:perspective(900px) rotateX(-110deg);
+transform:perspective(700px) rotateX(-100deg);
 transform-origin:top;
-animation:flipIn .9s cubic-bezier(.15,.85,.2,1) forwards;
+animation:flipIn .55s cubic-bezier(.2,.9,.15,1) forwards;
 }
 @keyframes flipIn{
-0%{opacity:0;transform:perspective(900px) rotateX(-110deg);}
-55%{opacity:1;transform:perspective(900px) rotateX(18deg);}
-75%{transform:perspective(900px) rotateX(-6deg);}
-90%{transform:perspective(900px) rotateX(2deg);}
-100%{opacity:1;transform:perspective(900px) rotateX(0deg);}
+0%{opacity:0;transform:perspective(700px) rotateX(-100deg);}
+70%{opacity:1;transform:perspective(700px) rotateX(12deg);}
+85%{transform:perspective(700px) rotateX(-4deg);}
+100%{opacity:1;transform:perspective(700px) rotateX(0deg);}
 }
 
-.hero-divider{
-width:120px;
-height:1px;
-background:#FA2A55;
-margin:40px auto 60px auto;
-}
+.hero-divider{width:120px;height:1px;background:#FA2A55;margin:40px auto 60px auto;}
 
 .nav-wrap{width:420px;margin:0 auto 60px;}
 .nav{display:flex;justify-content:space-between;font-size:.95rem;}
@@ -53,7 +46,6 @@ margin:40px auto 60px auto;
 
 .content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
 
-/* RESTORED ORIGINAL CARD BACKGROUND */
 .card{
 background:#111827;
 padding:32px;
@@ -103,9 +95,9 @@ link.addEventListener('click',e=>{
 const t=document.querySelector('.subtag');
 if(t){
 e.preventDefault();
-t.style.transform='perspective(900px) rotateX(110deg)';
+t.style.transform='perspective(700px) rotateX(100deg)';
 t.style.opacity='0';
-setTimeout(()=>{window.location=link.href;},420);
+setTimeout(()=>{window.location=link.href;},260);
 }
 });
 });
