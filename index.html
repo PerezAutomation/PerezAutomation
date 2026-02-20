@@ -73,7 +73,7 @@ margin-top:8px;
 color:#b7bec8;
 }
 
-/* -------- FAST, CLEAN FADE -------- */
+/* -------- REFINED SUBTLE EMERGE -------- */
 
 .subtag{
 margin-top:10px;
@@ -81,14 +81,18 @@ font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
 opacity:0;
-animation:fastFade .18s linear forwards;
+transform:translateY(-2px);
+animation:refinedFade .22s ease-out forwards;
 }
 
-@keyframes fastFade{
-to{ opacity:1; }
+@keyframes refinedFade{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
-/* ----------------------------------- */
+/* --------------------------------------- */
 
 .hero-divider{
 width:120px;
@@ -258,6 +262,7 @@ const t=document.querySelector('.subtag');
 if(t){
 e.preventDefault();
 t.style.opacity='0';
+t.style.transform='translateY(-2px)';
 setTimeout(()=>{window.location=link.href;},200);
 }
 });
