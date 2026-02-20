@@ -25,7 +25,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .nav a.active{color:#fff;}
 .nav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
 .nav a:hover span::after,.nav a.active span::after{width:100%;}
-.subnav-wrap{width:480px;margin:8px auto 64px;opacity:0;transform:translateY(-10px);animation:dropIn .35s ease-out .08s forwards, fadeIn .45s ease-out .08s forwards;}
+.subnav-wrap{width:480px;margin:8px auto 64px;opacity:1;transform:translateY(0);}
 .subnav{display:flex;justify-content:space-around;font-size:.85rem;letter-spacing:.35px;}
 .subnav a{text-align:center;color:#6b7280;text-decoration:none;}
 .subnav a span{position:relative;display:inline-block;padding-bottom:6px;}
@@ -33,10 +33,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .subnav a.active{color:#fff;}
 .subnav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
 .subnav a:hover span::after,.subnav a.active span::after{width:100%;}
-@keyframes dropIn{from{transform:translateY(-10px);}to{transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes dropOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
-.subnav-exit{animation:dropOut .35s ease forwards;}
 .content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
 .card{background:#111827;padding:32px;border-radius:12px;transition:.18s ease;}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 14px rgba(220,38,38,.16);}
@@ -81,6 +77,8 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 
 <script>
 const subtag=document.querySelector('.subtag');
+const subnav=document.getElementById('subnav');
+
 if(!sessionStorage.getItem('heroAnimated')){
 subtag.style.opacity='0';
 subtag.style.transform='translateY(-2px)';
@@ -92,17 +90,25 @@ subtag.style.transform='translateY(0)';
 sessionStorage.setItem('heroAnimated','true');
 }
 
+if(document.referrer && !document.referrer.includes('/projects/')){
+subnav.style.opacity='0';
+subnav.style.transform='translateY(-10px)';
+setTimeout(()=>{
+subnav.style.transition='opacity .35s ease-out, transform .35s ease-out';
+subnav.style.opacity='1';
+subnav.style.transform='translateY(0)';
+},10);
+}
+
 document.querySelectorAll('.nav a').forEach(link=>{
 link.addEventListener('click',e=>{
 if(link.classList.contains('active')) return;
-const sub=document.getElementById('subnav');
-if(sub){
 e.preventDefault();
-sub.classList.add('subnav-exit');
+subnav.style.opacity='0';
+subnav.style.transform='translateY(-10px)';
 subtag.style.opacity='0';
 subtag.style.transform='translateY(-2px)';
 setTimeout(()=>{window.location=link.href;},260);
-}
 });
 });
 </script>
