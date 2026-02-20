@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog - Perez Automation</title>
+<title>Portfolio - Perez Automation</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <style>
 html{overflow-y:scroll;}
-body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;}
-.hero{text-align:center;margin-top:110px;}
+body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;position:relative;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;opacity:.55;}
+.hero{text-align:center;margin-top:110px;position:relative;}
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;}
+
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
 .subtag{
@@ -25,7 +28,27 @@ from{opacity:0;transform:translateY(-2px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-.nav-wrap{width:420px;margin:0 auto 60px;}
+.subnav-wrap{
+width:480px;
+margin:8px auto 64px;
+opacity:0;
+transform:translateY(-8px);
+animation:subnavDrop .28s ease-out .05s forwards;
+}
+@keyframes subnavDrop{
+from{opacity:0;transform:translateY(-8px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.subnav-exit{
+animation:subnavExit .2s ease forwards;
+}
+@keyframes subnavExit{
+from{opacity:1;transform:translateY(0);}
+to{opacity:0;transform:translateY(-8px);}
+}
+
+.nav-wrap{width:420px;margin:0 auto 28px;}
 .nav{display:flex;justify-content:space-between;font-size:.95rem;}
 .nav a{width:140px;text-align:center;color:#6b7280;text-decoration:none;}
 .nav a span{position:relative;display:inline-block;padding-bottom:8px;}
@@ -40,13 +63,22 @@ to{opacity:1;transform:translateY(0);}
 <section class="hero">
 <h1>PEREZ AUTOMATION</h1>
 <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
-<p class="subtag">Engineering Thoughts & Breakdowns</p>
+<p class="subtag">Portfolio</p>
 
 <div class="nav-wrap">
 <div class="nav">
-<a href="index.html"><span>LANDING</span></a>
-<a href="projects/index.html"><span>PORTFOLIO</span></a>
-<a href="blog.html" class="active"><span>BLOG</span></a>
+<a href="../index.html"><span>LANDING</span></a>
+<a href="index.html" class="active"><span>PORTFOLIO</span></a>
+<a href="../blog.html"><span>BLOG</span></a>
+</div>
+</div>
+
+<div class="subnav-wrap">
+<div class="subnav">
+<a href="index.html" class="active"><span>RECENT</span></a>
+<a href="focusst.html"><span>FOCUS ST</span></a>
+<a href="honours-a.html"><span>HONOURS A</span></a>
+<a href="honours-b.html"><span>HONOURS B</span></a>
 </div>
 </div>
 </section>
@@ -54,11 +86,12 @@ to{opacity:1;transform:translateY(0);}
 <script>
 document.querySelectorAll('.nav a').forEach(link=>{
 link.addEventListener('click',e=>{
+const sub=document.querySelector('.subnav-wrap');
 const t=document.querySelector('.subtag');
-if(t){
+if(sub || t){
 e.preventDefault();
-t.style.opacity='0';
-t.style.transform='translateY(-2px)';
+if(t){t.style.opacity='0';t.style.transform='translateY(-2px)';}
+if(sub){sub.classList.add('subnav-exit');}
 setTimeout(()=>{window.location=link.href;},200);
 }
 });
