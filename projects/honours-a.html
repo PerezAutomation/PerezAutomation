@@ -9,114 +9,36 @@
 <style>
 html{overflow-y:scroll;}
 body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;position:relative;overflow-x:hidden;}
-
-body::before{
-content:"";position:fixed;inset:0;pointer-events:none;
-background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);
-}
-
-body::after{
-content:"";position:fixed;inset:0;pointer-events:none;
-background-image:
-linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-background-size:72px 72px;opacity:.55;
-}
-
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;opacity:.55;}
 .hero{text-align:center;margin-top:110px;position:relative;}
-
-.hero::before{
-content:"";position:absolute;left:50%;top:38%;
-width:1400px;height:600px;
-transform:translate(-50%,-50%);
-background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);
-filter:blur(90px);opacity:.45;z-index:-1;
-}
-
-.hero h1{
-font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;
-font-family:"Segoe UI",Roboto,sans-serif;
-}
-
-.tagline{
-font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;
-}
-
-.subtag{
-margin-top:10px;font-size:1rem;color:#9ca3af;letter-spacing:.35px;
-opacity:0;transform:translateY(-2px);
-animation:balancedFade .2s ease-out forwards;
-}
-
-@keyframes balancedFade{
-from{opacity:0;transform:translateY(-2px);}
-to{opacity:1;transform:translateY(0);}
-}
-
+.hero::before{content:"";position:absolute;left:50%;top:38%;width:1400px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);filter:blur(90px);opacity:.45;z-index:-1;}
+.hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
+.tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
+.subtag{margin-top:10px;font-size:1rem;color:#9ca3af;letter-spacing:.35px;opacity:1;transform:translateY(0);}
 .hero-divider{width:120px;height:1px;background:#FA2A55;margin:40px auto 60px auto;}
-
 .nav-wrap{width:420px;margin:0 auto 28px;}
-
 .nav{display:flex;justify-content:space-between;font-size:.95rem;}
 .nav a{width:140px;text-align:center;color:#6b7280;text-decoration:none;}
 .nav a span{position:relative;display:inline-block;padding-bottom:8px;}
 .nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
-
-.nav a span::after{
-content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;
-background:#FA2A55;transform:translateX(-50%);transition:.25s;
-}
-.nav a:hover span::after,
-.nav a.active span::after{width:100%;}
-
-/* Subnav */
-.subnav-wrap{
-width:480px;margin:8px auto 64px;
-opacity:0;transform:translateY(-10px);
-animation:dropIn .35s ease-out .08s forwards, fadeIn .45s ease-out .08s forwards;
-}
-
+.nav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
+.nav a:hover span::after,.nav a.active span::after{width:100%;}
+.subnav-wrap{width:480px;margin:8px auto 64px;opacity:1;transform:translateY(0);}
 .subnav{display:flex;justify-content:space-around;font-size:.85rem;letter-spacing:.35px;}
 .subnav a{text-align:center;color:#6b7280;text-decoration:none;}
 .subnav a span{position:relative;display:inline-block;padding-bottom:6px;}
 .subnav a:hover{color:#fff;}
 .subnav a.active{color:#fff;}
-
-.subnav a span::after{
-content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;
-background:#FA2A55;transform:translateX(-50%);transition:.25s;
-}
-.subnav a:hover span::after,
-.subnav a.active span::after{width:100%;}
-
-@keyframes dropIn{from{transform:translateY(-10px);}to{transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes dropOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
-.subnav-exit{animation:dropOut .35s ease forwards;}
-
+.subnav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
+.subnav a:hover span::after,.subnav a.active span::after{width:100%;}
 .content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
-
-.card{
-background:#111827;padding:32px;border-radius:12px;transition:.18s ease;
-}
-.card:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 14px rgba(220,38,38,.16);
-}
-
-.card h3{
-margin:0 0 12px 0;font-family:"Space Grotesk";font-size:1.3rem;font-weight:500;
-}
-
-.card p{
-margin:0;font-size:.95rem;color:#cfd3da;line-height:1.7;
-}
-
+.card{background:#111827;padding:32px;border-radius:12px;transition:.18s ease;}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 14px rgba(220,38,38,.16);}
 footer{text-align:center;padding:70px 20px;color:#6b7280;}
 </style>
 </head>
-
 <body>
 
 <section class="hero">
@@ -137,7 +59,7 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 <div class="subnav-wrap" id="subnav">
 <div class="subnav">
 <a href="index.html"><span>RECENT</span></a>
-<a href="focusst.html"><span>FOCUS ST</span></a>
+<a href="focus-st.html"><span>FOCUS ST</span></a>
 <a href="honours-a.html" class="active"><span>HONOURS A</span></a>
 <a href="honours-b.html"><span>HONOURS B</span></a>
 </div>
@@ -147,24 +69,46 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 <section class="content">
 <div class="card">
 <h3>Project Overview</h3>
-<p>Engineering research and applied system development focusing on modelling, validation, and real-world implementation.</p>
+<p>Applied modelling, system validation, and implementation research across advanced engineering domains.</p>
 </div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
 
 <script>
+const subtag=document.querySelector('.subtag');
+const subnav=document.getElementById('subnav');
+
+if(!sessionStorage.getItem('heroAnimated')){
+subtag.style.opacity='0';
+subtag.style.transform='translateY(-2px)';
+setTimeout(()=>{
+subtag.style.transition='opacity .2s ease-out, transform .2s ease-out';
+subtag.style.opacity='1';
+subtag.style.transform='translateY(0)';
+},10);
+sessionStorage.setItem('heroAnimated','true');
+}
+
+if(document.referrer && !document.referrer.includes('/projects/')){
+subnav.style.opacity='0';
+subnav.style.transform='translateY(-10px)';
+setTimeout(()=>{
+subnav.style.transition='opacity .35s ease-out, transform .35s ease-out';
+subnav.style.opacity='1';
+subnav.style.transform='translateY(0)';
+},10);
+}
+
 document.querySelectorAll('.nav a').forEach(link=>{
 link.addEventListener('click',e=>{
-const sub=document.getElementById('subnav');
-const t=document.querySelector('.subtag');
-if(sub){
+if(link.classList.contains('active')) return;
 e.preventDefault();
-sub.classList.add('subnav-exit');
-t.style.opacity='0';
-t.style.transform='translateY(-2px)';
+subnav.style.opacity='0';
+subnav.style.transform='translateY(-10px)';
+subtag.style.opacity='0';
+subtag.style.transform='translateY(-2px)';
 setTimeout(()=>{window.location=link.href;},260);
-}
 });
 });
 </script>
