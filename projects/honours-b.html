@@ -7,8 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* IDENTICAL STYLES AS ABOVE — kept same for consistency */
-
+/* identical styling as honours-a */
 html{overflow-y:scroll;}
 body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;position:relative;overflow-x:hidden;}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);}
@@ -36,6 +35,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .subnav a.active{color:#fff;}
 .subnav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
 .subnav a:hover span::after,.subnav a.active span::after{width:100%;}
+@keyframes dropOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
+.subnav-exit{animation:dropOut .35s ease forwards;}
 .content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
 .card{background:#111827;padding:32px;border-radius:12px;transition:.18s ease;}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 14px rgba(220,38,38,.16);}
@@ -81,6 +82,7 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 
 <script>
 const subnav=document.getElementById('subnav');
+
 if(document.referrer && !document.referrer.includes('/projects/')){
 subnav.style.opacity='0';
 subnav.style.transform='translateY(-10px)';
@@ -90,6 +92,15 @@ subnav.style.opacity='1';
 subnav.style.transform='translateY(0)';
 },10);
 }
+
+document.querySelectorAll('.nav a').forEach(link=>{
+link.addEventListener('click',e=>{
+if(link.classList.contains('active')) return;
+e.preventDefault();
+subnav.classList.add('subnav-exit');
+setTimeout(()=>{window.location=link.href;},260);
+});
+});
 </script>
 
 </body>
