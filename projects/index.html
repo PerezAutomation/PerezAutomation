@@ -16,20 +16,23 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
+/* UPDATED Y-AXIS ROLL */
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 opacity:0;
-transform:perspective(700px) rotateX(-100deg);
-transform-origin:top;
-animation:flipIn .55s cubic-bezier(.2,.9,.15,1) forwards;
+transform:perspective(900px) rotateY(90deg) scale(.95);
+transform-origin:center;
+backface-visibility:hidden;
+animation:rollInY .65s cubic-bezier(.22,.9,.2,1) forwards;
 }
-@keyframes flipIn{
-0%{opacity:0;transform:perspective(700px) rotateX(-100deg);}
-70%{opacity:1;transform:perspective(700px) rotateX(12deg);}
-85%{transform:perspective(700px) rotateX(-4deg);}
-100%{opacity:1;transform:perspective(700px) rotateX(0deg);}
+
+@keyframes rollInY{
+0%{opacity:0;transform:perspective(900px) rotateY(90deg) scale(.95);}
+60%{opacity:1;transform:perspective(900px) rotateY(-8deg) scale(1.02);}
+80%{transform:perspective(900px) rotateY(4deg) scale(1);}
+100%{opacity:1;transform:perspective(900px) rotateY(0deg) scale(1);}
 }
 
 .hero-divider{width:120px;height:1px;background:#FA2A55;margin:40px auto 60px auto;}
@@ -43,7 +46,6 @@ animation:flipIn .55s cubic-bezier(.2,.9,.15,1) forwards;
 .nav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
 .nav a:hover span::after,.nav a.active span::after{width:100%;}
 
-/* Secondary nav EXACT */
 .subnav-wrap{
 width:480px;
 margin:8px auto 64px;
@@ -125,7 +127,7 @@ const t=document.querySelector('.subtag');
 if(sub){
 e.preventDefault();
 sub.classList.add('subnav-exit');
-t.style.transform='perspective(700px) rotateX(100deg)';
+t.style.transform='perspective(900px) rotateY(-90deg)';
 t.style.opacity='0';
 setTimeout(()=>{window.location=link.href;},260);
 }
