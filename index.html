@@ -15,32 +15,39 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 text-align:center;
 margin-top:110px;
 position:relative;
-perspective:1000px; /* enables real 3D */
+perspective:1200px;
+transform-style:preserve-3d;
 }
-.hero::before{content:"";position:absolute;left:50%;top:38%;width:1400px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);filter:blur(90px);opacity:.45;z-index:-1;}
-.hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
-.tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
-
-/* -------- CLEAN FLIP DOWN ANIMATION -------- */
 
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
+
 transform-origin:top center;
-transform:rotateX(-90deg);
+transform-style:preserve-3d;
+backface-visibility:hidden;
+
+transform:rotateX(-100deg) translateZ(40px);
 opacity:0;
-animation:flipDown .65s cubic-bezier(.4,.0,.2,1) forwards;
+
+animation:mechanicalFlip .6s cubic-bezier(.55,.05,.25,1) forwards;
 }
 
-@keyframes flipDown{
+@keyframes mechanicalFlip{
+
 0%{
-transform:rotateX(-90deg);
+transform:rotateX(-100deg) translateZ(40px);
 opacity:0;
 }
+
+40%{
+opacity:1;
+}
+
 100%{
-transform:rotateX(0deg);
+transform:rotateX(0deg) translateZ(0px);
 opacity:1;
 }
 }
