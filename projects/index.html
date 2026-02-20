@@ -13,21 +13,33 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 
 .hero{text-align:center;margin-top:110px;position:relative;}
 .hero::before{content:"";position:absolute;left:50%;top:38%;width:1400px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);filter:blur(90px);opacity:.45;z-index:-1;}
+
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
+/* MECHANICAL FLIP */
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 opacity:0;
-transform:rotateX(40deg);
-animation:subtagIn .5s ease forwards;
-transition:opacity .2s ease, transform .25s ease;
+transform:perspective(600px) rotateX(-90deg);
+transform-origin:top;
+animation:flipIn .35s cubic-bezier(.4,0,.2,1) forwards;
 }
-@keyframes subtagIn{to{opacity:1;transform:rotateX(0deg);}}
+@keyframes flipIn{
+0%{opacity:0;transform:perspective(600px) rotateX(-90deg);}
+60%{opacity:1;transform:perspective(600px) rotateX(8deg);}
+100%{opacity:1;transform:perspective(600px) rotateX(0deg);}
+}
 
-.hero-divider{width:120px;height:1px;background:#FA2A55;margin:26px auto;}
+/* CLEANER DIVIDER */
+.hero-divider{
+width:120px;
+height:1px;
+background:#FA2A55;
+margin:40px auto 60px auto;
+}
 
 .nav-wrap{width:420px;margin:0 auto 28px;}
 .nav{display:flex;justify-content:space-between;font-size:.95rem;}
@@ -38,6 +50,7 @@ transition:opacity .2s ease, transform .25s ease;
 .nav a span::after{content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:#FA2A55;transform:translateX(-50%);transition:.25s;}
 .nav a:hover span::after,.nav a.active span::after{width:100%;}
 
+/* SECONDARY NAV ENTRY */
 .subnav-wrap{
 width:480px;
 margin:8px auto 64px;
@@ -56,21 +69,22 @@ animation:dropIn .35s ease-out .08s forwards, fadeIn .45s ease-out .08s forwards
 @keyframes dropIn{from{transform:translateY(-10px);}to{transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
-.subnav-exit{animation:exitUp .35s ease forwards;}
-@keyframes exitUp{to{opacity:0;transform:translateY(-10px);}}
+/* TRUE REVERSE EXIT */
+@keyframes dropOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
+.subnav-exit{animation:dropOut .35s ease forwards;}
 
 .content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
 .card{background:#111827;padding:32px;border-radius:12px;}
 footer{text-align:center;padding:70px 20px;color:#6b7280;}
 </style>
 </head>
+
 <body>
 
 <section class="hero">
 <h1>PEREZ AUTOMATION</h1>
 <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
 <p class="subtag">Portfolio</p>
-
 <div class="hero-divider"></div>
 
 <div class="nav-wrap">
@@ -89,6 +103,7 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 <a href="honours-b.html"><span>HONOURS B</span></a>
 </div>
 </div>
+
 </section>
 
 <section class="content">
@@ -108,8 +123,8 @@ const t=document.querySelector('.subtag');
 if(sub){
 e.preventDefault();
 sub.classList.add('subnav-exit');
+t.style.transform='perspective(600px) rotateX(90deg)';
 t.style.opacity='0';
-t.style.transform='rotateX(-40deg)';
 setTimeout(()=>{window.location=link.href;},240);
 }
 });
