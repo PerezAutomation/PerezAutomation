@@ -11,47 +11,41 @@ body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;po
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;opacity:.55;}
 
-.hero{text-align:center;margin-top:110px;position:relative;}
+.hero{
+text-align:center;
+margin-top:110px;
+position:relative;
+perspective:1000px; /* enables real 3D */
+}
 .hero::before{content:"";position:absolute;left:50%;top:38%;width:1400px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);filter:blur(90px);opacity:.45;z-index:-1;}
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
-/* -------- SLOT MACHINE SCROLL ANIMATION -------- */
+/* -------- CLEAN FLIP DOWN ANIMATION -------- */
 
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
-overflow:hidden;
-display:inline-block;
-height:1.4em;
+transform-origin:top center;
+transform:rotateX(-90deg);
+opacity:0;
+animation:flipDown .65s cubic-bezier(.4,.0,.2,1) forwards;
 }
 
-.subtag span{
-display:inline-block;
-transform:translateY(-120%);
-animation:slotScroll .8s cubic-bezier(.22,.8,.25,1) forwards;
-}
-
-@keyframes slotScroll{
+@keyframes flipDown{
 0%{
-transform:translateY(-120%);
+transform:rotateX(-90deg);
 opacity:0;
 }
-60%{
-opacity:1;
-}
-80%{
-transform:translateY(8%);
-}
 100%{
-transform:translateY(0%);
+transform:rotateX(0deg);
 opacity:1;
 }
 }
 
-/* ----------------------------------------------- */
+/* ------------------------------------------ */
 
 .hero-divider{width:120px;height:1px;background:#FA2A55;margin:40px auto 60px auto;}
 
@@ -92,7 +86,7 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 <section class="hero">
 <h1>PEREZ AUTOMATION</h1>
 <h2 class="tagline">Automotive | Automation | Mechatronics</h2>
-<p class="subtag"><span>Designing and building high-performance automotive systems.</span></p>
+<p class="subtag">Designing and building high-performance automotive systems.</p>
 <div class="hero-divider"></div>
 
 <div class="nav-wrap">
@@ -130,10 +124,10 @@ footer{text-align:center;padding:70px 20px;color:#6b7280;}
 <script>
 document.querySelectorAll('.nav a').forEach(link=>{
 link.addEventListener('click',e=>{
-const t=document.querySelector('.subtag span');
+const t=document.querySelector('.subtag');
 if(t){
 e.preventDefault();
-t.style.transform='translateY(120%)';
+t.style.transform='rotateX(90deg)';
 t.style.opacity='0';
 setTimeout(()=>{window.location=link.href;},260);
 }
