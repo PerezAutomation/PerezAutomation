@@ -11,39 +11,37 @@ body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;po
 body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:72px 72px;opacity:.55;}
 
-.hero{text-align:center;margin-top:110px;position:relative;}
+.hero{text-align:center;margin-top:110px;position:relative;perspective:1200px;}
 .hero::before{content:"";position:absolute;left:50%;top:38%;width:1400px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);filter:blur(90px);opacity:.45;z-index:-1;}
 .hero h1{font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;font-family:"Segoe UI",Roboto,sans-serif;}
 .tagline{font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;}
 
-/* UPDATED 3RD TITLE ANIMATION */
 .subtag{
 margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
 opacity:0;
-transform:perspective(900px) rotateY(90deg) scale(.95);
-transform-origin:center;
-backface-visibility:hidden;
-animation:rollInY .65s cubic-bezier(.22,.9,.2,1) forwards;
+transform:rotateX(-90deg) rotateZ(-8deg);
+transform-origin:top center;
+animation:rollIn .7s cubic-bezier(.22,.9,.25,1) forwards;
 }
 
-@keyframes rollInY{
+@keyframes rollIn{
 0%{
 opacity:0;
-transform:perspective(900px) rotateY(90deg) scale(.95);
+transform:rotateX(-90deg) rotateZ(-8deg);
 }
-60%{
+45%{
 opacity:1;
-transform:perspective(900px) rotateY(-8deg) scale(1.02);
+transform:rotateX(15deg) rotateZ(2deg);
 }
-80%{
-transform:perspective(900px) rotateY(4deg) scale(1);
+70%{
+transform:rotateX(-6deg) rotateZ(-1deg);
 }
 100%{
 opacity:1;
-transform:perspective(900px) rotateY(0deg) scale(1);
+transform:rotateX(0deg) rotateZ(0deg);
 }
 }
 
@@ -127,7 +125,7 @@ link.addEventListener('click',e=>{
 const t=document.querySelector('.subtag');
 if(t){
 e.preventDefault();
-t.style.transform='perspective(900px) rotateY(-90deg)';
+t.style.transform='rotateX(90deg)';
 t.style.opacity='0';
 setTimeout(()=>{window.location=link.href;},260);
 }
