@@ -37,19 +37,12 @@ background-size:72px 72px;
 opacity:.55;
 }
 
-.hero{
-text-align:center;
-margin-top:110px;
-position:relative;
-}
-
+.hero{text-align:center;margin-top:110px;position:relative;}
 .hero::before{
 content:"";
 position:absolute;
-left:50%;
-top:38%;
-width:1400px;
-height:600px;
+left:50%;top:38%;
+width:1400px;height:600px;
 transform:translate(-50%,-50%);
 background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);
 filter:blur(90px);
@@ -77,27 +70,24 @@ margin-top:10px;
 font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
-opacity:1;
-transform:translateY(0);
+opacity:0;
+transform:translateY(-8px);
+animation:subtagIn .45s cubic-bezier(.2,.9,.15,1) forwards;
+}
+
+@keyframes subtagIn{
+0%{opacity:0;transform:translateY(-8px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
 .hero-divider{
-width:120px;
-height:1px;
+width:120px;height:1px;
 background:#FA2A55;
 margin:40px auto 60px auto;
 }
 
-.nav-wrap{
-width:420px;
-margin:0 auto 28px;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-font-size:.95rem;
-}
+.nav-wrap{width:420px;margin:0 auto 28px;}
+.nav{display:flex;justify-content:space-between;font-size:.95rem;}
 
 .nav a{
 width:140px;
@@ -118,10 +108,8 @@ padding-bottom:8px;
 .nav a span::after{
 content:"";
 position:absolute;
-left:50%;
-bottom:0;
-width:0;
-height:1px;
+left:50%;bottom:0;
+width:0;height:1px;
 background:#FA2A55;
 transform:translateX(-50%);
 transition:.25s;
@@ -132,19 +120,8 @@ transition:.25s;
 width:100%;
 }
 
-.subnav-wrap{
-width:480px;
-margin:8px auto 64px;
-opacity:1;
-transform:translateY(0);
-}
-
-.subnav{
-display:flex;
-justify-content:space-around;
-font-size:.85rem;
-letter-spacing:.35px;
-}
+.subnav-wrap{width:480px;margin:8px auto 64px;}
+.subnav{display:flex;justify-content:space-around;font-size:.85rem;letter-spacing:.35px;}
 
 .subnav a{
 text-align:center;
@@ -164,10 +141,8 @@ padding-bottom:6px;
 .subnav a span::after{
 content:"";
 position:absolute;
-left:50%;
-bottom:0;
-width:0;
-height:1px;
+left:50%;bottom:0;
+width:0;height:1px;
 background:#FA2A55;
 transform:translateX(-50%);
 transition:.25s;
@@ -178,12 +153,7 @@ transition:.25s;
 width:100%;
 }
 
-.content{
-max-width:1100px;
-margin:0 auto 80px;
-padding:0 25px;
-}
-
+.content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
 .card{
 background:#111827;
 padding:32px;
@@ -231,35 +201,19 @@ color:#6b7280;
 <a href="honours-b.html"><span>HONOURS B</span></a>
 </div>
 </div>
-
 </section>
 
 <section class="content">
 <div class="card">
 <h3>Project Overview</h3>
-<p>Applied modelling, system validation, and implementation research across advanced engineering domains.</p>
+<p>Applied modelling, validation, and advanced engineering research implementation.</p>
 </div>
 </section>
 
 <footer>© 2026 Perez Automation</footer>
 
 <script>
-const subtag=document.querySelector('.subtag');
 const subnav=document.getElementById('subnav');
-
-/* Hero animation once per session */
-if(!sessionStorage.getItem('heroAnimated')){
-subtag.style.opacity='0';
-subtag.style.transform='translateY(-2px)';
-setTimeout(()=>{
-subtag.style.transition='opacity .2s ease-out, transform .2s ease-out';
-subtag.style.opacity='1';
-subtag.style.transform='translateY(0)';
-},10);
-sessionStorage.setItem('heroAnimated','true');
-}
-
-/* Subnav only drops in when entering from outside /projects */
 if(document.referrer && !document.referrer.includes('/projects/')){
 subnav.style.opacity='0';
 subnav.style.transform='translateY(-10px)';
