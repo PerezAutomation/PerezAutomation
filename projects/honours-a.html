@@ -3,145 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Honours Project A - Perez Automation</title>
+<title>Honours A - Perez Automation</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: #0b0f14;
-  color: #e5e7eb;
+html{overflow-y:scroll;}
+body{margin:0;font-family:"Inter",sans-serif;color:#e5e7eb;background:#0b0f14;position:relative;overflow-x:hidden;}
+
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background:radial-gradient(1000px 520px at 50% 72%,rgba(220,38,38,.045),transparent 70%);
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(220,38,38,0.08), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220,38,38,0.05), transparent 40%);
-  z-index: -1;
+body::after{
+content:"";position:fixed;inset:0;pointer-events:none;
+background-image:
+linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+background-size:72px 72px;opacity:.55;
 }
 
-.hero {
-  text-align: center;
-  margin-top: 140px;
-  min-height: 150px;
+.hero{text-align:center;margin-top:110px;position:relative;}
+
+.hero::before{
+content:"";position:absolute;left:50%;top:38%;
+width:1400px;height:600px;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);
+filter:blur(90px);opacity:.45;z-index:-1;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  letter-spacing: 6px;
-  margin: 0;
-  font-weight: 300;
+.hero h1{
+font-size:4.4rem;letter-spacing:10px;margin:0;font-weight:300;
+font-family:"Segoe UI",Roboto,sans-serif;
 }
 
-.hero h2 {
-  font-size: 1.05rem;
-  margin-top: 26px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #9ca3af;
+.tagline{
+font-family:"Space Grotesk";font-size:1.12rem;margin-top:8px;color:#b7bec8;
 }
 
-.breadcrumbs {
-  text-align: center;
-  margin-top: 35px;
-  font-size: 1.05rem;
-  font-weight: 700;
+.subtag{
+margin-top:10px;font-size:1rem;color:#9ca3af;letter-spacing:.35px;
+opacity:0;transform:translateY(-2px);
+animation:balancedFade .2s ease-out forwards;
 }
 
-.breadcrumbs a {
-  color: #6b7280;
-  text-decoration: none;
-  margin: 0 12px;
+@keyframes balancedFade{
+from{opacity:0;transform:translateY(-2px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-.breadcrumbs a:hover { color:#ffffff; }
+.hero-divider{width:120px;height:1px;background:#FA2A55;margin:40px auto 60px auto;}
 
-.active .bracket { color:#dc2626; }
-.active .label { color:#ffffff; }
+.nav-wrap{width:420px;margin:0 auto 28px;}
 
-.sub-breadcrumbs {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 0.95rem;
-  font-weight: 600;
+.nav{display:flex;justify-content:space-between;font-size:.95rem;}
+.nav a{width:140px;text-align:center;color:#6b7280;text-decoration:none;}
+.nav a span{position:relative;display:inline-block;padding-bottom:8px;}
+.nav a:hover{color:#fff;}
+.nav a.active{color:#fff;}
+
+.nav a span::after{
+content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;
+background:#FA2A55;transform:translateX(-50%);transition:.25s;
+}
+.nav a:hover span::after,
+.nav a.active span::after{width:100%;}
+
+/* Subnav */
+.subnav-wrap{
+width:480px;margin:8px auto 64px;
+opacity:0;transform:translateY(-10px);
+animation:dropIn .35s ease-out .08s forwards, fadeIn .45s ease-out .08s forwards;
 }
 
-.sub-breadcrumbs a {
-  color:#6b7280;
-  text-decoration:none;
-  margin:0 10px;
+.subnav{display:flex;justify-content:space-around;font-size:.85rem;letter-spacing:.35px;}
+.subnav a{text-align:center;color:#6b7280;text-decoration:none;}
+.subnav a span{position:relative;display:inline-block;padding-bottom:6px;}
+.subnav a:hover{color:#fff;}
+.subnav a.active{color:#fff;}
+
+.subnav a span::after{
+content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;
+background:#FA2A55;transform:translateX(-50%);transition:.25s;
+}
+.subnav a:hover span::after,
+.subnav a.active span::after{width:100%;}
+
+@keyframes dropIn{from{transform:translateY(-10px);}to{transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes dropOut{from{opacity:1;transform:translateY(0);}to{opacity:0;transform:translateY(-10px);}}
+.subnav-exit{animation:dropOut .35s ease forwards;}
+
+.content{max-width:1100px;margin:0 auto 80px;padding:0 25px;}
+
+.card{
+background:#111827;padding:32px;border-radius:12px;transition:.18s ease;
+}
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(0,0,0,.55),0 0 14px rgba(220,38,38,.16);
 }
 
-.sub-breadcrumbs a:hover { color:#ffffff; }
-
-.content {
-  max-width:900px;
-  margin:60px auto;
-  padding:0 20px;
+.card h3{
+margin:0 0 12px 0;font-family:"Space Grotesk";font-size:1.3rem;font-weight:500;
 }
 
-.card {
-  background:#111827;
-  padding:30px;
-  border-radius:10px;
+.card p{
+margin:0;font-size:.95rem;color:#cfd3da;line-height:1.7;
 }
 
-footer {
-  text-align:center;
-  padding:60px 20px;
-  color:#6b7280;
-  font-size:0.85rem;
-}
+footer{text-align:center;padding:70px 20px;color:#6b7280;}
 </style>
 </head>
+
 <body>
 
 <section class="hero">
-  <h1>HONOURS A</h1>
-  <h2>Automation & Systems Design</h2>
+<h1>PEREZ AUTOMATION</h1>
+<h2 class="tagline">Automotives | Automation | Mechatronics</h2>
+<p class="subtag">Honours Project A</p>
+
+<div class="hero-divider"></div>
+
+<div class="nav-wrap">
+<div class="nav">
+<a href="../index.html"><span>LANDING</span></a>
+<a href="index.html" class="active"><span>PORTFOLIO</span></a>
+<a href="../blog.html"><span>BLOG</span></a>
+</div>
+</div>
+
+<div class="subnav-wrap" id="subnav">
+<div class="subnav">
+<a href="index.html"><span>RECENT</span></a>
+<a href="focusst.html"><span>FOCUS ST</span></a>
+<a href="honours-a.html" class="active"><span>HONOURS A</span></a>
+<a href="honours-b.html"><span>HONOURS B</span></a>
+</div>
+</div>
 </section>
-
-<div class="breadcrumbs">
-  <a href="../index.html">MAIN</a>
-
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">PROJECTS</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a href="../blog.html">BLOG</a>
-</div>
-
-<div class="sub-breadcrumbs">
-  <a href="index.html">RECENT</a>
-  <a href="focus-st.html">FOCUS ST</a>
-
-  <span class="active">
-    <span class="bracket">[</span>
-    <span class="label">HONOURS A</span>
-    <span class="bracket">]</span>
-  </span>
-
-  <a href="honours-b.html">HONOURS B</a>
-</div>
 
 <section class="content">
-  <div class="card">
-    <h3>Honours Project A</h3>
-    <p>
-      Research, design development, and system integration work
-      documented throughout the progression of the honours project.
-    </p>
-  </div>
+<div class="card">
+<h3>Project Overview</h3>
+<p>Engineering research and applied system development focusing on modelling, validation, and real-world implementation.</p>
+</div>
 </section>
 
-<footer>
-© 2026 Perez Automation
-</footer>
+<footer>© 2026 Perez Automation</footer>
+
+<script>
+document.querySelectorAll('.nav a').forEach(link=>{
+link.addEventListener('click',e=>{
+const sub=document.getElementById('subnav');
+const t=document.querySelector('.subtag');
+if(sub){
+e.preventDefault();
+sub.classList.add('subnav-exit');
+t.style.opacity='0';
+t.style.transform='translateY(-2px)';
+setTimeout(()=>{window.location=link.href;},260);
+}
+});
+});
+</script>
 
 </body>
 </html>
