@@ -73,7 +73,7 @@ margin-top:8px;
 color:#b7bec8;
 }
 
-/* -------- VERY SUBTLE RENDER FADE -------- */
+/* -------- FAST, CLEAN FADE -------- */
 
 .subtag{
 margin-top:10px;
@@ -81,18 +81,14 @@ font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
 opacity:0;
-transform:translateY(-2px);
-animation:renderFade .35s ease-out forwards;
+animation:fastFade .18s linear forwards;
 }
 
-@keyframes renderFade{
-to{
-opacity:1;
-transform:translateY(0);
-}
+@keyframes fastFade{
+to{ opacity:1; }
 }
 
-/* ----------------------------------------- */
+/* ----------------------------------- */
 
 .hero-divider{
 width:120px;
@@ -262,7 +258,7 @@ const t=document.querySelector('.subtag');
 if(t){
 e.preventDefault();
 t.style.opacity='0';
-setTimeout(()=>{window.location=link.href;},220);
+setTimeout(()=>{window.location=link.href;},200);
 }
 });
 });
