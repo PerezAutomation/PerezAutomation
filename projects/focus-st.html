@@ -36,44 +36,56 @@ background-size:72px 72px;
 opacity:.55;
 }
 
-/* HERO */
 .hero{
 text-align:center;
 margin-top:90px;
 position:relative;
-padding:0 20px;
 }
+
 .hero::before{
 content:"";
 position:absolute;
 left:50%;
 top:38%;
-width:90vw;
-height:400px;
+width:1400px;
+height:600px;
 transform:translate(-50%,-50%);
 background:radial-gradient(circle,rgba(220,38,38,.07),rgba(220,38,38,.03),transparent 70%);
 filter:blur(90px);
 opacity:.45;
 z-index:-1;
 }
+
 .hero h1{
-font-size:clamp(2rem,6vw,4.4rem);
-letter-spacing:clamp(4px,1.5vw,10px);
+font-size:4.4rem;
+letter-spacing:10px;
 margin:0;
 font-weight:300;
+font-family:"Segoe UI",Roboto,sans-serif;
 }
+
 .tagline{
 font-family:"Space Grotesk";
-font-size:clamp(.9rem,2.5vw,1.12rem);
+font-size:1.12rem;
 margin-top:8px;
 color:#b7bec8;
 }
+
 .subtag{
 margin-top:10px;
-font-size:.95rem;
+font-size:1rem;
 color:#9ca3af;
 letter-spacing:.35px;
+opacity:0;
+transform:translateY(-8px);
+animation:subtagIn .45s cubic-bezier(.2,.9,.15,1) forwards;
 }
+
+@keyframes subtagIn{
+0%{opacity:0;transform:translateY(-8px);}
+100%{opacity:1;transform:translateY(0);}
+}
+
 .hero-divider{
 width:100px;
 height:1px;
@@ -81,12 +93,11 @@ background:#FA2A55;
 margin:35px auto 50px auto;
 }
 
-/* MAIN NAV */
 .nav-wrap{
-max-width:420px;
-margin:0 auto 36px;
-padding:0 20px;
+width:420px;
+margin:0 auto 20px;
 }
+
 .nav{
 display:flex;
 justify-content:space-between;
@@ -94,6 +105,7 @@ flex-wrap:wrap;
 gap:15px;
 font-size:.9rem;
 }
+
 .nav a{
 flex:1;
 min-width:90px;
@@ -101,34 +113,106 @@ text-align:center;
 color:#6b7280;
 text-decoration:none;
 }
+
+.nav a span{
+position:relative;
+display:inline-block;
+padding-bottom:6px;
+}
+
+.nav a:hover{color:#fff;}
 .nav a.active{color:#fff;}
 
-/* SUBNAV */
+.nav a span::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:0;
+width:0;
+height:1px;
+background:#FA2A55;
+transform:translateX(-50%);
+transition:.25s;
+}
+
+.nav a:hover span::after,
+.nav a.active span::after{
+width:100%;
+}
+
 .subnav-wrap{
 width:480px;
-margin:8px auto 64px;
+margin:8px auto 60px;
 }
+
 .subnav{
 display:flex;
 justify-content:space-around;
 font-size:.85rem;
+letter-spacing:.35px;
 }
+
 .subnav a{
+text-align:center;
 color:#6b7280;
 text-decoration:none;
 }
+
+.subnav a span{
+position:relative;
+display:inline-block;
+padding-bottom:6px;
+}
+
+.subnav a:hover{color:#fff;}
 .subnav a.active{color:#fff;}
+
+.subnav a span::after{
+content:"";
+position:absolute;
+left:50%;
+bottom:0;
+width:0;
+height:1px;
+background:#FA2A55;
+transform:translateX(-50%);
+transition:.25s;
+}
+
+.subnav a:hover span::after,
+.subnav a.active span::after{
+width:100%;
+}
+
+@keyframes dropOut{
+from{opacity:1;transform:translateY(0);}
+to{opacity:0;transform:translateY(-10px);}
+}
+
+.subnav-exit{
+animation:dropOut .35s ease forwards;
+}
 
 .content{
 max-width:1100px;
 margin:0 auto 80px;
 padding:0 25px;
 }
+
 .card{
 background:#111827;
 padding:32px;
 border-radius:12px;
+transition:.18s ease;
 }
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:
+0 12px 28px rgba(0,0,0,.55),
+0 0 14px rgba(220,38,38,.16);
+}
+
 footer{
 text-align:center;
 padding:70px 20px;
@@ -142,23 +226,23 @@ color:#6b7280;
 <section class="hero">
 <h1>PEREZ AUTO</h1>
 <h2 class="tagline">Automotives | Automation | Mechatronics</h2>
-<p class="subtag">Focus ST Development</p>
+<p class="subtag">Focus ST</p>
 
 <div class="hero-divider"></div>
 
 <div class="nav-wrap">
 <div class="nav">
-<a href="../index.html">LANDING</a>
-<a href="index.html" class="active">PORTFOLIO</a>
-<a href="../blog.html">BLOG</a>
+<a href="../index.html"><span>LANDING</span></a>
+<a href="index.html" class="active"><span>PORTFOLIO</span></a>
+<a href="../blog.html"><span>BLOG</span></a>
 </div>
 </div>
 
-<div class="subnav-wrap">
+<div class="subnav-wrap" id="subnav">
 <div class="subnav">
-<a href="index.html">RECENT</a>
-<a href="focus-st.html" class="active">FOCUS ST</a>
-<a href="honours.html">HONOURS</a>
+<a href="index.html"><span>RECENT</span></a>
+<a href="focus-st.html" class="active"><span>FOCUS ST</span></a>
+<a href="honours.html"><span>HONOURS</span></a>
 </div>
 </div>
 
@@ -166,12 +250,33 @@ color:#6b7280;
 
 <section class="content">
 <div class="card">
-<h3>Build Overview</h3>
-<p>Turbo selection, fueling strategy, calibration development, and hardware integration targeting 520+ WHP.</p>
+<h3>Focus ST Build</h3>
+<p>Full engineering breakdown and performance documentation of the Focus ST platform.</p>
 </div>
 </section>
 
-<footer>© 2026 Perez Auto</footer>
+<footer>© 2026 Perez Automation</footer>
+
+<script>
+const subnav=document.getElementById('subnav');
+if(document.referrer && !document.referrer.includes('/projects/')){
+subnav.style.opacity='0';
+subnav.style.transform='translateY(-10px)';
+setTimeout(()=>{
+subnav.style.transition='opacity .35s ease-out, transform .35s ease-out';
+subnav.style.opacity='1';
+subnav.style.transform='translateY(0)';
+},10);
+}
+document.querySelectorAll('.nav a').forEach(link=>{
+link.addEventListener('click',e=>{
+if(link.classList.contains('active')) return;
+e.preventDefault();
+subnav.classList.add('subnav-exit');
+setTimeout(()=>{window.location=link.href;},260);
+});
+});
+</script>
 
 </body>
 </html>
