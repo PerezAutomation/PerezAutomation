@@ -19,7 +19,6 @@ position:relative;
 overflow-x:hidden;
 }
 
-/* Background effects */
 body::before{
 content:"";
 position:fixed;
@@ -92,7 +91,6 @@ from{opacity:0;transform:translateY(-2px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* Divider matches landing */
 .hero-divider{
 width:100px;
 height:1px;
@@ -100,10 +98,10 @@ background:#FA2A55;
 margin:35px auto 50px auto;
 }
 
-/* NAV — EXACT LANDING */
+/* MAIN NAV — TIGHT GAP */
 .nav-wrap{
 max-width:420px;
-margin:0 auto 50px;
+margin:0 auto 28px;
 padding:0 20px;
 }
 
@@ -149,10 +147,10 @@ transition:.25s;
 width:100%;
 }
 
-/* SECOND NAV — KEEP ORIGINAL PORTFOLIO SPACING */
+/* SUBNAV — 3 ITEMS */
 .subnav-wrap{
 width:480px;
-margin:8px auto 64px; /* this keeps spacing to cards identical */
+margin:8px auto 64px;
 }
 
 .subnav{
@@ -204,7 +202,6 @@ to{opacity:0;transform:translateY(-10px);}
 animation:dropOut .35s ease forwards;
 }
 
-/* Content */
 .content{
 max-width:1100px;
 margin:0 auto 80px;
@@ -220,7 +217,8 @@ transition:.18s ease;
 
 .card:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(0,0,0,.55),
+box-shadow:
+0 12px 28px rgba(0,0,0,.55),
 0 0 14px rgba(220,38,38,.16);
 }
 
@@ -253,8 +251,7 @@ color:#6b7280;
 <div class="subnav">
 <a href="index.html" class="active"><span>RECENT</span></a>
 <a href="focus-st.html"><span>FOCUS ST</span></a>
-<a href="honours-a.html"><span>HONOURS A</span></a>
-<a href="honours-b.html"><span>HONOURS B</span></a>
+<a href="honours.html"><span>HONOURS</span></a>
 </div>
 </div>
 
@@ -267,7 +264,7 @@ color:#6b7280;
 </div>
 </section>
 
-<footer>© 2026 Perez Automation</footer>
+<footer>© 2026 Perez Auto</footer>
 
 <script>
 const subnav=document.getElementById('subnav');
