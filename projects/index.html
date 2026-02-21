@@ -74,7 +74,6 @@ margin-top:8px;
 color:#b7bec8;
 }
 
-/* ✅ Subtag animation restored */
 .subtag{
 margin-top:10px;
 font-size:1rem;
@@ -90,17 +89,18 @@ animation:subtagIn .45s cubic-bezier(.2,.9,.15,1) forwards;
 100%{opacity:1;transform:translateY(0);}
 }
 
+/* ✅ FIXED Divider to match Blog */
 .hero-divider{
-width:120px;
+width:100px;
 height:1px;
 background:#FA2A55;
-margin:40px auto 60px auto;
+margin:35px auto 50px auto;
 }
 
-/* MAIN NAV — spacing unchanged */
+/* MAIN NAV */
 .nav-wrap{
 width:420px;
-margin:0 auto 20px;
+margin:0 auto 50px; /* ✅ MATCH BLOG spacing */
 }
 
 .nav{
@@ -142,7 +142,7 @@ transition:.25s;
 width:100%;
 }
 
-/* SUBNAV — spacing unchanged */
+/* SUBNAV */
 .subnav-wrap{
 width:480px;
 margin:8px auto 64px;
@@ -187,7 +187,6 @@ transition:.25s;
 width:100%;
 }
 
-/* ✅ Subnav exit animation restored */
 @keyframes dropOut{
 from{opacity:1;transform:translateY(0);}
 to{opacity:0;transform:translateY(-10px);}
@@ -197,6 +196,7 @@ to{opacity:0;transform:translateY(-10px);}
 animation:dropOut .35s ease forwards;
 }
 
+/* ✅ MATCH BLOG content spacing */
 .content{
 max-width:1100px;
 margin:0 auto 80px;
@@ -264,7 +264,6 @@ color:#6b7280;
 <script>
 const subnav=document.getElementById('subnav');
 
-/* restore animated entrance when coming from outside projects */
 if(document.referrer && !document.referrer.includes('/projects/')){
 subnav.style.opacity='0';
 subnav.style.transform='translateY(-10px)';
@@ -275,7 +274,6 @@ subnav.style.transform='translateY(0)';
 },10);
 }
 
-/* restore animated exit */
 document.querySelectorAll('.nav a').forEach(link=>{
 link.addEventListener('click',e=>{
 if(link.classList.contains('active')) return;
